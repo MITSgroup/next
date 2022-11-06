@@ -1,0 +1,25 @@
+@import "styles/variables";
+
+.header {
+  padding: 10px 0;
+
+  @media (min-width: 768px) {
+    padding: 10px 0;
+  }
+
+  .wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  .logo {
+    @media (min-width: 768px) {
+      margin-right: 100px;
+    }
+  }
+}
+
+.headerTransparent {
+  position: absolute;
+  width: 100%;
+}

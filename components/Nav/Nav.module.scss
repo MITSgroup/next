@@ -1,0 +1,86 @@
+@import "styles/variables";
+
+.mainNav {
+  display: none;
+
+  @media (min-width: 768px) {
+    display: block;
+  }
+
+  ul {
+    display: flex;
+    align-items: center;
+
+    li {
+      @media (min-width: 768px) {
+        margin-right: 50px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+
+      @media (min-width: 1200px) {
+        margin-right: 140px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+
+      a {
+        font-family: "Metropolis";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 12px;
+        /* identical to box height */
+        color: $black;
+        text-transform: uppercase;
+        transition: color 0.3s ease-in-out;
+
+        &:hover {
+          color: $secondary;
+        }
+      }
+    }
+  }
+}
+
+.footerNav {
+  ul {
+    li {
+      margin-bottom: 20px;
+
+      a {
+        font-family: "Metropolis", Helvetica, sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 12px;
+        /* identical to box height */
+        color: $black;
+        text-transform: uppercase;
+        transition: color 0.3s ease-in-out;
+
+        &:hover {
+          color: $secondary;
+        }
+      }
+    }
+  }
+}
+
+.navLight {
+  ul {
+    li {
+      a {
+        color: white;
+
+        &:hover {
+          color: #ddd;
+        }
+      }
+    }
+  }
+}

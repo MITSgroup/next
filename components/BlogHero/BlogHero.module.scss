@@ -1,0 +1,27 @@
+@import 'styles/variables';
+
+.pageHero {
+  min-height: 100vh;
+  background-color: $secondary;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .title {
+    font-family: 'Metropolis', Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 60px;
+    color: #ffffff;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    text-align: center;
+
+    @media (min-width: 1200px) {
+      font-size: 72px;
+    }
+  }
+}

@@ -1,0 +1,14 @@
+@import "styles/variables";
+
+.mobileMenu {
+  height: 100%;
+  width: 100%;
+  background-color: $secondary;
+  padding: 10px 15px;
+
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}

@@ -1,0 +1,53 @@
+@import "styles/variables";
+
+.portfolioHero {
+  min-height: 100vh;
+  background-color: $secondary;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  .content {
+    background-color: rgba(#000, 0.7);
+    max-width: 93%;
+    height: 100%;
+    padding-top: 60px;
+    padding-bottom: 80px;
+
+    @media (min-width: 768px) {
+      max-width: 95%;
+      height: 100%;
+    }
+
+    @media (min-width: 1200px) {
+      max-width: 70%;
+    }
+  }
+
+  .inner {
+    @media (min-width: 768px) {
+      display: flex;
+    }
+  }
+
+  .title {
+    font-family: "Metropolis", Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 60px;
+    color: #ffffff;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+  }
+
+  .description {
+    font-family: "Metropolis", Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 32px;
+    color: #ffffff;
+  }
+}

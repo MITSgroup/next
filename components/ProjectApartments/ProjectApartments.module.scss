@@ -1,0 +1,130 @@
+@import "styles/variables";
+
+.projectApartments {
+  padding: 40px 0;
+
+  .tabs {
+    display: flex;
+    overflow: hidden;
+
+    .tabItem {
+      width: 205px;
+      min-height: 220px;
+      padding: 15px 25px 40px;
+      transition: background-color 0.3s ease-in-out;
+      background-color: #fff;
+      cursor: pointer;
+
+      @media (min-width: 768px) {
+        padding: 23px 25px 40px;
+      }
+
+      &:hover {
+        background-color: #f6f6f6;
+        .list {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+
+      .price {
+        font-family: "Metropolis", Helvetica, sans-serif;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 24px;
+        /* identical to box height */
+        color: #000000;
+        display: block;
+        margin-bottom: 20px;
+      }
+
+      .bedrooms {
+        font-family: "Metropolis", Helvetica, sans-serif;
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 12px;
+        /* identical to box height */
+        color: #000000;
+        margin-bottom: 35px;
+      }
+
+      .list {
+        list-style: inside;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease-in-out;
+        li {
+          font-size: 12px;
+          line-height: 15px;
+          color: #000000;
+          margin-bottom: 4px;
+        }
+      }
+    }
+
+    .active {
+      background-color: #f6f6f6;
+      .list {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+
+  .subtitle {
+    font-family: "Metropolis", Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 12px;
+    /* identical to box height */
+    color: #000000;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+  }
+
+  .tabContent {
+    .small {
+      display: block;
+      padding: 10px 0;
+      width: 100%;
+      text-align: right;
+    }
+
+    .specs {
+      li {
+        display: flex;
+        align-items: center;
+        padding: 12px 0 12px 12px;
+        width: 100%;
+        border-top: 1px solid #000;
+
+        p {
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 150%;
+          /* identical to box height, or 27px */
+          color: #000000;
+
+          @media (min-width: 768px) {
+            font-size: 18px;
+          }
+        }
+        .count {
+          margin-right: 20px;
+
+          @media (min-width: 768px) {
+            margin-right: 40px;
+          }
+        }
+
+        .value {
+          margin-left: auto;
+        }
+
+        .total {
+          margin-left: auto;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,77 @@
+@import "styles/variables";
+
+.footer {
+  padding-top: 50px;
+  padding-bottom: 40px;
+  background-color: #f9f9f9;
+
+  @media (min-width: 768px) {
+    padding-top: 75px;
+    padding-bottom: 60px;
+  }
+
+  .contacts {
+    margin-bottom: 20px;
+    width: 50%;
+
+    @media (min-width: 768px) {
+      margin-bottom: 40px;
+      width: auto;
+    }
+
+    li {
+      a {
+        font-family: "Inter", Helvetica, sans-serif;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 179%;
+        color: #000000;
+        transition: color 0.3s ease-in-out;
+
+        &:hover {
+          color: $secondary;
+        }
+      }
+    }
+  }
+
+  .social {
+    width: 50%;
+
+    @media (min-width: 768px) {
+      display: flex;
+      width: auto;
+    }
+
+    li {
+      margin-bottom: 10px;
+
+      a {
+        font-family: "Metropolis", Helvetica, sans-serif;
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 12px;
+        /* identical to box height */
+        color: #000000;
+        transition: color 0.3s ease-in-out;
+
+        &:hover {
+          color: $secondary;
+        }
+      }
+    }
+  }
+
+  .copy {
+    text-align: center;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+
+    color: #000000;
+
+    @media (min-width: 1200px) {
+      text-align: right;
+    }
+  }
+}

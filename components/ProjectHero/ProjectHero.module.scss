@@ -1,0 +1,136 @@
+@import "styles/variables";
+
+.projectHero {
+  min-height: 100vh;
+  background-color: $secondary;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("./img/bg.jpg");
+  padding-top: 105px;
+
+  @media (min-width: 768px) {
+    padding-top: 175px;
+    height: auto;
+    min-height: auto;
+  }
+
+  @media (min-width: 1200px) {
+    padding-top: 175px;
+    height: 100vh;
+  }
+
+  .content {
+    background-color: rgba(#000, 0.7);
+    max-width: 93%;
+    height: 100%;
+
+    @media (min-width: 768px) {
+      max-width: 95%;
+      height: 100%;
+    }
+
+    @media (min-width: 1200px) {
+      max-width: 70%;
+    }
+  }
+
+  .inner {
+    @media (min-width: 768px) {
+      display: flex;
+    }
+  }
+
+  .priceBlock {
+    background-color: #555555;
+    padding: 30px;
+    font-family: "Metropolis", Helvetica, sans-serif;
+    margin-bottom: 30px;
+
+    small {
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 12px;
+      color: #ffffff;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .price {
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 32px;
+      color: #ffffff;
+      margin-bottom: 40px;
+    }
+
+    .includesList {
+      li {
+        position: relative;
+        padding-left: 10px;
+        margin-bottom: 15px;
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 12px;
+        /* identical to box height */
+        color: #ffffff;
+
+        &:before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 3px;
+          width: 3px;
+          height: 3px;
+          background-color: #fff;
+          border-radius: 100%;
+        }
+      }
+    }
+  }
+
+  .availability {
+    background-color: #000;
+    border-radius: 100%;
+    width: 180px;
+    height: 180px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    text-transform: uppercase;
+
+    @media (min-width: 768px) {
+      margin: 0 auto;
+    }
+
+    p {
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 138%;
+      /* or 25px */
+      font-family: "Metropolis", Helvetica, sans-serif;
+      text-align: center;
+      color: #ffffff;
+    }
+  }
+
+  .title {
+    font-family: "Metropolis", Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 60px;
+    color: #ffffff;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+  }
+
+  .description {
+    font-family: "Metropolis", Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 32px;
+    color: #ffffff;
+  }
+}

@@ -1,0 +1,32 @@
+@import "styles/variables";
+
+.projectIntro {
+  .title {
+    font-family: "Metropolis", Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 32px;
+    color: #000000;
+    margin-bottom: 15px;
+  }
+
+  .icon {
+    margin-right: 8px;
+  }
+
+  .location {
+    font-family: "Inter", Helvetica, sans-serif;
+    font-size: 12px;
+    line-height: 15px;
+    /* identical to box height */
+    text-decoration-line: underline;
+    color: #000000;
+  }
+
+  .description {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #000000;
+  }
+}
