@@ -28,5 +28,9 @@
     font-size: 14px;
     line-height: 17px;
     color: #000000;
+
+    @media (min-width: 1200px) {
+      padding-right: 80px;
+    }
   }
 }

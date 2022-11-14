@@ -10,14 +10,19 @@
 
   @media (min-width: 1200px) {
     padding: 80px 0;
+    padding-left: 200px;
   }
 
   .text {
-    font-family: 'Metropolis';
+    font-family: "Metropolis", Helvetica, sans-serif;
     font-style: normal;
     font-weight: 700;
-    font-size: 32px;
+    font-size: 26px;
     line-height: 32px;
-    color: #FFFFFF;
+    color: #ffffff;
+
+    @media (min-width: 1200px) {
+      font-size: 32px;
+    }
   }
 }

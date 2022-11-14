@@ -8,6 +8,11 @@
     align-items: center;
   }
 
+  @media (min-width: 1200px) {
+    padding-left: 100px;
+    padding-right: 200px;
+  }
+
   .imgBox {
     border-radius: 100%;
     margin-bottom: 20px;
@@ -20,6 +25,18 @@
     @media (min-width: 768px) {
       margin-right: 50px;
       display: block;
+    }
+
+    .placeholder {
+      font-family: "Metropolis", Helvetica, sans-serif;
+      width: 150px;
+      height: 150px;
+      border-radius: 100%;
+      text-align: center;
+      line-height: 160px;
+      font-size: 76px;
+      background-color: #dddddd;
+      color: #fff;
     }
   }
 

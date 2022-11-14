@@ -15,8 +15,6 @@ const PortfolioGallery = ({ images }) => {
   const matchesMd = useMediaQuery("(min-width: 768px)");
   const matchesLg = useMediaQuery("(min-width: 1200px)");
 
-  console.log(images);
-
   return (
     <Box className={styles.portfolioGallery}>
       <Container>
@@ -28,9 +26,9 @@ const PortfolioGallery = ({ images }) => {
                   <li key={item.id} className={styles.gridItem}>
                     <Image
                       src={`http://localhost:1337${item.attributes.url}`}
-                      width={item.attributes.width}
-                      height={item.attributes.height}
-                      alt={item.attributes.height}
+                      objectFit={"cover"}
+                      layout={"fill"}
+                      alt={item.attributes.name}
                     />
                   </li>
                 ))}

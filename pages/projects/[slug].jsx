@@ -14,11 +14,14 @@ import ProjectAdvantages from "../../components/ProjectAdvantages/ProjectAdvanta
 import ProjectModelling from "../../components/ProjectModelling/ProjectModelling";
 import { fetchAPI } from "../../lib/api";
 import ProjectApartments from "../../components/ProjectApartments/ProjectApartments";
+import ProjectCta from "../../components/ProjectCta/ProjectCta";
 
-const Project = ({ project }) => {
+const Project = ({ project, reviews }) => {
   const matchesMd = useMediaQuery("(min-width: 768px)");
   const matchesLg = useMediaQuery("(min-width: 1200px)");
   const router = useRouter();
+
+  console.log(project);
 
   return (
     <MainLayout
@@ -33,8 +36,8 @@ const Project = ({ project }) => {
         left={project.attributes.hero.projectLeft}
         price={project.attributes.hero.startingPrice}
         specs={project.attributes.hero.specs}
+        imageUrl={project.attributes.thumbnail.data.attributes.url}
       />
-
       {project.attributes.intro && (
         <ProjectIntro
           title={project.attributes.intro.title}
@@ -44,9 +47,12 @@ const Project = ({ project }) => {
           textSecondColumn={project.attributes.intro.textSecondColumn}
         />
       )}
-
-      <ImageGallery images={project.attributes.gallery?.data} />
-      <ProjectApartments apartments={project.attributes?.apartment} />
+      {project.attributes.gallery && (
+        <ImageGallery images={project.attributes.gallery?.data} />
+      )}
+      {project.attributes?.apartment && (
+        <ProjectApartments apartments={project.attributes?.apartment} />
+      )}
       <ProjectLocation
         title={project.attributes.location?.title}
         description={project.attributes.location?.description}
@@ -70,23 +76,27 @@ const Project = ({ project }) => {
           }
         />
       )}
-
       {project.attributes.specs && (
         <ProjectSpecs
           layout={project.attributes.specs?.generalLayout}
           amenities={project.attributes.specs?.amenities}
         />
       )}
-
-      <Reviews />
-
+      {reviews && <Reviews reviews={reviews} />}
       {project.attributes.advantages && (
         <ProjectAdvantages items={project.attributes?.advantages.advantage} />
       )}
-
       {project.attributes.returnOnInvestment && (
         <ProjectModelling apartments={project.attributes.returnOnInvestment} />
       )}
+      <ProjectCta
+        title={"EARLY BIRD SPECIAL OFFER"}
+        description={
+          "Gain up to 12% annualy or set up your fine-cut base in the heart of the most lively area in the most visited tourist destination of recent years."
+        }
+        type={project.attributes.hero.projectType}
+        left={project.attributes.hero.projectLeft}
+      />
     </MainLayout>
   );
 };
@@ -105,18 +115,22 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const projectsRes = await fetchAPI("/projects", {
-    filters: {
-      slug: params.slug,
-    },
-    populate: "deep",
-  });
+  const [projectsRes, reviewsRes] = await Promise.all([
+    fetchAPI("/projects", {
+      filters: {
+        slug: params.slug,
+      },
+      populate: "deep",
+    }),
+    fetchAPI("/reviews", { populate: "*" }),
+  ]);
 
   return {
     props: {
       project: projectsRes.data[0],
+      reviews: reviewsRes.data,
     },
-    revalidate: 1,
+    revalidate: 10,
   };
 }
 

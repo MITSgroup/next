@@ -1,25 +1,35 @@
 @import "styles/variables";
 
 .header {
-  padding: 10px 0;
-
-  @media (min-width: 768px) {
-    padding: 10px 0;
-  }
-
   .wrapper {
     display: flex;
     align-items: center;
+    padding: 10px 0;
+
+    @media (min-width: 768px) {
+      padding: 20px 0;
+    }
+
+    @media (min-width: 1200px) {
+      padding-top: 40px;
+      padding-bottom: 20px;
+    }
   }
 
   .logo {
     @media (min-width: 768px) {
-      margin-right: 100px;
+      margin-right: 20px;
+    }
+
+    @media (min-width: 1200px) {
+      margin-right: 130px;
     }
   }
 }
 
 .headerTransparent {
   position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
 }

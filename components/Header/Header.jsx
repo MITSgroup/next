@@ -15,8 +15,9 @@ import Image from "next/image";
 import MainNav from "../Nav/MainNav";
 import Link from "next/link";
 
-const Header = ({ transparent }) => {
+const Header = ({ transparent, openMenu }) => {
   const matchesLg = useMediaQuery("(min-width: 1200px)");
+
   return (
     <header
       className={`${styles.header} ${transparent && styles.headerTransparent}`}
@@ -29,21 +30,22 @@ const Header = ({ transparent }) => {
                 {transparent ? (
                   <Image
                     src={logoWhiteSvg}
-                    width={matchesLg ? 160 : 80}
-                    height={matchesLg ? 160 : 80}
+                    width={matchesLg ? 80 : 80}
+                    height={matchesLg ? 112 : 80}
                   />
                 ) : (
                   <Image
                     src={logoSvg}
-                    width={matchesLg ? 160 : 80}
-                    height={matchesLg ? 160 : 80}
+                    width={matchesLg ? 80 : 80}
+                    height={matchesLg ? 112 : 80}
                   />
                 )}
               </a>
             </Link>
           </Box>
 
-          <MainNav transparent />
+          {matchesLg && <MainNav transparent={transparent} />}
+
           <Box sx={{ marginLeft: "auto" }}>
             {matchesLg && (
               <Button
@@ -58,7 +60,7 @@ const Header = ({ transparent }) => {
             )}
           </Box>
           {!matchesLg && (
-            <IconButton>
+            <IconButton onClick={openMenu}>
               {" "}
               <DragHandleIcon
                 sx={{

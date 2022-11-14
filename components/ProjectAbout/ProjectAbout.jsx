@@ -53,7 +53,7 @@ const ProjectAbout = ({
           <Grid item xs={12} md={6} lg={5}>
             <Box className={styles.column}>
               {imageSecondColumn && (
-                <Box width={"100%"} height={600} position={"relative"}>
+                <Box width={"100%"} mb={5} height={600} position={"relative"}>
                   <Image
                     src={`http://localhost:1337${imageSecondColumn}`}
                     layout={"fill"}
@@ -62,7 +62,7 @@ const ProjectAbout = ({
                 </Box>
               )}
 
-              <Box maxWidth={400} mt={"auto"} ml={"auto"}>
+              <Box maxWidth={400} mt={"auto"} ml={matchesLg ? "auto" : 0}>
                 <h4 className={styles.subtitle}>{titleSecondColumn}</h4>
 
                 {paragraphSecondColumn &&

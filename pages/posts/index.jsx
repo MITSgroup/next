@@ -4,10 +4,10 @@ import axios from "axios";
 import BlogHero from "../../components/BlogHero/BlogHero";
 import PostsGrid from "../../components/PostsGrid/PostsGrid";
 import { fetchAPI } from "../../lib/api";
+import Subscribe from "../../components/Subscribe/Subscribe";
 
 const Posts = ({ posts }) => {
   const matchesMd = useMediaQuery("(min-width: 768px)");
-  const matchesLg = useMediaQuery("(min-width: 1200px)");
 
   return (
     <MainLayout
@@ -22,6 +22,7 @@ const Posts = ({ posts }) => {
           <PostsGrid posts={posts} />
         </Box>
       </Container>
+      <Subscribe />
     </MainLayout>
   );
 };

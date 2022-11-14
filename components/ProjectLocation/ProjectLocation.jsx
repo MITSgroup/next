@@ -1,15 +1,25 @@
 import styles from "./ProjectLocation.module.scss";
 import React from "react";
-
+import GoogleMapReact from "google-map-react";
 import { Container, Grid, useMediaQuery, Box } from "@mui/material";
 import Image from "next/image";
 import image1 from "./img/1.jpg";
 import image2 from "./img/2.jpg";
 import image3 from "./img/3.jpg";
 
+const AnyReactComponent = ({ text }) => <div>{text}</div>;
+
 const ProjectLocation = ({ title, description, advantages }) => {
   const matchesMd = useMediaQuery("(min-width: 768px)");
   const matchesLg = useMediaQuery("(min-width: 1200px)");
+
+  const defaultProps = {
+    center: {
+      lat: 10.99835602,
+      lng: 77.01502627,
+    },
+    zoom: 11,
+  };
 
   return (
     <Box className={styles.projectLocation}>
@@ -55,7 +65,19 @@ const ProjectLocation = ({ title, description, advantages }) => {
             </Box>
           </Grid>
           <Grid item xs={12} md={6} lg={5}>
-            <Box></Box>
+            <Box className={styles.map}>
+              <GoogleMapReact
+                bootstrapURLKeys={{ key: "" }}
+                defaultCenter={defaultProps.center}
+                defaultZoom={defaultProps.zoom}
+              >
+                <AnyReactComponent
+                  lat={59.955413}
+                  lng={30.337844}
+                  text="My Marker"
+                />
+              </GoogleMapReact>
+            </Box>
           </Grid>
         </Grid>
       </Container>

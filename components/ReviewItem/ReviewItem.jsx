@@ -1,14 +1,21 @@
 import styles from "./ReviewItem.module.scss";
 import React from "react";
-import { Container, Grid, Typography, Box } from "@mui/material";
+import { Box } from "@mui/material";
 import Image from "next/image";
 
 const ReviewItem = ({ imgUrl, authorName, authorText }) => {
   return (
     <article className={styles.reviewItem}>
       <Box className={styles.imgBox}>
-        {" "}
-        <Image src={imgUrl} width={150} height={150} />
+        {imgUrl ? (
+          <Image
+            src={`http://127.0.0.1:1337${imgUrl}`}
+            width={150}
+            height={150}
+          />
+        ) : (
+          <p className={styles.placeholder}>{authorName[0]}</p>
+        )}
       </Box>
 
       <Box>

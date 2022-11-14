@@ -6,6 +6,7 @@ import ProjectIntro from "../../components/ProjectIntro/ProjectIntro";
 import PortfolioHero from "../../components/PortfolioHero/PortfolioHero";
 import { fetchAPI } from "../../lib/api";
 import PortfolioGallery from "../../components/PortfolioGallery/PortfolioGallery";
+import ContactUs from "../../components/ContactUs/ContactUs";
 
 const PortfolioSingle = ({ portfolio }) => {
   const matchesMd = useMediaQuery("(min-width: 768px)");
@@ -36,6 +37,7 @@ const PortfolioSingle = ({ portfolio }) => {
       {portfolio.attributes.gallery && (
         <PortfolioGallery images={portfolio.attributes.gallery.data} />
       )}
+      <ContactUs />
     </MainLayout>
   );
 };

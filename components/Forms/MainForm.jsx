@@ -1,11 +1,11 @@
-import styles from "./MainForm.module.scss";
+import styles from "./Form.module.scss";
 import React from "react";
 import { Button, Box } from "@mui/material";
 import ReviewItem from "../ReviewItem/ReviewItem";
 
 const MainForm = () => {
   return (
-    <form className={styles.mainForm}>
+    <form className={styles.form}>
       <Box className={styles.field}>
         <label htmlFor="name">Your name:</label>
         <input type={"text"} id={"name"} name={"name"} />

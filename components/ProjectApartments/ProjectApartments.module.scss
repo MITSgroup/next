@@ -2,21 +2,27 @@
 
 .projectApartments {
   padding: 40px 0;
+  position: relative;
 
   .tabs {
     display: flex;
     overflow: hidden;
 
     .tabItem {
-      width: 205px;
       min-height: 220px;
-      padding: 15px 25px 40px;
+      padding: 40px 10px;
+      padding-top: 20px;
+      min-width: 50%;
       transition: background-color 0.3s ease-in-out;
       background-color: #fff;
       cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
 
       @media (min-width: 768px) {
-        padding: 23px 25px 40px;
+        padding-top: 25px;
       }
 
       &:hover {
@@ -36,6 +42,7 @@
         color: #000000;
         display: block;
         margin-bottom: 20px;
+        text-align: left;
       }
 
       .bedrooms {
@@ -124,6 +131,40 @@
         .total {
           margin-left: auto;
         }
+      }
+    }
+  }
+
+  .arrowPrev {
+    position: absolute;
+    z-index: 20;
+    top: 5px;
+    left: -15px;
+    display: block !important;
+
+    @media (min-width: 768px) {
+      left: 0;
+      top: 15px;
+    }
+  }
+  .arrowNext {
+    position: absolute;
+    z-index: 20;
+    top: 5px;
+    right: -15px;
+    display: block !important;
+
+    @media (min-width: 768px) {
+      right: 0;
+      top: 15px;
+    }
+  }
+  .apartmentsSlider {
+    margin-left: 0;
+
+    .slide {
+      @media (min-width: 768px) {
+        width: 205px !important;
       }
     }
   }

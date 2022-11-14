@@ -4,8 +4,10 @@ import logoSvg from "./img/logo.svg";
 import { Dialog, useMediaQuery, Box, Slide, IconButton } from "@mui/material";
 import Image from "next/image";
 import CloseIcon from "@mui/icons-material/Close";
+import MainNav from "../Nav/MainNav";
+import ContactsItem from "../ContactsItem/ContactsItem";
 
-const MobileMenu = ({ onClickClose, open, categories, info }) => {
+const MobileMenu = ({ closeMenu, open }) => {
   const matches = useMediaQuery("(min-width: 768px)");
   const materialStyles = {
     menu: {
@@ -15,20 +17,23 @@ const MobileMenu = ({ onClickClose, open, categories, info }) => {
   };
 
   return (
-    <Dialog
-      fullScreen
-      open={open}
-      sx={materialStyles.menu}
-      onClose={onClickClose}
-    >
+    <Dialog fullScreen open={open} sx={materialStyles.menu} onClose={closeMenu}>
       <Box className={styles.mobileMenu}>
         <Box className={styles.header}>
           <Image src={logoSvg} width={80} height={80} />
-          <IconButton onClick={onClickClose}>
-            <CloseIcon sx={{ color: "#fff", fontSize: 30 }} />
+          <IconButton onClick={closeMenu}>
+            <CloseIcon sx={{ fontSize: 36 }} />
           </IconButton>
         </Box>
-        <Box mb={3}> </Box>
+
+        <Box mb={8}>
+          <MainNav transparent={false} />
+        </Box>
+        <Box className={styles.socials}>
+          <ContactsItem title={"instagram"} icon={"instagram"} link={""} />
+          <ContactsItem title={"LINKEDIN"} icon={"linkedin"} link={""} />
+          <ContactsItem title={"facebook"} icon={"facebook"} link={""} />
+        </Box>
       </Box>
     </Dialog>
   );

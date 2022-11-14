@@ -13,7 +13,7 @@
 
   .title {
     margin-bottom: 30px;
-    font-family: 'Metropolis';
+    font-family: "Metropolis";
     font-style: normal;
     font-weight: 700;
     font-size: 32px;
@@ -24,5 +24,24 @@
     @media (min-width: 768px) {
       margin-bottom: 10px;
     }
+  }
+
+  .reviewsSlider {
+    padding: 0 15px;
+  }
+
+  .arrowPrev {
+    position: absolute;
+    z-index: 20;
+
+    top: calc(50% - 30px);
+    left: 0;
+  }
+
+  .arrowNext {
+    position: absolute;
+    z-index: 20;
+    top: calc(50% - 30px);
+    right: 0;
   }
 }

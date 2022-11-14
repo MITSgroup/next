@@ -14,6 +14,8 @@ export const MainLayout = ({
   keywords,
   headerTransparent,
 }) => {
+  const [menuIsOpen, setMenuIsOpen] = React.useState(false);
+
   return (
     <ThemeProvider theme={theme}>
       <Head>
@@ -51,11 +53,15 @@ export const MainLayout = ({
         />
         <link rel="stylesheet" href="/fonts/style.css" />
       </Head>
-      <Header transparent={headerTransparent} />
+      <Header
+        transparent={headerTransparent}
+        openMenu={() => setMenuIsOpen(true)}
+      />
 
       <div className="main">{children}</div>
       <Footer />
-      <MobileMenu open={false} />
+
+      <MobileMenu open={menuIsOpen} closeMenu={() => setMenuIsOpen(false)} />
     </ThemeProvider>
   );
 };

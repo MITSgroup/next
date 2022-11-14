@@ -5,7 +5,7 @@ const nextConfig = {
   reactStrictMode: false,
   images: {
     loader: "default",
-    domains: ["localhost"],
+    domains: ["localhost", "127.0.0.1"],
   },
 };
 

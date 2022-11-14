@@ -1,0 +1,26 @@
+@import "styles/variables";
+
+.contactsItem {
+  .icon {
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .title {
+    font-family: "Metropolis", Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 12px;
+    /* identical to box height */
+    color: #000000;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+  }
+  .textLink {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 179%;
+    /* or 21px */
+    color: #000000;
+  }
+}

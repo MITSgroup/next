@@ -18,6 +18,7 @@
     display: flex;
     margin-bottom: 25px;
     overflow: hidden;
+    position: relative;
 
     .tabItem {
       width: 180px;
@@ -67,6 +68,7 @@
 
     @media (min-width: 1200px) {
       min-width: 820px;
+      overflow-x: auto;
     }
 
     .row {
@@ -101,11 +103,44 @@
 
         @media (min-width: 768px) {
           font-size: 18px;
+          width: 15%;
         }
 
         &:first-child {
           width: 50%;
         }
+      }
+    }
+  }
+
+  .arrowPrev {
+    position: absolute;
+    z-index: 20;
+    top: 30px;
+    left: -15px;
+    display: block !important;
+
+    @media (min-width: 768px) {
+      left: 0;
+    }
+  }
+  .arrowNext {
+    position: absolute;
+    z-index: 20;
+    top: 30px;
+    right: -15px;
+    display: block !important;
+
+    @media (min-width: 768px) {
+      right: 0;
+    }
+  }
+  .apartmentsSlider {
+    margin-left: 0;
+
+    .slide {
+      @media (min-width: 768px) {
+        width: 205px !important;
       }
     }
   }

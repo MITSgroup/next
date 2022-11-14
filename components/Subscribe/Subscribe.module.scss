@@ -1,0 +1,39 @@
+@import "styles/variables";
+
+.subscribe {
+  padding: 50px 0;
+  background-color: $secondary;
+
+  .title {
+    font-family: "Metropolis", Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 24px;
+    color: #ffffff;
+
+    margin-bottom: 20px;
+  }
+
+  .list {
+    li {
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 20px;
+      padding-left: 12px;
+      color: #ffffff;
+      position: relative;
+
+      &:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 8px;
+        width: 4px;
+        height: 4px;
+        background-color: #fff;
+        border-radius: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+@import "styles/variables";
+
+.postIntro {
+  .title {
+    font-family: "Metropolis", Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 24px;
+    margin-bottom: 50px;
+    color: #000000;
+  }
+
+  .description {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #000000;
+  }
+}
