@@ -1,13 +1,11 @@
 @import "styles/variables";
 
 .projectHero {
-  min-height: 100vh;
   background-color: $secondary;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-image: url("./img/bg.jpg");
   padding-top: 105px;
+
+  position: relative;
+  overflow: hidden;
 
   @media (min-width: 768px) {
     padding-top: 135px;
@@ -17,13 +15,23 @@
 
   @media (min-width: 1200px) {
     padding-top: 185px;
-    min-height: 100vh;
+  }
+
+  .backgroundImage {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    top: 0;
+    left: 0;
   }
 
   .content {
     background-color: rgba(#000, 0.7);
     max-width: 93%;
     height: 100%;
+    position: relative;
+    z-index: 0;
 
     @media (min-width: 768px) {
       max-width: 95%;
@@ -39,6 +47,7 @@
 
   .inner {
     padding: 0 16px;
+    position: relative;
 
     @media (min-width: 768px) {
       padding: 0;
@@ -107,45 +116,67 @@
   .availability {
     background-color: #000;
     border-radius: 100%;
-    width: 180px;
-    height: 180px;
+    width: 120px;
+    height: 120px;
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-left: auto;
     text-transform: uppercase;
+    position: absolute;
+    bottom: 20px;
+    right: 5px;
 
     @media (min-width: 768px) {
       margin: 0 auto;
+      position: relative;
+      width: 180px;
+      height: 180px;
     }
 
     p {
       font-weight: 700;
-      font-size: 18px;
+      font-size: 14px;
       line-height: 138%;
       /* or 25px */
       font-family: "Metropolis", Helvetica, sans-serif;
       text-align: center;
       color: #ffffff;
+
+      @media (min-width: 768px) {
+        font-size: 18px;
+      }
     }
   }
 
   .title {
     font-family: "Metropolis", Helvetica, sans-serif;
     font-weight: 700;
-    font-size: 60px;
-    line-height: 60px;
+    font-size: 42px;
+    line-height: 42px;
     color: #ffffff;
     text-transform: uppercase;
     margin-bottom: 30px;
+    position: relative;
+    z-index: 0;
+
+    @media (min-width: 768px) {
+      font-size: 60px;
+      line-height: 60px;
+    }
   }
 
   .description {
     font-family: "Metropolis", Helvetica, sans-serif;
     font-weight: 700;
-    font-size: 32px;
-    line-height: 32px;
+    font-size: 18px;
+    line-height: 18px;
     color: #ffffff;
+
+    @media (min-width: 768px) {
+      font-size: 32px;
+      line-height: 32px;
+    }
   }
 }

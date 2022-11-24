@@ -7,7 +7,7 @@ import ProjectForm from "../Forms/ProjectForm";
 
 const ProjectCta = ({ title, description, type, left, imageUrl, label }) => {
   return (
-    <Box className={styles.projectCta}>
+    <Box className={styles.projectCta} id={"form"}>
       <Container>
         <Grid container justifyContent={"flex-end"} position={"relative"}>
           <Grid item xs={12} md={6} lg={5}>

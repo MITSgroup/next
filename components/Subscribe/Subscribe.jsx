@@ -5,7 +5,7 @@ import SubscribeForm from "../Forms/SubscribeForm";
 
 const Subscribe = () => {
   return (
-    <section className={styles.subscribe}>
+    <section className={styles.subscribe} id={"form"}>
       <Container>
         <Grid container spacing={5}>
           <Grid item xs={12} md={4} lg={3}>

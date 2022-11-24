@@ -10,8 +10,8 @@ function MyApp({ Component, pageProps }) {
     <>
       <style jsx global>{`
         html {
-          font-family: ${inter.style.fontFamily};
           font-family: ${Metropolis.style.fontFamily};
+          font-family: ${inter.style.fontFamily};
         }
       `}</style>
       <NextNProgress

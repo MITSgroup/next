@@ -2,6 +2,7 @@ import styles from "./ProjectApartments.module.scss";
 import React from "react";
 
 import { Container, Grid, useMediaQuery, Box, IconButton } from "@mui/material";
+
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 

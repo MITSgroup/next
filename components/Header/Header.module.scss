@@ -1,6 +1,8 @@
 @import "styles/variables";
 
 .header {
+  position: relative;
+  z-index: 10;
   .wrapper {
     display: flex;
     align-items: center;
@@ -32,4 +34,5 @@
   top: 0;
   left: 0;
   width: 100%;
+  z-index: 10;
 }

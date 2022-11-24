@@ -10,8 +10,11 @@ const ReviewItem = ({ imgUrl, authorName, authorText }) => {
         {imgUrl ? (
           <Image
             src={imgUrl}
-            width={150}
-            height={150}
+            fill
+            sizes="100vw"
+            style={{
+              objectFit: "cover",
+            }}
             alt={`Review by ${authorName}`}
           />
         ) : (

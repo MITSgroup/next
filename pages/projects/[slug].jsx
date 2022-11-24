@@ -41,6 +41,7 @@ const Project = ({ project, reviews }) => {
       {project.attributes.gallery && (
         <ImageGallery images={project.attributes.gallery?.data} />
       )}
+
       {project.attributes?.apartment && (
         <ProjectApartments apartments={project.attributes?.apartment} />
       )}
@@ -102,7 +103,7 @@ export async function getStaticPaths() {
         slug: page.attributes.slug,
       },
     })),
-    fallback: true,
+    fallback: false,
   };
 }
 

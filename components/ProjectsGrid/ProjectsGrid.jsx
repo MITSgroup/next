@@ -16,6 +16,9 @@ const ProjectsGrid = ({ projects, portfolio }) => {
               title={project.attributes.name}
               locationName={project.attributes.locationName}
               description={project.attributes.description}
+              label
+              left={project.attributes.hero.projectLeft}
+              type={project.attributes.hero.projectType}
             />
           </Grid>
         ))}

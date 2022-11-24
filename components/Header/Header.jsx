@@ -48,6 +48,7 @@ const Header = ({ transparent, openMenu }) => {
           <Box sx={{ marginLeft: "auto" }}>
             {matchesLg && (
               <Button
+                href={"#form"}
                 variant={"outlined"}
                 style={{
                   color: transparent ? "#fff" : "primary.main",

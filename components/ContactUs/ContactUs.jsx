@@ -6,7 +6,7 @@ import MainForm from "../Forms/MainForm";
 
 const ContactUs = () => {
   return (
-    <section className={styles.contactUs}>
+    <section className={styles.contactUs} id={"form"}>
       <Container>
         <Grid container spacing={5}>
           <Grid item xs={12} md={4} lg={3}>

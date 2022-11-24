@@ -4,6 +4,7 @@ import React from "react";
 import { useMediaQuery, Box } from "@mui/material";
 
 import ProjectForm from "../Forms/ProjectForm";
+import Image from "next/image";
 
 const ProjectHero = ({
   name,
@@ -18,10 +19,20 @@ const ProjectHero = ({
   const matchesLg = useMediaQuery("(min-width: 1200px)");
 
   return (
-    <Box
-      className={styles.projectHero}
-      style={{ backgroundImage: `url(${imageUrl})` }}
-    >
+    <Box className={styles.projectHero}>
+      <Box className={styles.backgroundImage}>
+        <Image
+          alt="Mountains"
+          src={imageUrl}
+          quality={100}
+          fill
+          sizes="100vw"
+          style={{
+            objectFit: "cover",
+          }}
+        />
+      </Box>
+
       <Box className={styles.content}>
         <Box className={styles.inner}>
           <Box
@@ -34,16 +45,15 @@ const ProjectHero = ({
           >
             <h1 className={styles.title}>{name}</h1>
             <p className={styles.description}>{description}</p>
-            {matchesMd && (
-              <Box
-                sx={{
-                  paddingTop: matchesLg ? 8 : 6,
-                  paddingRight: matchesLg ? 10 : 0,
-                }}
-              >
-                <ProjectForm />
-              </Box>
-            )}
+
+            <Box
+              sx={{
+                paddingTop: matchesLg ? 8 : 6,
+                paddingRight: matchesLg ? 10 : 0,
+              }}
+            >
+              <ProjectForm />
+            </Box>
           </Box>
           <Box
             sx={{

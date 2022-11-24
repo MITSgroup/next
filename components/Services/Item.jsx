@@ -70,21 +70,45 @@ const ServicesItem = ({ title, description, slug }) => {
           </Grid>
 
           {!matchesLg && (
-            <Grid item xs={12}>
+            <Grid item xs={12} md={6}>
               <Swiper pagination={true} modules={[Pagination]}>
                 <SwiperSlide>
                   <Box className={styles.imageBox}>
-                    <Image src={"/images/services/1.jpg"} fill alt={title} />
+                    <Image
+                      src={"/images/services/1.jpg"}
+                      fill
+                      sizes="100vw"
+                      style={{
+                        objectFit: "cover",
+                      }}
+                      alt={title}
+                    />
                   </Box>
                 </SwiperSlide>
                 <SwiperSlide>
                   <Box className={styles.imageBox}>
-                    <Image src={"/images/services/2.jpg"} fill alt={title} />
+                    <Image
+                      src={"/images/services/2.jpg"}
+                      fill
+                      sizes="100vw"
+                      style={{
+                        objectFit: "cover",
+                      }}
+                      alt={title}
+                    />
                   </Box>
                 </SwiperSlide>
                 <SwiperSlide>
                   <Box className={styles.imageBox}>
-                    <Image src={"/images/services/3.jpg"} fill alt={title} />
+                    <Image
+                      src={"/images/services/3.jpg"}
+                      fill
+                      sizes="100vw"
+                      style={{
+                        objectFit: "cover",
+                      }}
+                      alt={title}
+                    />
                   </Box>
                 </SwiperSlide>
               </Swiper>
@@ -95,7 +119,15 @@ const ServicesItem = ({ title, description, slug }) => {
             <Grid item xs={12} md={6} lg={3}>
               {" "}
               <Box className={styles.imageBox}>
-                <Image src={"/images/services/1.jpg"} fill alt={title} />
+                <Image
+                  src={"/images/services/1.jpg"}
+                  fill
+                  sizes="100vw"
+                  style={{
+                    objectFit: "cover",
+                  }}
+                  alt={title}
+                />
               </Box>
             </Grid>
           )}
@@ -103,7 +135,15 @@ const ServicesItem = ({ title, description, slug }) => {
             <Grid item xs={12} md={6} lg={3}>
               {" "}
               <Box className={styles.imageBox}>
-                <Image src={"/images/services/2.jpg"} fill alt={title} />
+                <Image
+                  src={"/images/services/2.jpg"}
+                  fill
+                  sizes="100vw"
+                  style={{
+                    objectFit: "cover",
+                  }}
+                  alt={title}
+                />
               </Box>
             </Grid>
           )}
@@ -111,7 +151,15 @@ const ServicesItem = ({ title, description, slug }) => {
             <Grid item xs={12} md={6} lg={3}>
               {" "}
               <Box className={styles.imageBox}>
-                <Image src={"/images/services/3.jpg"} fill alt={title} />
+                <Image
+                  src={"/images/services/3.jpg"}
+                  fill
+                  sizes="100vw"
+                  style={{
+                    objectFit: "cover",
+                  }}
+                  alt={title}
+                />
               </Box>
             </Grid>
           )}

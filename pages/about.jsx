@@ -25,7 +25,15 @@ const About = () => {
                 }}
               >
                 {" "}
-                <Image src={"/images/about/1.jpg"} alt={"about company"} fill />
+                <Image
+                  src={"/images/about/1.jpg"}
+                  alt={"about company"}
+                  fill
+                  sizes="100vw"
+                  style={{
+                    objectFit: "cover",
+                  }}
+                />
               </Box>
               <h1 className={styles.title}>ABOUT MITS.STUDIO</h1>
               <p className={styles.subtitle}>
@@ -67,19 +75,51 @@ const About = () => {
 
         <Box className={styles.aboutImages}>
           <Box className={styles.aboutImage}>
-            <Image src={"/images/about/2.jpg"} fill alt={"about MITS"} />
+            <Image
+              src={"/images/about/2.jpg"}
+              fill
+              sizes="100vw"
+              style={{
+                objectFit: "cover",
+              }}
+              alt={"about MITS"}
+            />
           </Box>
 
           <Box className={styles.aboutImage}>
-            <Image src={"/images/about/3.jpg"} fill alt={"about MITS"} />
+            <Image
+              src={"/images/about/3.jpg"}
+              fill
+              sizes="100vw"
+              style={{
+                objectFit: "cover",
+              }}
+              alt={"about MITS"}
+            />
           </Box>
 
           <Box className={styles.aboutImage}>
-            <Image src={"/images/about/4.jpg"} fill alt={"about MITS"} />
+            <Image
+              src={"/images/about/4.jpg"}
+              fill
+              sizes="100vw"
+              style={{
+                objectFit: "cover",
+              }}
+              alt={"about MITS"}
+            />
           </Box>
 
           <Box className={styles.aboutImage}>
-            <Image src={"/images/about/5.jpg"} fill alt={"about MITS"} />
+            <Image
+              src={"/images/about/5.jpg"}
+              fill
+              sizes="100vw"
+              style={{
+                objectFit: "cover",
+              }}
+              alt={"about MITS"}
+            />
           </Box>
         </Box>
       </section>

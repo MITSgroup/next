@@ -2,24 +2,25 @@ import styles from "./ImageGallery.module.scss";
 import React from "react";
 
 import { Container, Grid, useMediaQuery, Box, IconButton } from "@mui/material";
-import { Swiper, SwiperSlide } from "swiper/react";
 
 import Image from "next/image";
+import { Swiper, SwiperSlide } from "swiper/react";
+
 import "swiper/css";
 import "swiper/css/navigation";
+
 import { Navigation } from "swiper";
 
 const ImageGallery = ({ images }) => {
-  const matchesMd = useMediaQuery("(min-width: 768px)");
-
   const arrowPrev = React.useRef(null);
   const arrowNext = React.useRef(null);
+  const matchesMd = useMediaQuery("(min-width: 768px)");
 
   return (
     <Box className={styles.imageGallery}>
-      <Container>
+      <Container sx={{ position: "relative" }}>
         <Grid container justifyContent={"center"} position={"relative"}>
-          <Grid item xs={11} md={10}>
+          <Grid item xs={10}>
             <Swiper
               navigation={{
                 prevEl: arrowPrev.current,
@@ -33,7 +34,7 @@ const ImageGallery = ({ images }) => {
               modules={[Navigation]}
               spaceBetween={20}
               loop={true}
-              className="gallerySwiper"
+              className={styles.gallerySwiper}
             >
               {images &&
                 images.map((image) => (
@@ -53,64 +54,64 @@ const ImageGallery = ({ images }) => {
                     </Box>
                   </SwiperSlide>
                 ))}
+              <IconButton className={styles.arrowPrev} ref={arrowPrev}>
+                <svg
+                  width="12"
+                  height="20"
+                  viewBox="0 0 12 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g clipPath="url(#clip0_129_20)">
+                    <path
+                      d="M10.5 1.42859L1.5 10L10.5 18.5714"
+                      stroke="black"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_129_20">
+                      <rect
+                        width="20"
+                        height="12"
+                        fill="white"
+                        transform="translate(12) rotate(90)"
+                      />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </IconButton>
+              <IconButton className={styles.arrowNext} ref={arrowNext}>
+                <svg
+                  width="12"
+                  height="20"
+                  viewBox="0 0 12 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g clipPath="url(#clip0_129_18)">
+                    <path
+                      d="M1.5 18.5714L10.5 9.99998L1.5 1.42856"
+                      stroke="black"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_129_18">
+                      <rect
+                        width="20"
+                        height="12"
+                        fill="white"
+                        transform="translate(0 20) rotate(-90)"
+                      />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </IconButton>
             </Swiper>
           </Grid>
-          <IconButton className={styles.arrowPrev} ref={arrowPrev}>
-            <svg
-              width="12"
-              height="20"
-              viewBox="0 0 12 20"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <g clipPath="url(#clip0_129_20)">
-                <path
-                  d="M10.5 1.42859L1.5 10L10.5 18.5714"
-                  stroke="black"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </g>
-              <defs>
-                <clipPath id="clip0_129_20">
-                  <rect
-                    width="20"
-                    height="12"
-                    fill="white"
-                    transform="translate(12) rotate(90)"
-                  />
-                </clipPath>
-              </defs>
-            </svg>
-          </IconButton>
-          <IconButton className={styles.arrowNext} ref={arrowNext}>
-            <svg
-              width="12"
-              height="20"
-              viewBox="0 0 12 20"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <g clipPath="url(#clip0_129_18)">
-                <path
-                  d="M1.5 18.5714L10.5 9.99998L1.5 1.42856"
-                  stroke="black"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </g>
-              <defs>
-                <clipPath id="clip0_129_18">
-                  <rect
-                    width="20"
-                    height="12"
-                    fill="white"
-                    transform="translate(0 20) rotate(-90)"
-                  />
-                </clipPath>
-              </defs>
-            </svg>
-          </IconButton>
         </Grid>
       </Container>
     </Box>
