@@ -6,6 +6,8 @@ import { Container, Grid, Box, useMediaQuery } from "@mui/material";
 
 const About = () => {
   const matchesMd = useMediaQuery("(min-width: 768px)");
+  const placeholder =
+    "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAECAIAAADETxJQAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAM0lEQVR4nAEoANf/AAABAPH1++3z+wC+u7afZk6gak0AXVhB48Wy//vcACcjF6aek4mRgaNzFJBAf93eAAAAAElFTkSuQmCC";
 
   return (
     <MainLayout
@@ -28,6 +30,8 @@ const About = () => {
                 <Image
                   src={"/images/about/1.jpg"}
                   alt={"about company"}
+                  blurDataURL={placeholder}
+                  placeholder={"blur"}
                   fill
                   sizes="100vw"
                   style={{
@@ -77,6 +81,8 @@ const About = () => {
           <Box className={styles.aboutImage}>
             <Image
               src={"/images/about/2.jpg"}
+              blurDataURL={placeholder}
+              placeholder={"blur"}
               fill
               sizes="100vw"
               style={{
@@ -89,6 +95,8 @@ const About = () => {
           <Box className={styles.aboutImage}>
             <Image
               src={"/images/about/3.jpg"}
+              blurDataURL={placeholder}
+              placeholder={"blur"}
               fill
               sizes="100vw"
               style={{
@@ -101,6 +109,8 @@ const About = () => {
           <Box className={styles.aboutImage}>
             <Image
               src={"/images/about/4.jpg"}
+              blurDataURL={placeholder}
+              placeholder={"blur"}
               fill
               sizes="100vw"
               style={{
@@ -113,6 +123,8 @@ const About = () => {
           <Box className={styles.aboutImage}>
             <Image
               src={"/images/about/5.jpg"}
+              blurDataURL={placeholder}
+              placeholder={"blur"}
               fill
               sizes="100vw"
               style={{

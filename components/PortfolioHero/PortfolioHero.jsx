@@ -5,6 +5,8 @@ import { Container, Grid, Box } from "@mui/material";
 import Image from "next/image";
 
 const PortfolioHero = ({ name, description, image }) => {
+  const placeholder =
+    "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAECAIAAADETxJQAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAM0lEQVR4nAEoANf/AAABAPH1++3z+wC+u7afZk6gak0AXVhB48Wy//vcACcjF6aek4mRgaNzFJBAf93eAAAAAElFTkSuQmCC";
   return (
     <Box className={styles.portfolioHero}>
       <Box className={styles.backgroundImage}>
@@ -13,6 +15,8 @@ const PortfolioHero = ({ name, description, image }) => {
           src={image}
           quality={100}
           fill
+          blurDataURL={placeholder}
+          placeholder={"blur"}
           sizes="100vw"
           style={{
             objectFit: "cover",

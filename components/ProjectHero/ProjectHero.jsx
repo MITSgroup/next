@@ -17,6 +17,8 @@ const ProjectHero = ({
 }) => {
   const matchesMd = useMediaQuery("(min-width: 768px)");
   const matchesLg = useMediaQuery("(min-width: 1200px)");
+  const placeholder =
+    "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAECAIAAADETxJQAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAM0lEQVR4nAEoANf/AAABAPH1++3z+wC+u7afZk6gak0AXVhB48Wy//vcACcjF6aek4mRgaNzFJBAf93eAAAAAElFTkSuQmCC";
 
   return (
     <Box className={styles.projectHero}>
@@ -26,6 +28,7 @@ const ProjectHero = ({
           src={imageUrl}
           quality={100}
           fill
+          blurDataURL={placeholder}
           placeholder={"blur"}
           sizes="100vw"
           style={{

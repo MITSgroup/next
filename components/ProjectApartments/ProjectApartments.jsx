@@ -15,10 +15,13 @@ const numberOfCount = (count, apartmentsLength) =>
   count > apartmentsLength ? apartmentsLength : count;
 
 const ProjectApartments = ({ apartments }) => {
+  const placeholder =
+    "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAECAIAAADETxJQAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAM0lEQVR4nAEoANf/AAABAPH1++3z+wC+u7afZk6gak0AXVhB48Wy//vcACcjF6aek4mRgaNzFJBAf93eAAAAAElFTkSuQmCC";
   const matchesLg = useMediaQuery("(min-width: 1200px)");
   const [activeTab, setActiveTab] = React.useState(0);
   const [slidesCount, setSlidesCount] = React.useState(1);
   const arrowPrev = React.useRef(null);
+
   const arrowNext = React.useRef(null);
 
   const handleWindowResize = () => {
@@ -113,6 +116,8 @@ const ProjectApartments = ({ apartments }) => {
                             width={500}
                             height={750}
                             sizes="100vw"
+                            blurDataURL={placeholder}
+                            placeholder={"blur"}
                             style={{
                               width: "100%",
                               height: "auto",

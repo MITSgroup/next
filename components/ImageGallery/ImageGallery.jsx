@@ -12,6 +12,8 @@ import "swiper/css/navigation";
 import { Navigation } from "swiper";
 
 const ImageGallery = ({ images }) => {
+  const placeholder =
+    "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAECAIAAADETxJQAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAM0lEQVR4nAEoANf/AAABAPH1++3z+wC+u7afZk6gak0AXVhB48Wy//vcACcjF6aek4mRgaNzFJBAf93eAAAAAElFTkSuQmCC";
   const arrowPrev = React.useRef(null);
   const arrowNext = React.useRef(null);
   const matchesMd = useMediaQuery("(min-width: 768px)");
@@ -45,6 +47,7 @@ const ImageGallery = ({ images }) => {
                       <Image
                         src={image.attributes.url}
                         fill
+                        blurDataURL={placeholder}
                         placeholder={"blur"}
                         sizes="100vw"
                         style={{

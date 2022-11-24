@@ -14,6 +14,8 @@ const ProjectAbout = ({
   imageSecondColumn,
 }) => {
   const matchesLg = useMediaQuery("(min-width: 1200px)");
+  const placeholder =
+    "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAECAIAAADETxJQAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAM0lEQVR4nAEoANf/AAABAPH1++3z+wC+u7afZk6gak0AXVhB48Wy//vcACcjF6aek4mRgaNzFJBAf93eAAAAAElFTkSuQmCC";
 
   return (
     <Box className={styles.projectAbout}>
@@ -35,7 +37,18 @@ const ProjectAbout = ({
               </Box>
               {imageFirstColumn && (
                 <Box width={"100%"} height={600} position={"relative"}>
-                  <Image src={imageFirstColumn} fill alt={title} />
+                  <Image
+                    src={imageFirstColumn}
+                    fill
+                    sizes="100vw"
+                    blurDataURL={placeholder}
+                    placeholder={"blur"}
+                    style={{
+                      width: "100%",
+                      height: "auto",
+                    }}
+                    alt={title}
+                  />
                 </Box>
               )}
             </Box>
@@ -44,7 +57,18 @@ const ProjectAbout = ({
             <Box className={styles.column}>
               {imageSecondColumn && (
                 <Box width={"100%"} mb={5} height={600} position={"relative"}>
-                  <Image src={imageSecondColumn} fill alt={title} />
+                  <Image
+                    src={imageSecondColumn}
+                    fill
+                    sizes="100vw"
+                    blurDataURL={placeholder}
+                    placeholder={"blur"}
+                    style={{
+                      width: "100%",
+                      height: "auto",
+                    }}
+                    alt={title}
+                  />
                 </Box>
               )}
 
