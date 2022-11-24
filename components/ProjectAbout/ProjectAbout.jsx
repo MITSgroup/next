@@ -44,8 +44,7 @@ const ProjectAbout = ({
                     blurDataURL={placeholder}
                     placeholder={"blur"}
                     style={{
-                      width: "100%",
-                      height: "auto",
+                      objectFit: "cover",
                     }}
                     alt={title}
                   />
@@ -64,8 +63,7 @@ const ProjectAbout = ({
                     blurDataURL={placeholder}
                     placeholder={"blur"}
                     style={{
-                      width: "100%",
-                      height: "auto",
+                      objectFit: "cover",
                     }}
                     alt={title}
                   />

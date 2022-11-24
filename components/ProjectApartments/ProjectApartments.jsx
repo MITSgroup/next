@@ -16,7 +16,7 @@ const numberOfCount = (count, apartmentsLength) =>
 
 const ProjectApartments = ({ apartments }) => {
   const placeholder =
-    "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAECAIAAADETxJQAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAM0lEQVR4nAEoANf/AAABAPH1++3z+wC+u7afZk6gak0AXVhB48Wy//vcACcjF6aek4mRgaNzFJBAf93eAAAAAElFTkSuQmCC";
+    "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAIAAAAmkwkpAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAMklEQVR4nB3BQREAQAgCQKJcDjP4NQQhSEIgYnkz7oLkOyRhu6ok7S5ybCeBpO4GMDMfM6oWVFzQoEYAAAAASUVORK5CYII=";
   const matchesLg = useMediaQuery("(min-width: 1200px)");
   const [activeTab, setActiveTab] = React.useState(0);
   const [slidesCount, setSlidesCount] = React.useState(1);
