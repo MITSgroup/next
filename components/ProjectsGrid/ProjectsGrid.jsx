@@ -15,7 +15,6 @@ const ProjectsGrid = ({ projects, portfolio }) => {
               }
               title={project.attributes.name}
               locationName={project.attributes.locationName}
-              locationUrl={project.attributes.locationUrl}
               description={project.attributes.description}
             />
           </Grid>
@@ -31,7 +30,6 @@ const ProjectsGrid = ({ projects, portfolio }) => {
               }
               title={project.attributes.name}
               locationName={project.attributes.locationName}
-              locationUrl={project.attributes.locationUrl}
               description={project.attributes.description}
             />
           </Grid>

@@ -6,14 +6,7 @@ import Image from "next/image";
 
 import Link from "next/link";
 
-const ProjectCard = ({
-  url,
-  image,
-  title,
-  locationName,
-  locationUrl,
-  description,
-}) => {
+const ProjectCard = ({ url, image, title, locationName, description }) => {
   return (
     <Link href={url}>
       <article className={styles.projectCard}>
@@ -27,6 +20,7 @@ const ProjectCard = ({
                   src={"/images/icons/locationWhite.svg"}
                   width={15}
                   height={15}
+                  priority
                   alt={"location icon"}
                 />
               </Box>
