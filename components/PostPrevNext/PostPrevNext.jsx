@@ -32,7 +32,7 @@ const PostPrevNext = ({ prevPostSlug, nextPostSlug }) => {
                 variant={"text"}
                 sx={{ paddingX: 3 }}
               >
-                <Link href={`${process.env.SITE_URL}/posts/${prevPostSlug}`}>
+                <Link href={`https://www.mits.group/posts/${prevPostSlug}`}>
                   PREVIOUS ARTICLE
                 </Link>
               </Button>
@@ -42,7 +42,7 @@ const PostPrevNext = ({ prevPostSlug, nextPostSlug }) => {
                 sx={{ paddingX: 3 }}
                 disabled={nextPostSlug === undefined}
               >
-                <Link href={`${process.env.SITE_URL}/posts/${nextPostSlug}`}>
+                <Link href={`https://www.mits.group/posts/${nextPostSlug}`}>
                   NEXT ARTICLE
                 </Link>
               </Button>
