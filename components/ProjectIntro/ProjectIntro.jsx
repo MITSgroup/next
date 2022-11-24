@@ -44,7 +44,10 @@ const ProjectIntro = ({
                         />
                       </svg>
                     </i>
-                    <Link href={locationUrl} className={styles.location}>
+                    <Link
+                      href={locationUrl ? locationUrl : "#"}
+                      className={styles.location}
+                    >
                       {locationName}
                     </Link>
                   </Box>

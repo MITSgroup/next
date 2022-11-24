@@ -2,24 +2,28 @@ import { MainLayout } from "../../layouts/MainLayout";
 import ProjectsGrid from "../../components/ProjectsGrid/ProjectsGrid";
 import { fetchAPI } from "../../lib/api";
 
-const Portfolio = () => {
+const Portfolio = ({ projects, portfolios }) => {
   return (
-    <MainLayout metaTitle={"MITS"} metaDescription={"MITS"}>
-      <ProjectsGrid projects={projects} />
+    <MainLayout
+      metaTitle={"MITS"}
+      metaDescription={"MITS"}
+      headerTransparent={false}
+    >
+      <ProjectsGrid projects={projects} portfolio={portfolios} />
     </MainLayout>
   );
 };
 
 export async function getStaticProps() {
-  const [projectsRes, portfolioRes] = await Promise.all([
+  const [projectsRes, portfoliosRes] = await Promise.all([
     fetchAPI("/projects", { populate: "*" }),
-    fetchAPI("/portfolio", { populate: "*" }),
+    fetchAPI("/portfolios", { populate: "*" }),
   ]);
 
   return {
     props: {
       projects: projectsRes.data,
-      portfolio: portfolioRes.data,
+      portfolios: portfoliosRes.data,
     },
     revalidate: 120,
   };
