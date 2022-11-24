@@ -1,16 +1,8 @@
 import styles from "./PostsGrid.module.scss";
 import React from "react";
 
-import {
-  Container,
-  IconButton,
-  useMediaQuery,
-  Box,
-  Button,
-} from "@mui/material";
-import Image from "next/image";
-import MainNav from "../Nav/MainNav";
-import Link from "next/link";
+import { Box } from "@mui/material";
+
 import PostCard from "../PostCard/PostCard";
 
 const PostsGrid = ({ posts }) => {

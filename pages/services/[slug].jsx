@@ -1,32 +1,67 @@
 import { MainLayout } from "../../layouts/MainLayout";
-import { useRouter } from "next/router";
-
-import { useMediaQuery, Box, Grid } from "@mui/material";
-import ProjectHero from "../../components/ProjectHero/ProjectHero";
-import ProjectIntro from "../../components/ProjectIntro/ProjectIntro";
-import ImageGallery from "../../components/ImageGallery/ImageGallery";
-import ProjectLocation from "../../components/ProjectLocation/ProjectLocation";
-import Cta from "../../components/Cta/Cta";
-import ProjectAbout from "../../components/ProjectAbout/ProjectAbout";
-import ProjectSpecs from "../../components/ProjectSpecs/ProjectSpecs";
-import Reviews from "../../components/Reviews/Reviews";
-import ProjectAdvantages from "../../components/ProjectAdvantages/ProjectAdvantages";
-import ProjectModelling from "../../components/ProjectModelling/ProjectModelling";
+import { useMediaQuery, Box, Grid, Container, Typography } from "@mui/material";
 import { fetchAPI } from "../../lib/api";
-import ProjectApartments from "../../components/ProjectApartments/ProjectApartments";
+import ServicesHero from "../../components/ServicesHero/ServicesHero";
+import CompanyNumbers from "../../components/CompanyNumbers/CompanyNumbers";
+import ImageGallery from "../../components/ImageGallery/ImageGallery";
+import Cta from "../../components/Cta/Cta";
+import Reviews from "../../components/Reviews/Reviews";
 import ProjectCta from "../../components/ProjectCta/ProjectCta";
 
-const Project = ({ service }) => {
+const Service = ({ service, reviews }) => {
   const matchesMd = useMediaQuery("(min-width: 768px)");
-  const matchesLg = useMediaQuery("(min-width: 1200px)");
-  const router = useRouter();
 
   return (
     <MainLayout
-      metaTitle={`MITS – ${project.attributes.name}`}
+      metaTitle={`MITS – ${service.attributes.name}`}
       metaDescription={"MITS"}
       headerTransparent={true}
-    ></MainLayout>
+    >
+      <ServicesHero
+        title={service.attributes.name}
+        image={service.attributes.thumbnail.data.attributes.url}
+      />
+      <Container>
+        <Grid sx={{ paddingY: 8 }} container>
+          <Grid item xs={12} lg={5}>
+            <Typography
+              sx={{ fontSize: matchesMd ? 24 : 18, lineHeight: "130%" }}
+            >
+              MITS. studio facilitates collaborative processes between clients,
+              builders and suppliers, with the aim of provide the best
+              solutions, based on aesthetics and creativity.
+            </Typography>
+          </Grid>
+        </Grid>
+
+        <Grid container justifyContent={"center"}>
+          <Grid item xs={12} md={10}>
+            <CompanyNumbers />
+
+            <Grid container>
+              <Grid item></Grid>
+            </Grid>
+          </Grid>
+        </Grid>
+        {service.attributes.gallery && (
+          <ImageGallery images={service.attributes.gallery?.data} />
+        )}
+
+        {reviews && <Reviews reviews={reviews} />}
+      </Container>
+
+      <Box mb={20}>
+        <Cta />
+      </Box>
+
+      <ProjectCta
+        title={"TELL US ABOUT YOUR PROJECT"}
+        description={
+          "Gain up to 12% annualy or set up your fine-cut base in the heart of the most lively area in the most visited tourist destination of recent years."
+        }
+        label={false}
+      />
+    </MainLayout>
   );
 };
 
@@ -44,19 +79,23 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const servicesRes = await fetchAPI("/services", {
-    filters: {
-      slug: params.slug,
-    },
-    populate: "deep",
-  });
+  const [servicesRes, reviewsRes] = await Promise.all([
+    fetchAPI("/services", {
+      filters: {
+        slug: params.slug,
+      },
+      populate: "*",
+    }),
+    fetchAPI("/reviews", { populate: "*" }),
+  ]);
 
   return {
     props: {
       service: servicesRes.data[0],
+      reviews: reviewsRes.data,
     },
-    revalidate: 10,
+    revalidate: 120,
   };
 }
 
-export default Project;
+export default Service;

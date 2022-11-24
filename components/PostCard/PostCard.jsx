@@ -1,13 +1,12 @@
 import styles from "./PostCard.module.scss";
 import React from "react";
 
-import { Container, IconButton, useMediaQuery, Grid } from "@mui/material";
+import { useMediaQuery, Grid } from "@mui/material";
 
 import Link from "next/link";
 
 const PostCard = ({ url, title, date }) => {
   const matchesMd = useMediaQuery("(min-width: 768px)");
-  const [postDate, setPostDate] = React.useState();
 
   const year = (date) => new Date(Date.parse(date)).getFullYear();
   const month = (date) =>
@@ -16,29 +15,21 @@ const PostCard = ({ url, title, date }) => {
 
   return (
     <Link href={`posts/${url}`}>
-      <a>
-        <article className={styles.postCard}>
-          <Grid container alignItems={"center"} spacing={3}>
-            <Grid item xs={12} md={2} lg={3}>
-              <p className={styles.date}>
-                {month(date)}, {day(date)} <br /> {year(date)}
-              </p>
-            </Grid>
-            <Grid item xs={12} md={8} lg={4}>
-              <h3 className={styles.title}>{title}</h3>
-            </Grid>
-            <Grid
-              item
-              xs={12}
-              md={2}
-              lg={5}
-              textAlign={matchesMd ? "right" : ""}
-            >
-              <span className={styles.more}>FIND OUT MORE &gt;</span>
-            </Grid>
+      <article className={styles.postCard}>
+        <Grid container alignItems={"center"} spacing={3}>
+          <Grid item xs={12} md={2} lg={3}>
+            <p className={styles.date}>
+              {month(date)}, {day(date)} <br /> {year(date)}
+            </p>
           </Grid>
-        </article>
-      </a>
+          <Grid item xs={12} md={8} lg={4}>
+            <h3 className={styles.title}>{title}</h3>
+          </Grid>
+          <Grid item xs={12} md={2} lg={5} textAlign={matchesMd ? "right" : ""}>
+            <span className={styles.more}>FIND OUT MORE &gt;</span>
+          </Grid>
+        </Grid>
+      </article>
     </Link>
   );
 };

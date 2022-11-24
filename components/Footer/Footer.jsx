@@ -1,18 +1,11 @@
 import styles from "./Footer.module.scss";
 import logoSvg from "./img/logo.svg";
 
-import {
-  Box,
-  Button,
-  Container,
-  Typography,
-  Grid,
-  useMediaQuery,
-} from "@mui/material";
+import { Box, Container, Grid, useMediaQuery } from "@mui/material";
 import Image from "next/image";
 import FooterNav from "../Nav/FooterNav";
 
-const Footer = () => {
+const Footer = ({ global, social }) => {
   const matchesMd = useMediaQuery("(min-width: 768px)");
 
   return (
@@ -21,11 +14,12 @@ const Footer = () => {
         <Container>
           <Grid container spacing={3}>
             <Grid item xs={6} md={3} lg={2}>
-              <Box className={styles.logo}>
+              <Box>
                 <Image
                   src={logoSvg}
-                  width={matchesMd ? 150 : 100}
-                  height={matchesMd ? 150 : 100}
+                  width={matchesMd ? 140 : 100}
+                  height={matchesMd ? 140 : 100}
+                  alt={"logo"}
                 />
               </Box>
             </Grid>
@@ -33,8 +27,14 @@ const Footer = () => {
               <FooterNav />
             </Grid>
 
-            <Grid item xs={12} md={5} lg={3}>
-              <Box sx={{ display: "flex", gap: 3 }}>
+            <Grid item xs={12} md={5} lg={4}>
+              <Box
+                sx={{
+                  display: "flex",
+                  flexDirection: matchesMd ? "column" : "row",
+                  gap: 3,
+                }}
+              >
                 {" "}
                 <ul className={styles.contacts}>
                   <li>

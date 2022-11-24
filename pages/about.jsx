@@ -2,11 +2,11 @@ import Image from "next/image";
 import { MainLayout } from "../layouts/MainLayout";
 import ContactUs from "../components/ContactUs/ContactUs";
 import styles from "../styles/about.module.scss";
-import { Container, Grid, Box, Typography, useMediaQuery } from "@mui/material";
+import { Container, Grid, Box, useMediaQuery } from "@mui/material";
 
 const About = () => {
   const matchesMd = useMediaQuery("(min-width: 768px)");
-  const matchesLg = useMediaQuery("(min-width: 1200px)");
+
   return (
     <MainLayout
       metaTitle={"MITS"}
@@ -25,12 +25,7 @@ const About = () => {
                 }}
               >
                 {" "}
-                <Image
-                  src={"/images/about/1.jpg"}
-                  alt={"about company"}
-                  layout={"fill"}
-                  objectFit={"cover"}
-                />
+                <Image src={"/images/about/1.jpg"} alt={"about company"} fill />
               </Box>
               <h1 className={styles.title}>ABOUT MITS.STUDIO</h1>
               <p className={styles.subtitle}>
@@ -72,35 +67,19 @@ const About = () => {
 
         <Box className={styles.aboutImages}>
           <Box className={styles.aboutImage}>
-            <Image
-              src={"/images/about/2.jpg"}
-              layout={"fill"}
-              objectFit={"cover"}
-            />
+            <Image src={"/images/about/2.jpg"} fill alt={"about MITS"} />
           </Box>
 
           <Box className={styles.aboutImage}>
-            <Image
-              src={"/images/about/3.jpg"}
-              layout={"fill"}
-              objectFit={"cover"}
-            />
+            <Image src={"/images/about/3.jpg"} fill alt={"about MITS"} />
           </Box>
 
           <Box className={styles.aboutImage}>
-            <Image
-              src={"/images/about/4.jpg"}
-              layout={"fill"}
-              objectFit={"cover"}
-            />
+            <Image src={"/images/about/4.jpg"} fill alt={"about MITS"} />
           </Box>
 
           <Box className={styles.aboutImage}>
-            <Image
-              src={"/images/about/5.jpg"}
-              layout={"fill"}
-              objectFit={"cover"}
-            />
+            <Image src={"/images/about/5.jpg"} fill alt={"about MITS"} />
           </Box>
         </Box>
       </section>

@@ -1,14 +1,7 @@
 import styles from "./ProjectApartments.module.scss";
 import React from "react";
 
-import {
-  Container,
-  Grid,
-  useMediaQuery,
-  Box,
-  Button,
-  IconButton,
-} from "@mui/material";
+import { Container, Grid, useMediaQuery, Box, IconButton } from "@mui/material";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -111,16 +104,22 @@ const ProjectApartments = ({ apartments }) => {
                   idx === activeTab ? (
                     <Box key={apartment.id} className={styles.tabContent}>
                       <Grid container spacing={matchesLg ? 8 : 6}>
-                        <Grid item xs={10} md={6} lg={5}>
+                        <Grid item xs={12} md={6} lg={5}>
                           <h4 className={styles.subtitle}>LAYOUT</h4>
+
                           <Image
-                            src={`http://localhost:1337${apartment.layout.data.attributes.url}`}
+                            src={apartment.layout.data.attributes.url}
                             width={500}
-                            objectFit="cover"
-                            height={600}
+                            height={750}
+                            sizes="100vw"
+                            style={{
+                              width: "100%",
+                              height: "auto",
+                            }}
+                            alt={"Apartment"}
                           />
                         </Grid>
-                        <Grid item xs={12} md={4} lg={4}>
+                        <Grid item xs={12} md={6} lg={4}>
                           <h4 className={styles.subtitle}>Specs</h4>
                           <small className={styles.small}>Sq. m.</small>
                           <ul className={styles.specs}>

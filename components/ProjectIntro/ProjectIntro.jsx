@@ -1,10 +1,7 @@
 import styles from "./ProjectIntro.module.scss";
 import React from "react";
-
-import { Container, Grid, useMediaQuery, Box, Button } from "@mui/material";
-import Image from "next/image";
-
 import Link from "next/link";
+import { Container, Grid, useMediaQuery, Box } from "@mui/material";
 
 const ProjectIntro = ({
   title,
@@ -14,7 +11,6 @@ const ProjectIntro = ({
   textSecondColumn,
 }) => {
   const matchesMd = useMediaQuery("(min-width: 768px)");
-  const matchesLg = useMediaQuery("(min-width: 1200px)");
 
   return (
     <Box className={styles.projectIntro}>
@@ -48,7 +44,9 @@ const ProjectIntro = ({
                         />
                       </svg>
                     </i>
-                    <p className={styles.location}>{locationName}</p>
+                    <Link href={locationUrl} className={styles.location}>
+                      {locationName}
+                    </Link>
                   </Box>
                 </Grid>
               </Grid>
@@ -61,7 +59,7 @@ const ProjectIntro = ({
 
                 <Grid item xs={12} md={6} lg={6}>
                   {" "}
-                  <p className={styles.description}>{textFirstColumn}</p>
+                  <p className={styles.description}>{textSecondColumn}</p>
                 </Grid>
               </Grid>
             </Grid>

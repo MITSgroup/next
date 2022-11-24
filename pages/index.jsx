@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { MainLayout } from "../layouts/MainLayout";
 import ProjectsGrid from "../components/ProjectsGrid/ProjectsGrid";
 import Reviews from "../components/Reviews/Reviews";
@@ -8,7 +7,7 @@ import ContactUs from "../components/ContactUs/ContactUs";
 import { fetchAPI } from "../lib/api";
 import React from "react";
 
-const Home = ({ projects, portfolios, reviews }) => {
+const Home = ({ projects, portfolios, reviews, services }) => {
   return (
     <MainLayout
       metaTitle={"MITS"}
@@ -18,26 +17,29 @@ const Home = ({ projects, portfolios, reviews }) => {
       <ProjectsGrid projects={projects} portfolio={portfolios} />
       <Reviews reviews={reviews} />
       <Cta />
-      <Services />
+      <Services services={services} />
       <ContactUs />
     </MainLayout>
   );
 };
 
 export async function getStaticProps() {
-  const [projectsRes, portfoliosRes, reviewsRes] = await Promise.all([
-    fetchAPI("/projects", { populate: "*" }),
-    fetchAPI("/portfolios", { populate: "*" }),
-    fetchAPI("/reviews", { populate: "*" }),
-  ]);
+  const [projectsRes, portfoliosRes, reviewsRes, servicesRes] =
+    await Promise.all([
+      fetchAPI("/projects", { populate: "*" }),
+      fetchAPI("/portfolios", { populate: "*" }),
+      fetchAPI("/reviews", { populate: "*" }),
+      fetchAPI("/services", { populate: "*" }),
+    ]);
 
   return {
     props: {
       projects: projectsRes.data,
       portfolios: portfoliosRes.data,
       reviews: reviewsRes.data,
+      services: servicesRes.data,
     },
-    revalidate: 10,
+    revalidate: 120,
   };
 }
 

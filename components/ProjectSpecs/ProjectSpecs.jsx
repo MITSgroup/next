@@ -1,15 +1,9 @@
 import styles from "./ProjectSpecs.module.scss";
 import React from "react";
 
-import { Container, Grid, useMediaQuery, Box, Button } from "@mui/material";
-import Image from "next/image";
-
-import Link from "next/link";
+import { Container, Grid, Box } from "@mui/material";
 
 const ProjectSpecs = ({ layout, amenities }) => {
-  const matchesMd = useMediaQuery("(min-width: 768px)");
-  const matchesLg = useMediaQuery("(min-width: 1200px)");
-
   return (
     <Box className={styles.projectSpecs}>
       <Container>

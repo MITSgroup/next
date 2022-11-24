@@ -6,6 +6,7 @@ import { theme } from "../theme";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import MobileMenu from "../components/MobileMenu/MobileMenu";
+import { fetchAPI } from "../lib/api";
 
 export const MainLayout = ({
   children,
@@ -13,6 +14,8 @@ export const MainLayout = ({
   metaDescription,
   keywords,
   headerTransparent,
+  global,
+  social,
 }) => {
   const [menuIsOpen, setMenuIsOpen] = React.useState(false);
 
@@ -59,9 +62,13 @@ export const MainLayout = ({
       />
 
       <div className="main">{children}</div>
-      <Footer />
+      <Footer social={social} global={global} />
 
-      <MobileMenu open={menuIsOpen} closeMenu={() => setMenuIsOpen(false)} />
+      <MobileMenu
+        social={social}
+        open={menuIsOpen}
+        closeMenu={() => setMenuIsOpen(false)}
+      />
     </ThemeProvider>
   );
 };

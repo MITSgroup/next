@@ -1,7 +1,7 @@
 import styles from "./ProjectLocation.module.scss";
 import React from "react";
 import GoogleMapReact from "google-map-react";
-import { Container, Grid, useMediaQuery, Box } from "@mui/material";
+import { Container, Grid, Box } from "@mui/material";
 import Image from "next/image";
 import image1 from "./img/1.jpg";
 import image2 from "./img/2.jpg";
@@ -10,9 +10,6 @@ import image3 from "./img/3.jpg";
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
 const ProjectLocation = ({ title, description, advantages }) => {
-  const matchesMd = useMediaQuery("(min-width: 768px)");
-  const matchesLg = useMediaQuery("(min-width: 1200px)");
-
   const defaultProps = {
     center: {
       lat: 10.99835602,
@@ -59,9 +56,9 @@ const ProjectLocation = ({ title, description, advantages }) => {
             </Box>
 
             <Box className={styles.images}>
-              <Image src={image1} width={180} height={138} />
-              <Image src={image2} width={180} height={138} />
-              <Image src={image3} width={180} height={138} />
+              <Image src={image1} width={180} height={138} alt={"Bali"} />
+              <Image src={image2} width={180} height={138} alt={"Bali"} />
+              <Image src={image3} width={180} height={138} alt={"Bali"} />
             </Box>
           </Grid>
           <Grid item xs={12} md={6} lg={5}>

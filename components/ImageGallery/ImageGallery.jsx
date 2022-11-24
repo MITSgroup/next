@@ -1,14 +1,7 @@
 import styles from "./ImageGallery.module.scss";
 import React from "react";
-import ArrowLeftIcon from "@mui/icons-material/ArrowLeft";
-import {
-  Container,
-  Grid,
-  useMediaQuery,
-  Box,
-  Button,
-  IconButton,
-} from "@mui/material";
+
+import { Container, Grid, useMediaQuery, Box, IconButton } from "@mui/material";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import Image from "next/image";
@@ -18,7 +11,7 @@ import { Navigation } from "swiper";
 
 const ImageGallery = ({ images }) => {
   const matchesMd = useMediaQuery("(min-width: 768px)");
-  const matchesLg = useMediaQuery("(min-width: 1200px)");
+
   const arrowPrev = React.useRef(null);
   const arrowNext = React.useRef(null);
 
@@ -49,9 +42,13 @@ const ImageGallery = ({ images }) => {
                       sx={{ width: "100%", height: 400, position: "relative" }}
                     >
                       <Image
-                        src={`http://localhost:1337${image.attributes.url}`}
-                        layout={"fill"}
-                        objectFit="cover"
+                        src={image.attributes.url}
+                        fill
+                        alt={
+                          image.attributes.caption
+                            ? image.attributes.caption
+                            : "Mits Apartment"
+                        }
                       />
                     </Box>
                   </SwiperSlide>

@@ -8,19 +8,16 @@ const FooterNav = () => {
     <nav className={styles.footerNav}>
       <ul>
         <li>
-          <Link href={""}>
-            <a>About us</a>
-          </Link>
+          <Link href={""}>About us</Link>
         </li>
         <li>
-          <Link href={""}>
-            <a>PROJECTS</a>
-          </Link>
+          <Link href={""}>PROJECTS</Link>
         </li>
         <li>
-          <Link href={""}>
-            <a>JOURNAL</a>
-          </Link>
+          <Link href={""}>JOURNAL</Link>
+        </li>
+        <li>
+          <Link href={""}>Contact us</Link>
         </li>
       </ul>
     </nav>

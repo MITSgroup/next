@@ -1,7 +1,7 @@
 import styles from "./ProjectHero.module.scss";
 import React from "react";
 
-import { Container, Grid, useMediaQuery, Box, Button } from "@mui/material";
+import { useMediaQuery, Box } from "@mui/material";
 
 import ProjectForm from "../Forms/ProjectForm";
 
@@ -20,7 +20,7 @@ const ProjectHero = ({
   return (
     <Box
       className={styles.projectHero}
-      style={{ backgroundImage: `url(http://127.0.0.1:1337${imageUrl})` }}
+      style={{ backgroundImage: `url(${imageUrl})` }}
     >
       <Box className={styles.content}>
         <Box className={styles.inner}>

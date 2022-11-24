@@ -1,20 +1,10 @@
 import styles from "./PortfolioGallery.module.scss";
 import React from "react";
 
-import {
-  Container,
-  Grid,
-  useMediaQuery,
-  Box,
-  Button,
-  IconButton,
-} from "@mui/material";
+import { Container, Grid, Box } from "@mui/material";
 import Image from "next/image";
 
 const PortfolioGallery = ({ images }) => {
-  const matchesMd = useMediaQuery("(min-width: 768px)");
-  const matchesLg = useMediaQuery("(min-width: 1200px)");
-
   return (
     <Box className={styles.portfolioGallery}>
       <Container>
@@ -25,10 +15,13 @@ const PortfolioGallery = ({ images }) => {
                 images.map((item) => (
                   <li key={item.id} className={styles.gridItem}>
                     <Image
-                      src={`http://localhost:1337${item.attributes.url}`}
-                      objectFit={"cover"}
-                      layout={"fill"}
-                      alt={item.attributes.name}
+                      src={item.attributes.url}
+                      fill
+                      alt={
+                        item.attributes.name
+                          ? item.attributes.name
+                          : "Mits - apartment"
+                      }
                     />
                   </li>
                 ))}

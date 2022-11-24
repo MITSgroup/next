@@ -1,13 +1,10 @@
 import { MainLayout } from "../layouts/MainLayout";
-import { useMediaQuery, Box, Typography, Container, Grid } from "@mui/material";
+import { Box, Typography, Container } from "@mui/material";
 import Subscribe from "../components/Subscribe/Subscribe";
 import styles from "../styles/thankYou.module.scss";
 import ContactsItem from "../components/ContactsItem/ContactsItem";
 
-const Contacts = () => {
-  const matchesMd = useMediaQuery("(min-width: 768px)");
-  const matchesLg = useMediaQuery("(min-width: 1200px)");
-
+const ThankYouForm = () => {
   return (
     <MainLayout
       metaTitle={"MITS – Thank You"}
@@ -39,19 +36,4 @@ const Contacts = () => {
   );
 };
 
-// export async function getStaticProps() {
-//   const response = await fetch(
-//     "http://127.0.0.1:1337/api/posts?sort=createdAt:desc"
-//   );
-//
-//   const postsRes = await response.json();
-//
-//   return {
-//     props: {
-//       posts: postsRes.data,
-//     },
-//     revalidate: 10,
-//   };
-// }
-
-export default Contacts;
+export default ThankYouForm;

@@ -1,6 +1,6 @@
 import styles from "./Subscribe.module.scss";
 import React from "react";
-import { Container, Grid, Typography } from "@mui/material";
+import { Container, Grid } from "@mui/material";
 import SubscribeForm from "../Forms/SubscribeForm";
 
 const Subscribe = () => {

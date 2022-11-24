@@ -1,20 +1,33 @@
 import { MainLayout } from "../../layouts/MainLayout";
-import { useMediaQuery, Box } from "@mui/material";
 import ProjectsGrid from "../../components/ProjectsGrid/ProjectsGrid";
+import React from "react";
+import { fetchAPI } from "../../lib/api";
 
-const Projects = () => {
-  const matches = useMediaQuery("(min-width: 768px)");
-  const matchesLg = useMediaQuery("(min-width: 1200px)");
-
+const Projects = ({ projects, portfolios }) => {
   return (
     <MainLayout
       metaTitle={"MITS"}
       metaDescription={"MITS"}
-      headerTransparent={true}
+      headerTransparent={false}
     >
-      <ProjectsGrid />
+      <ProjectsGrid projects={projects} portfolio={portfolios} />
     </MainLayout>
   );
 };
+
+export async function getStaticProps() {
+  const [projectsRes, portfoliosRes] = await Promise.all([
+    fetchAPI("/projects", { populate: "*" }),
+    fetchAPI("/portfolios", { populate: "*" }),
+  ]);
+
+  return {
+    props: {
+      projects: projectsRes.data,
+      portfolios: portfoliosRes.data,
+    },
+    revalidate: 120,
+  };
+}
 
 export default Projects;

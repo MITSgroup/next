@@ -35,7 +35,7 @@ const Post = ({ post }) => {
   React.useEffect(() => {
     const fetchData = async () => {
       const response = await fetch(
-        "http://127.0.0.1:1337/api/posts?sort=createdAt:desc"
+        "https://mits-cbd3l.ondigitalocean.app/api/posts?sort=createdAt:desc"
       );
       const data = await response.json();
       const slugs = getSlugs(data.data);
@@ -44,7 +44,6 @@ const Post = ({ post }) => {
       setNextSlug(slugs[slug + 1]);
     };
 
-    console.log("render");
     fetchData().catch(console.error);
   }, [router.asPath]);
 
@@ -69,7 +68,7 @@ const Post = ({ post }) => {
     >
       <BlogHero title={post.attributes.title} />
       <Container>
-        <Box sx={{ paddingTop: 7.5, paddingBottom: 15 }}>
+        <Box sx={{ paddingTop: 7.5, paddingBottom: 4 }}>
           <Grid container>
             <Grid item xs={12} md={7} lg={5}>
               {" "}
@@ -130,7 +129,7 @@ export async function getStaticProps({ params }) {
     props: {
       post: postsRes.data[0],
     },
-    revalidate: 10,
+    revalidate: 120,
   };
 }
 

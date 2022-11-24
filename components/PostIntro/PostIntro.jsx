@@ -1,19 +1,15 @@
 import styles from "./PostIntro.module.scss";
 import React from "react";
 
-import { Container, Grid, useMediaQuery, Box, Button } from "@mui/material";
-import Image from "next/image";
-
-import Link from "next/link";
+import { Container, Grid, useMediaQuery, Box } from "@mui/material";
 
 const PostIntro = ({ title, textFirstColumn, textSecondColumn }) => {
   const matchesMd = useMediaQuery("(min-width: 768px)");
-  const matchesLg = useMediaQuery("(min-width: 1200px)");
 
   return (
     <Box className={styles.postIntro}>
       <Container>
-        <Box sx={{ paddingY: matchesMd ? 12 : 8 }}>
+        <Box sx={{ paddingY: 8 }}>
           <h2 className={styles.title}>{title}</h2>
           <Grid container spacing={matchesMd ? 15 : 6}>
             <Grid item xs={12} md={6} lg={4}>

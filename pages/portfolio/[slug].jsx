@@ -1,7 +1,5 @@
 import { MainLayout } from "../../layouts/MainLayout";
-import { useRouter } from "next/router";
 
-import { useMediaQuery, Box, Grid } from "@mui/material";
 import ProjectIntro from "../../components/ProjectIntro/ProjectIntro";
 import PortfolioHero from "../../components/PortfolioHero/PortfolioHero";
 import { fetchAPI } from "../../lib/api";
@@ -9,10 +7,6 @@ import PortfolioGallery from "../../components/PortfolioGallery/PortfolioGallery
 import ContactUs from "../../components/ContactUs/ContactUs";
 
 const PortfolioSingle = ({ portfolio }) => {
-  const matchesMd = useMediaQuery("(min-width: 768px)");
-  const matchesLg = useMediaQuery("(min-width: 1200px)");
-  const router = useRouter();
-
   return (
     <MainLayout
       metaTitle={"MITS"}
@@ -67,7 +61,7 @@ export async function getStaticProps({ params }) {
     props: {
       portfolio: portfolioRes.data[0],
     },
-    revalidate: 1,
+    revalidate: 120,
   };
 }
 

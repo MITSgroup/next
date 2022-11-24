@@ -1,9 +1,8 @@
 import { MainLayout } from "../../layouts/MainLayout";
-import { useMediaQuery, Box, Typography, Container } from "@mui/material";
-import axios from "axios";
+import { useMediaQuery, Box, Container } from "@mui/material";
+
 import BlogHero from "../../components/BlogHero/BlogHero";
 import PostsGrid from "../../components/PostsGrid/PostsGrid";
-import { fetchAPI } from "../../lib/api";
 import Subscribe from "../../components/Subscribe/Subscribe";
 
 const Posts = ({ posts }) => {
@@ -29,7 +28,7 @@ const Posts = ({ posts }) => {
 
 export async function getStaticProps() {
   const response = await fetch(
-    "http://127.0.0.1:1337/api/posts?sort=createdAt:desc"
+    `${process.env.API_URL}/posts?sort=createdAt:desc`
   );
 
   const postsRes = await response.json();
@@ -38,7 +37,7 @@ export async function getStaticProps() {
     props: {
       posts: postsRes.data,
     },
-    revalidate: 10,
+    revalidate: 120,
   };
 }
 

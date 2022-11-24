@@ -11,4 +11,59 @@
     padding: 80px 0;
   }
 
+  .item {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #000000;
+
+    .title {
+      font-family: "Metropolis", Helvetica, sans-serif;
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 24px;
+      /* identical to box height */
+      color: #000000;
+      margin-bottom: 10px;
+    }
+
+    .description {
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 15px;
+      color: #000000;
+    }
+
+    .iconRotate {
+      transform: rotate(180deg);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .content {
+      max-width: 50%;
+      font-size: 12px;
+    }
+
+    .links {
+      display: flex;
+      align-content: center;
+      justify-content: space-between;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 50px;
+    }
+
+    .body {
+      display: flex;
+      align-items: center;
+    }
+
+    .imageBox {
+      position: relative;
+      height: 400px;
+    }
+  }
 }

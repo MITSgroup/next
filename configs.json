@@ -1,4 +1,4 @@
 {
-  "STRAPI_URL": "http://localhost:1337/",
-  "STRAPI_DOMAIN": "localhost:1337/"
+  "STRAPI_URL": "https://mits-cbd3l.ondigitalocean.app/",
+  "STRAPI_DOMAIN": "mits-cbd3l.ondigitalocean.app"
 }

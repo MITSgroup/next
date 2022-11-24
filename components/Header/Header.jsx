@@ -9,7 +9,6 @@ import {
   useMediaQuery,
   Box,
   Button,
-  Icon,
 } from "@mui/material";
 import Image from "next/image";
 import MainNav from "../Nav/MainNav";
@@ -26,21 +25,21 @@ const Header = ({ transparent, openMenu }) => {
         <Box className={styles.wrapper}>
           <Box className={styles.logo}>
             <Link href="/">
-              <a>
-                {transparent ? (
-                  <Image
-                    src={logoWhiteSvg}
-                    width={matchesLg ? 80 : 80}
-                    height={matchesLg ? 112 : 80}
-                  />
-                ) : (
-                  <Image
-                    src={logoSvg}
-                    width={matchesLg ? 80 : 80}
-                    height={matchesLg ? 112 : 80}
-                  />
-                )}
-              </a>
+              {transparent ? (
+                <Image
+                  src={logoWhiteSvg}
+                  width={matchesLg ? 80 : 80}
+                  height={matchesLg ? 112 : 80}
+                  alt={"logo"}
+                />
+              ) : (
+                <Image
+                  src={logoSvg}
+                  width={matchesLg ? 80 : 80}
+                  height={matchesLg ? 112 : 80}
+                  alt={"logo"}
+                />
+              )}
             </Link>
           </Box>
 

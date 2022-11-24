@@ -8,25 +8,17 @@ const MainNav = ({ transparent }) => {
     <nav className={`${styles.mainNav} ${transparent ? styles.navLight : ""} `}>
       <ul>
         <li>
-          <Link href={"/about"}>
-            <a>About us</a>
-          </Link>
+          <Link href={"/about"}>About us</Link>
         </li>
         <li>
-          <Link href={"/projects"}>
-            <a>PROJECTS</a>
-          </Link>
+          <Link href={"/projects"}>PROJECTS</Link>
         </li>
         <li>
-          <Link href={"/posts"}>
-            <a>JOURNAL</a>
-          </Link>
+          <Link href={"/posts"}>JOURNAL</Link>
         </li>
         <li>
-          <Link href={"/posts"}>
-            <a>Contact us</a>
-          </Link>
-        </li>{" "}
+          <Link href={"/contacts"}>Contact us</Link>
+        </li>
       </ul>
     </nav>
   );

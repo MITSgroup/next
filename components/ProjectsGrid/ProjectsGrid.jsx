@@ -1,4 +1,3 @@
-import styles from "./ProjectsGrid.module.scss";
 import React from "react";
 import { Grid } from "@mui/material";
 import ProjectCard from "../ProjectCard/ProjectCard";
@@ -11,7 +10,9 @@ const ProjectsGrid = ({ projects, portfolio }) => {
           <Grid item xs={12} md={6} lg={4} key={project.id}>
             <ProjectCard
               url={`projects/${project.attributes.slug}`}
-              image={`http://localhost:1337${project.attributes.thumbnail.data.attributes.formats.medium.url}`}
+              image={
+                project.attributes.thumbnail.data.attributes.formats.medium.url
+              }
               title={project.attributes.name}
               locationName={project.attributes.locationName}
               locationUrl={project.attributes.locationUrl}
@@ -25,7 +26,9 @@ const ProjectsGrid = ({ projects, portfolio }) => {
           <Grid item xs={12} md={6} lg={4} key={project.id}>
             <ProjectCard
               url={`portfolio/${project.attributes.slug}`}
-              image={`http://localhost:1337${project.attributes.thumbnail.data.attributes.formats.medium.url}`}
+              image={
+                project.attributes.thumbnail.data.attributes.formats.medium.url
+              }
               title={project.attributes.name}
               locationName={project.attributes.locationName}
               locationUrl={project.attributes.locationUrl}

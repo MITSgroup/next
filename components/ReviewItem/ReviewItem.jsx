@@ -9,9 +9,10 @@ const ReviewItem = ({ imgUrl, authorName, authorText }) => {
       <Box className={styles.imgBox}>
         {imgUrl ? (
           <Image
-            src={`http://127.0.0.1:1337${imgUrl}`}
+            src={imgUrl}
             width={150}
             height={150}
+            alt={`Review by ${authorName}`}
           />
         ) : (
           <p className={styles.placeholder}>{authorName[0]}</p>

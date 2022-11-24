@@ -5,7 +5,10 @@ const nextConfig = {
   reactStrictMode: false,
   images: {
     loader: "default",
-    domains: ["localhost", "127.0.0.1"],
+    domains: [
+      "mits-cbd3l.ondigitalocean.app",
+      "mits.sgp1.digitaloceanspaces.com",
+    ],
   },
 };
 

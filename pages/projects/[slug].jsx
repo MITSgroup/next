@@ -1,7 +1,4 @@
 import { MainLayout } from "../../layouts/MainLayout";
-import { useRouter } from "next/router";
-
-import { useMediaQuery, Box, Grid } from "@mui/material";
 import ProjectHero from "../../components/ProjectHero/ProjectHero";
 import ProjectIntro from "../../components/ProjectIntro/ProjectIntro";
 import ImageGallery from "../../components/ImageGallery/ImageGallery";
@@ -17,12 +14,6 @@ import ProjectApartments from "../../components/ProjectApartments/ProjectApartme
 import ProjectCta from "../../components/ProjectCta/ProjectCta";
 
 const Project = ({ project, reviews }) => {
-  const matchesMd = useMediaQuery("(min-width: 768px)");
-  const matchesLg = useMediaQuery("(min-width: 1200px)");
-  const router = useRouter();
-
-  console.log(project);
-
   return (
     <MainLayout
       metaTitle={`MITS – ${project.attributes.name}`}
@@ -94,6 +85,7 @@ const Project = ({ project, reviews }) => {
         description={
           "Gain up to 12% annualy or set up your fine-cut base in the heart of the most lively area in the most visited tourist destination of recent years."
         }
+        label
         type={project.attributes.hero.projectType}
         left={project.attributes.hero.projectLeft}
       />
@@ -130,7 +122,7 @@ export async function getStaticProps({ params }) {
       project: projectsRes.data[0],
       reviews: reviewsRes.data,
     },
-    revalidate: 10,
+    revalidate: 120,
   };
 }
 

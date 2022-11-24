@@ -1,6 +1,6 @@
 import styles from "./Reviews.module.scss";
 import React from "react";
-import { Container, Grid, IconButton } from "@mui/material";
+import { Container, IconButton } from "@mui/material";
 import ReviewItem from "../ReviewItem/ReviewItem";
 import { Swiper, SwiperSlide } from "swiper/react";
 

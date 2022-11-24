@@ -1,14 +1,13 @@
 import styles from "./MobileMenu.module.scss";
 import React from "react";
 import logoSvg from "./img/logo.svg";
-import { Dialog, useMediaQuery, Box, Slide, IconButton } from "@mui/material";
+import { Dialog, Box, IconButton } from "@mui/material";
 import Image from "next/image";
 import CloseIcon from "@mui/icons-material/Close";
 import MainNav from "../Nav/MainNav";
 import ContactsItem from "../ContactsItem/ContactsItem";
 
 const MobileMenu = ({ closeMenu, open }) => {
-  const matches = useMediaQuery("(min-width: 768px)");
   const materialStyles = {
     menu: {
       width: "100%",
@@ -20,7 +19,7 @@ const MobileMenu = ({ closeMenu, open }) => {
     <Dialog fullScreen open={open} sx={materialStyles.menu} onClose={closeMenu}>
       <Box className={styles.mobileMenu}>
         <Box className={styles.header}>
-          <Image src={logoSvg} width={80} height={80} />
+          <Image src={logoSvg} width={80} height={80} alt={"logo"} />
           <IconButton onClick={closeMenu}>
             <CloseIcon sx={{ fontSize: 36 }} />
           </IconButton>

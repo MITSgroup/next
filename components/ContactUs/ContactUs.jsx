@@ -1,12 +1,12 @@
 import styles from "./ContactUs.module.scss";
 import React from "react";
-import { Container, Grid, Typography } from "@mui/material";
-import ReviewItem from "../ReviewItem/ReviewItem";
+import { Container, Grid } from "@mui/material";
+
 import MainForm from "../Forms/MainForm";
 
 const ContactUs = () => {
   return (
-    <section className={styles.contuctUs}>
+    <section className={styles.contactUs}>
       <Container>
         <Grid container spacing={5}>
           <Grid item xs={12} md={4} lg={3}>

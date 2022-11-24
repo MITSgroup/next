@@ -1,13 +1,11 @@
 import styles from "./ProjectCta.module.scss";
 import React from "react";
 
-import { Container, Grid, useMediaQuery, Box, Button } from "@mui/material";
+import { Container, Grid, Box } from "@mui/material";
 
 import ProjectForm from "../Forms/ProjectForm";
 
-const ProjectCta = ({ title, description, type, left, imageUrl }) => {
-  const matchesLg = useMediaQuery("(min-width: 1200px)");
-
+const ProjectCta = ({ title, description, type, left, imageUrl, label }) => {
   return (
     <Box className={styles.projectCta}>
       <Container>
@@ -18,12 +16,15 @@ const ProjectCta = ({ title, description, type, left, imageUrl }) => {
               <p className={styles.description}>{description}</p>
               <ProjectForm />
             </Box>
-            <Box className={styles.availability}>
-              <p>
-                ONLY {left} <br /> {type}S <br />
-                LEFT
-              </p>
-            </Box>
+
+            {label && (
+              <Box className={styles.availability}>
+                <p>
+                  ONLY {left} <br /> {type}S <br />
+                  LEFT
+                </p>
+              </Box>
+            )}
           </Grid>
         </Grid>
       </Container>

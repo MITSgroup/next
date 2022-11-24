@@ -15,7 +15,7 @@
     width: 50%;
 
     @media (min-width: 768px) {
-      margin-bottom: 40px;
+      margin-bottom: 25px;
       width: auto;
     }
 
@@ -41,6 +41,7 @@
     @media (min-width: 768px) {
       display: flex;
       width: auto;
+      gap: 25px;
     }
 
     li {

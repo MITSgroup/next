@@ -1,7 +1,6 @@
 import styles from "./Cta.module.scss";
 import React from "react";
 import { Container, Grid, Button } from "@mui/material";
-import ReviewItem from "../ReviewItem/ReviewItem";
 
 const Cta = () => {
   return (

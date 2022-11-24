@@ -1,13 +1,6 @@
 import styles from "./ProjectModelling.module.scss";
 import React from "react";
-import {
-  Container,
-  Grid,
-  useMediaQuery,
-  Box,
-  Button,
-  IconButton,
-} from "@mui/material";
+import { Container, Grid, Box, IconButton } from "@mui/material";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";

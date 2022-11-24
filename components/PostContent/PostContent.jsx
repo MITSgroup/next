@@ -1,21 +1,10 @@
 import styles from "./PostContent.module.scss";
 import React from "react";
 import parse from "html-react-parser";
-import {
-  Container,
-  Grid,
-  useMediaQuery,
-  Box,
-  Button,
-  Typography,
-} from "@mui/material";
+import { Container, Grid, Box, Typography } from "@mui/material";
 import Image from "next/image";
 
-import Link from "next/link";
-
 const PostContent = ({ content }) => {
-  const matchesMd = useMediaQuery("(min-width: 768px)");
-  const matchesLg = useMediaQuery("(min-width: 1200px)");
   const [blocks, setBlocks] = React.useState([]);
 
   React.useEffect(() => {
@@ -51,12 +40,16 @@ const PostContent = ({ content }) => {
       case "image":
         return (
           <Box mb={2} className={styles.image}>
-            {" "}
             <Image
-              src={`http://127.0.0.1:1337${block.data?.file.url}`}
+              src={block.data?.file.url}
               width={block.data?.file?.width}
               height={block.data?.file?.height}
               alt={block.data?.file?.alt}
+              sizes="100vw"
+              style={{
+                width: "100%",
+                height: "auto",
+              }}
             />
             <Typography className={styles.caption}>
               {block.data?.caption}

@@ -2,7 +2,7 @@ import styles from "./PostPrevNext.module.scss";
 import React from "react";
 import logoSvg from "./img/logo.svg";
 
-import { Container, Grid, useMediaQuery, Box, Button } from "@mui/material";
+import { Container, Grid, Box, Button } from "@mui/material";
 import Image from "next/image";
 
 import Link from "next/link";
@@ -32,8 +32,8 @@ const PostPrevNext = ({ prevPostSlug, nextPostSlug }) => {
                 variant={"text"}
                 sx={{ paddingX: 3 }}
               >
-                <Link href={`http://localhost:3000/posts/${prevPostSlug}`}>
-                  <a> PREVIOUS ARTICLE</a>
+                <Link href={`${process.env.SITE_URL}/posts/${prevPostSlug}`}>
+                  PREVIOUS ARTICLE
                 </Link>
               </Button>
 
@@ -42,8 +42,8 @@ const PostPrevNext = ({ prevPostSlug, nextPostSlug }) => {
                 sx={{ paddingX: 3 }}
                 disabled={nextPostSlug === undefined}
               >
-                <Link href={`http://localhost:3000/posts/${nextPostSlug}`}>
-                  <a>NEXT ARTICLE</a>
+                <Link href={`${process.env.SITE_URL}/posts/${nextPostSlug}`}>
+                  NEXT ARTICLE
                 </Link>
               </Button>
             </Box>

@@ -2,12 +2,7 @@ import styles from "./ProjectAbout.module.scss";
 import React from "react";
 
 import { Container, Grid, useMediaQuery, Box } from "@mui/material";
-
-import { getStrapiMedia } from "../../lib/media";
 import Image from "next/image";
-import image1 from "./img/1.jpg";
-import image2 from "./img/2.jpg";
-import image3 from "./img/3.jpg";
 
 const ProjectAbout = ({
   title,
@@ -18,7 +13,6 @@ const ProjectAbout = ({
   imageFirstColumn,
   imageSecondColumn,
 }) => {
-  const matchesMd = useMediaQuery("(min-width: 768px)");
   const matchesLg = useMediaQuery("(min-width: 1200px)");
 
   return (
@@ -41,11 +35,7 @@ const ProjectAbout = ({
               </Box>
               {imageFirstColumn && (
                 <Box width={"100%"} height={600} position={"relative"}>
-                  <Image
-                    src={`http://localhost:1337${imageFirstColumn}`}
-                    layout={"fill"}
-                    objectFit="cover"
-                  />
+                  <Image src={imageFirstColumn} fill alt={title} />
                 </Box>
               )}
             </Box>
@@ -54,11 +44,7 @@ const ProjectAbout = ({
             <Box className={styles.column}>
               {imageSecondColumn && (
                 <Box width={"100%"} mb={5} height={600} position={"relative"}>
-                  <Image
-                    src={`http://localhost:1337${imageSecondColumn}`}
-                    layout={"fill"}
-                    objectFit="cover"
-                  />
+                  <Image src={imageSecondColumn} fill alt={title} />
                 </Box>
               )}
 

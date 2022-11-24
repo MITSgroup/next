@@ -1,13 +1,13 @@
 import { MainLayout } from "../layouts/MainLayout";
-import { useMediaQuery, Box, Typography, Container, Grid } from "@mui/material";
+import { useMediaQuery, Box, Container, Grid } from "@mui/material";
 import styles from "../styles/contacts.module.scss";
 import BlogHero from "../components/BlogHero/BlogHero";
 import GoogleMapReact from "google-map-react";
 import ContactsItem from "../components/ContactsItem/ContactsItem";
+import { fetchAPI } from "../lib/api";
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
-const Contacts = () => {
-  const matchesMd = useMediaQuery("(min-width: 768px)");
+const Contacts = ({ global, social }) => {
   const matchesLg = useMediaQuery("(min-width: 1200px)");
 
   const defaultProps = {
@@ -23,6 +23,8 @@ const Contacts = () => {
       metaTitle={"MITS – Journal"}
       metaDescription={"MITS"}
       headerTransparent={true}
+      global={global}
+      social={social}
     >
       <BlogHero title={"CONTACT US"} />
 
@@ -82,19 +84,19 @@ const Contacts = () => {
   );
 };
 
-// export async function getStaticProps() {
-//   const response = await fetch(
-//     "http://127.0.0.1:1337/api/posts?sort=createdAt:desc"
-//   );
-//
-//   const postsRes = await response.json();
-//
-//   return {
-//     props: {
-//       posts: postsRes.data,
-//     },
-//     revalidate: 10,
-//   };
-// }
+export async function getStaticProps() {
+  const [globalRes, socialRes] = await Promise.all([
+    fetchAPI("/global"),
+    fetchAPI("/social"),
+  ]);
+
+  return {
+    props: {
+      global: globalRes.data,
+      social: socialRes.data,
+    },
+    revalidate: 120,
+  };
+}
 
 export default Contacts;

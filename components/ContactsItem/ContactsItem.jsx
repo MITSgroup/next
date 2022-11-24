@@ -1,8 +1,5 @@
 import styles from "./ContactsItem.module.scss";
 import React from "react";
-import { Container, Grid, Typography, Box } from "@mui/material";
-import ReviewItem from "../ReviewItem/ReviewItem";
-import MainForm from "../Forms/MainForm";
 import Link from "next/link";
 
 const ContactsItem = ({ icon, title, textLink, link }) => {
@@ -192,12 +189,10 @@ const ContactsItem = ({ icon, title, textLink, link }) => {
   };
 
   return (
-    <Link href={link}>
-      <a className={styles.contactsItem}>
-        <i className={styles.icon}>{renderIcon(icon)}</i>
-        <h4 className={styles.title}>{title}</h4>
-        {textLink && <p className={styles.textLink}>{textLink}</p>}
-      </a>
+    <Link href={link} className={styles.contactsItem}>
+      <i className={styles.icon}>{renderIcon(icon)}</i>
+      <h4 className={styles.title}>{title}</h4>
+      {textLink && <p className={styles.textLink}>{textLink}</p>}
     </Link>
   );
 };

@@ -1,0 +1,33 @@
+@import "styles/variables";
+
+.companyNumbers {
+  font-family: "Metropolis", Helvetica, sans-serif;
+  padding: 40px 0;
+
+  .title {
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 12px;
+  }
+
+  .numLarge {
+    text-align: center;
+    font-weight: 700;
+    font-size: 120px;
+
+    @media (min-width: 768px) {
+      font-size: 220px;
+    }
+  }
+
+  .num {
+    font-weight: 700;
+    font-size: 42px;
+    color: #000000;
+    margin-bottom: 20px;
+
+    @media (min-width: 768px) {
+      font-size: 60px;
+    }
+  }
+}
