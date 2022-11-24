@@ -3,12 +3,19 @@
 .portfolioHero {
   min-height: 100vh;
   background-color: $secondary;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+
+  .backgroundImage {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    top: 0;
+    left: 0;
+  }
 
   .content {
     background-color: rgba(#000, 0.7);
@@ -16,6 +23,8 @@
     height: 100%;
     padding-top: 60px;
     padding-bottom: 80px;
+    position: relative;
+    z-index: 1;
 
     @media (min-width: 768px) {
       max-width: 95%;

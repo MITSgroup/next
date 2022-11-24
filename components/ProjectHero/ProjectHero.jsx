@@ -26,6 +26,7 @@ const ProjectHero = ({
           src={imageUrl}
           quality={100}
           fill
+          placeholder={"blur"}
           sizes="100vw"
           style={{
             objectFit: "cover",

@@ -45,6 +45,11 @@ const ImageGallery = ({ images }) => {
                       <Image
                         src={image.attributes.url}
                         fill
+                        placeholder={"blur"}
+                        sizes="100vw"
+                        style={{
+                          objectFit: "cover",
+                        }}
                         alt={
                           image.attributes.caption
                             ? image.attributes.caption

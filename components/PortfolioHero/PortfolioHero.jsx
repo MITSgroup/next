@@ -2,13 +2,23 @@ import styles from "./PortfolioHero.module.scss";
 import React from "react";
 
 import { Container, Grid, Box } from "@mui/material";
+import Image from "next/image";
 
 const PortfolioHero = ({ name, description, image }) => {
   return (
-    <Box
-      className={styles.portfolioHero}
-      sx={{ backgroundImage: `url(${image})` }}
-    >
+    <Box className={styles.portfolioHero}>
+      <Box className={styles.backgroundImage}>
+        <Image
+          alt="Mountains"
+          src={image}
+          quality={100}
+          fill
+          sizes="100vw"
+          style={{
+            objectFit: "cover",
+          }}
+        />
+      </Box>
       <Box className={styles.content}>
         <Container>
           <Grid container justifyContent={"center"}>

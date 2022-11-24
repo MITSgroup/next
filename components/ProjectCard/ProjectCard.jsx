@@ -21,6 +21,7 @@ const ProjectCard = ({
           src={image}
           alt={title}
           fill
+          placeholder={"blur"}
           sizes="100vw"
           style={{
             objectFit: "cover",
