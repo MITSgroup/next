@@ -23,7 +23,6 @@ const ProjectCard = ({
           src={image}
           alt={title}
           fill
-          priority
           blurDataURL={placeholder}
           placeholder={"blur"}
           sizes="100vw"

@@ -35,14 +35,13 @@ const ServicesItem = ({ title, description, slug }) => {
 
   return (
     <Collapse collapsedSize={140} in={isOpen} className={styles.item}>
-      <Box className={styles.header}>
+      <Box onClick={() => setIsOpen(!isOpen)} className={styles.header}>
         <Box maxWidth={280}>
           <h3 className={styles.title}>{title}</h3>
           <p className={styles.description}>{description}</p>
         </Box>
 
         <IconButton
-          onClick={() => setIsOpen(!isOpen)}
           sx={{
             transform: isOpen ? "rotate(180deg)" : "",
             transition: "transform .2s ease-in-out",

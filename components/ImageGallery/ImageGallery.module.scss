@@ -4,10 +4,38 @@
   padding: 40px 0;
 
   .gallerySwiper {
-    padding: 0 30px;
+    padding: 0 40px;
+    position: relative;
+
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 30px;
+      height: 100%;
+      background-color: #fff;
+      z-index: 8;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 30px;
+      height: 100%;
+      background-color: #fff;
+      z-index: 8;
+    }
 
     @media (min-width: 1200px) {
       padding: 0 100px;
+
+      &:before,
+      &:after {
+        width: 100px;
+      }
     }
   }
 

@@ -35,7 +35,6 @@ const Footer = ({ global, social }) => {
                   gap: 3,
                 }}
               >
-                {" "}
                 <ul className={styles.contacts}>
                   <li>
                     <a href="#">8/9 Longland St, Newstead 4006</a>
@@ -49,14 +48,16 @@ const Footer = ({ global, social }) => {
                 </ul>
                 <ul className={styles.social}>
                   <li>
-                    <a href="#">INSTAGRAM</a>
+                    <a href="https://instagram.com/mits.bali?igshid=YmMyMTA2M2Y=">
+                      INSTAGRAM
+                    </a>
                   </li>
-                  <li>
-                    <a href="#">FACEBOOK</a>
-                  </li>
-                  <li>
-                    <a href="#">LINKEDIN</a>
-                  </li>
+                  {/*<li>*/}
+                  {/*  <a href="#">FACEBOOK</a>*/}
+                  {/*</li>*/}
+                  {/*<li>*/}
+                  {/*  <a href="#">LINKEDIN</a>*/}
+                  {/*</li>*/}
                 </ul>
               </Box>
             </Grid>

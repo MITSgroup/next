@@ -59,14 +59,18 @@ const Contacts = ({ global, social }) => {
 
           <Grid container spacing={4} justifyContent={"center"}>
             <Grid item xs={4} md={4} lg={3}>
-              <ContactsItem title={"Instagram"} icon={"instagram"} link={"#"} />
+              <ContactsItem
+                title={"Instagram"}
+                icon={"instagram"}
+                link={"https://instagram.com/mits.bali?igshid=YmMyMTA2M2Y="}
+              />
             </Grid>
-            <Grid item xs={4} md={4} lg={3}>
-              <ContactsItem title={"Linkedin"} icon={"linkedin"} link={"#"} />
-            </Grid>
-            <Grid item xs={4} md={4} lg={3}>
-              <ContactsItem title={"Facebook"} icon={"facebook"} link={"#"} />
-            </Grid>
+            {/*<Grid item xs={4} md={4} lg={3}>*/}
+            {/*  <ContactsItem title={"Linkedin"} icon={"linkedin"} link={"#"} />*/}
+            {/*</Grid>*/}
+            {/*<Grid item xs={4} md={4} lg={3}>*/}
+            {/*  <ContactsItem title={"Facebook"} icon={"facebook"} link={"#"} />*/}
+            {/*</Grid>*/}
           </Grid>
         </Container>
       </section>
