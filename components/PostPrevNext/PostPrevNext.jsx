@@ -8,12 +8,16 @@ import Image from "next/image";
 import Link from "next/link";
 
 const PostPrevNext = ({ prevPostSlug, nextPostSlug }) => {
+  const handleClick = () => {
+    window.scrollTo(0, 0);
+  };
+
   return (
     <Container>
       <Box className={styles.postPrevNext}>
         <Grid container>
           <Grid item xs={12} md={4}>
-            <Box className={styles.logo}>
+            <Box onClick={() => handleClick} className={styles.logo}>
               <Image src={logoSvg} width={120} height={180} alt={"logo"} />
             </Box>
           </Grid>
@@ -25,7 +29,6 @@ const PostPrevNext = ({ prevPostSlug, nextPostSlug }) => {
               <br /> <br />
               Be the first to know when newest articles go live!
             </p>
-
             <Box className={styles.buttons}>
               <Button
                 disabled={prevPostSlug === undefined}
@@ -39,6 +42,7 @@ const PostPrevNext = ({ prevPostSlug, nextPostSlug }) => {
 
               <Button
                 variant={"text"}
+                onClick={() => handleClick}
                 sx={{ paddingX: 3 }}
                 disabled={nextPostSlug === undefined}
               >

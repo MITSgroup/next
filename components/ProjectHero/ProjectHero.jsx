@@ -41,8 +41,8 @@ const ProjectHero = ({
         <Box className={styles.inner}>
           <Box
             sx={{
-              paddingTop: matchesLg ? 10 : 4,
-              paddingBottom: matchesLg ? 8 : 4,
+              paddingTop: matchesLg ? 10 : 2,
+              paddingBottom: matchesLg ? 8 : 2,
               paddingLeft: 0,
               paddingRight: matchesMd ? 8 : 0,
             }}
@@ -52,7 +52,7 @@ const ProjectHero = ({
 
             <Box
               sx={{
-                paddingTop: matchesLg ? 8 : 6,
+                paddingTop: matchesLg ? 8 : 4,
                 paddingRight: matchesLg ? 10 : 0,
               }}
             >
@@ -61,8 +61,8 @@ const ProjectHero = ({
           </Box>
           <Box
             sx={{
-              paddingTop: matchesMd ? 0 : 4,
-              paddingBottom: 4,
+              paddingTop: matchesMd ? 0 : 2,
+              paddingBottom: 2,
             }}
           >
             <Box className={styles.priceBlock}>

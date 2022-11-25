@@ -1,12 +1,16 @@
 @import "styles/variables";
 
 .pageHero {
-  min-height: 100vh;
+  min-height: 400px;
   background-color: $secondary;
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  @media (min-width: 1200px) {
+    min-height: 100vh;
+  }
 
   .backgroundImage {
     position: absolute;
@@ -20,14 +24,19 @@
   .title {
     font-family: "Metropolis", Helvetica, sans-serif;
     font-weight: 700;
-    font-size: 60px;
-    line-height: 60px;
+    font-size: 42px;
+    line-height: 42px;
     color: #ffffff;
     text-transform: uppercase;
     margin-bottom: 30px;
     text-align: center;
     z-index: 1;
     position: relative;
+
+    @media (min-width: 768px) {
+      font-size: 60px;
+      line-height: 60px;
+    }
 
     @media (min-width: 1200px) {
       font-size: 72px;

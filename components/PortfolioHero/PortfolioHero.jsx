@@ -17,7 +17,7 @@ const PortfolioHero = ({ name, description, image }) => {
           fill
           blurDataURL={placeholder}
           placeholder={"blur"}
-          sizes="100vw"
+          sizes={"400px"}
           style={{
             objectFit: "cover",
           }}

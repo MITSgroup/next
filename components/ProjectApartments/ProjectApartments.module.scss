@@ -139,7 +139,7 @@
     position: absolute;
     z-index: 20;
     top: 5px;
-    left: -15px;
+    left: 0;
     display: block !important;
 
     @media (min-width: 768px) {
@@ -151,7 +151,7 @@
     position: absolute;
     z-index: 20;
     top: 5px;
-    right: -15px;
+    right: 0;
     display: block !important;
 
     @media (min-width: 768px) {
@@ -161,6 +161,13 @@
   }
   .apartmentsSlider {
     margin-left: 0;
+    padding: 0 40px;
+    position: relative;
+    width: 100%;
+
+    @media (min-width: 768px) {
+      padding: 0 100px;
+    }
 
     .slide {
       @media (min-width: 768px) {

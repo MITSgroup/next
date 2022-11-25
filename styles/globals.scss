@@ -7,7 +7,6 @@ body {
   margin: 0;
   font-family: "Inter", sans-serif;
   scroll-behavior: smooth;
-  overflow-x: hidden;
   position: relative;
 }
 
@@ -18,6 +17,10 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+.main {
+  overflow-x: hidden;
 }
 
 .swiper-button-disabled {
