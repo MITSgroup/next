@@ -10,8 +10,7 @@
 
     .tabItem {
       min-height: 220px;
-      padding: 40px 10px;
-      padding-top: 20px;
+      padding: 20px 10px 40px;
       min-width: 50%;
       transition: background-color 0.3s ease-in-out;
       background-color: #fff;
@@ -167,12 +166,6 @@
 
     @media (min-width: 768px) {
       padding: 0 100px;
-    }
-
-    .slide {
-      @media (min-width: 768px) {
-        width: 205px !important;
-      }
     }
   }
 }

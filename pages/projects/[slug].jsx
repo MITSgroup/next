@@ -1,8 +1,9 @@
+import React, { Suspense } from "react";
+
 import { MainLayout } from "../../layouts/MainLayout";
 import ProjectHero from "../../components/ProjectHero/ProjectHero";
 import ProjectIntro from "../../components/ProjectIntro/ProjectIntro";
 import ImageGallery from "../../components/ImageGallery/ImageGallery";
-import ProjectLocation from "../../components/ProjectLocation/ProjectLocation";
 import Cta from "../../components/Cta/Cta";
 import ProjectAbout from "../../components/ProjectAbout/ProjectAbout";
 import ProjectSpecs from "../../components/ProjectSpecs/ProjectSpecs";
@@ -12,6 +13,9 @@ import ProjectModelling from "../../components/ProjectModelling/ProjectModelling
 import { fetchAPI } from "../../lib/api";
 import ProjectApartments from "../../components/ProjectApartments/ProjectApartments";
 import ProjectCta from "../../components/ProjectCta/ProjectCta";
+const ProjectLocation = React.lazy(() =>
+  import("../../components/ProjectLocation/ProjectLocation")
+);
 
 const Project = ({ project, reviews }) => {
   return (
@@ -45,11 +49,18 @@ const Project = ({ project, reviews }) => {
       {project.attributes?.apartment && (
         <ProjectApartments apartments={project.attributes?.apartment} />
       )}
-      <ProjectLocation
-        title={project.attributes.location?.title}
-        description={project.attributes.location?.description}
-        advantages={project.attributes.location?.advantages}
-      />
+      {
+        <Suspense fallback={<div>Loading...</div>}>
+          {project.attributes.location && (
+            <ProjectLocation
+              title={project.attributes.location?.title}
+              description={project.attributes.location?.description}
+              advantages={project.attributes.location?.advantages}
+            />
+          )}
+        </Suspense>
+      }
+
       <Cta />
       {project.attributes.about && (
         <ProjectAbout

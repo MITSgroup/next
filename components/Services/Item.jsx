@@ -61,11 +61,6 @@ const ServicesItem = ({ title, description, slug }) => {
                   Projects
                 </Button>
               </Link>
-              <Link href={`/services/${slug}`}>
-                <Button variant={"text"} sx={materialStyles.link}>
-                  FIND OUT MORE &gt;
-                </Button>
-              </Link>
             </Box>
           </Grid>
 

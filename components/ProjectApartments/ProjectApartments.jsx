@@ -98,66 +98,66 @@ const ProjectApartments = ({ apartments }) => {
                     </SwiperSlide>
                   ))}
                 <IconButton
-                  disabled={activeTab === 0}
-                  onClick={() => setActiveTab(activeTab - 1)}
-                  className={styles.arrowPrev}
-                  ref={arrowPrev}
+                    disabled={activeTab === 0}
+                    onClick={() => setActiveTab(activeTab - 1)}
+                    className={styles.arrowPrev}
+                    ref={arrowPrev}
                 >
                   <svg
-                    width="12"
-                    height="20"
-                    viewBox="0 0 12 20"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
+                      width="12"
+                      height="20"
+                      viewBox="0 0 12 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
                   >
                     <g clipPath="url(#clip0_129_20)">
                       <path
-                        d="M10.5 1.42859L1.5 10L10.5 18.5714"
-                        stroke="black"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
+                          d="M10.5 1.42859L1.5 10L10.5 18.5714"
+                          stroke="black"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
                       />
                     </g>
                     <defs>
                       <clipPath id="clip0_129_20">
                         <rect
-                          width="20"
-                          height="12"
-                          fill="white"
-                          transform="translate(12) rotate(90)"
+                            width="20"
+                            height="12"
+                            fill="white"
+                            transform="translate(12) rotate(90)"
                         />
                       </clipPath>
                     </defs>
                   </svg>
                 </IconButton>
                 <IconButton
-                  disabled={activeTab === apartments.length - 1}
-                  onClick={() => setActiveTab(activeTab + 1)}
-                  className={styles.arrowNext}
-                  ref={arrowNext}
+                    disabled={activeTab === apartments.length - 1}
+                    onClick={() => setActiveTab(activeTab + 1)}
+                    className={styles.arrowNext}
+                    ref={arrowNext}
                 >
                   <svg
-                    width="12"
-                    height="20"
-                    viewBox="0 0 12 20"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
+                      width="12"
+                      height="20"
+                      viewBox="0 0 12 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
                   >
                     <g clipPath="url(#clip0_129_18)">
                       <path
-                        d="M1.5 18.5714L10.5 9.99998L1.5 1.42856"
-                        stroke="black"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
+                          d="M1.5 18.5714L10.5 9.99998L1.5 1.42856"
+                          stroke="black"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
                       />
                     </g>
                     <defs>
                       <clipPath id="clip0_129_18">
                         <rect
-                          width="20"
-                          height="12"
-                          fill="white"
-                          transform="translate(0 20) rotate(-90)"
+                            width="20"
+                            height="12"
+                            fill="white"
+                            transform="translate(0 20) rotate(-90)"
                         />
                       </clipPath>
                     </defs>

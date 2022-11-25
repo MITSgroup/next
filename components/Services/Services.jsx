@@ -1,6 +1,6 @@
 import styles from "./Services.module.scss";
 import React from "react";
-import { Container, Grid, Typography, useMediaQuery } from "@mui/material";
+import { Container, Grid, useMediaQuery } from "@mui/material";
 
 import Item from "./Item";
 

@@ -22,7 +22,7 @@ const ImageGallery = ({ images }) => {
     <Box className={styles.imageGallery}>
       <Container sx={{ position: "relative" }}>
         <Grid container justifyContent={"center"} position={"relative"}>
-          <Grid item xs={10}>
+          <Grid item xs={12}>
             <Swiper
               navigation={{
                 prevEl: arrowPrev.current,
