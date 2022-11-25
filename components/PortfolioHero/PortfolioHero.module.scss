@@ -9,6 +9,10 @@
   justify-content: flex-end;
   overflow: hidden;
 
+  @media (min-width: 1200px) {
+    min-height: 100vh;
+  }
+
   .backgroundImage {
     position: absolute;
     width: 100%;

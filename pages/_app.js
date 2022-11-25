@@ -21,7 +21,7 @@ function MyApp({ Component, pageProps }) {
         height={2}
         options={{ showSpinner: false }}
       />
-      <Component {...pageProps} />;
+      <Component {...pageProps} />
     </>
   );
 }
