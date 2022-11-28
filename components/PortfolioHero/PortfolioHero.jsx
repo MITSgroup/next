@@ -15,6 +15,7 @@ const PortfolioHero = ({ name, description, image }) => {
           src={image}
           quality={100}
           fill
+          priority
           blurDataURL={placeholder}
           placeholder={"blur"}
           sizes={"100vh"}

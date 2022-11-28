@@ -15,6 +15,7 @@ const BlogHero = ({ title, image }) => {
           src={"/images/hero/blog.jpg"}
           quality={100}
           fill
+          priority
           blurDataURL={placeholder}
           placeholder={"blur"}
           sizes="100vw"
