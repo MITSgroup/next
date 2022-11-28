@@ -189,7 +189,7 @@ const ContactsItem = ({ icon, title, textLink, link }) => {
   };
 
   return (
-    <Link href={link} className={styles.contactsItem}>
+    <Link href={link} target={"_blank"} className={styles.contactsItem}>
       <i className={styles.icon}>{renderIcon(icon)}</i>
       <h4 className={styles.title}>{title}</h4>
       {textLink && <p className={styles.textLink}>{textLink}</p>}

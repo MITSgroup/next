@@ -36,23 +36,25 @@ const Contacts = ({ global, social }) => {
                 title={"Visit us"}
                 icon={"location"}
                 link={"#"}
-                textLink={"8/9 Longland St,  Newstead 4006"}
+                textLink={
+                  "jalan Dukuh Indah Gang Suli N°5 x2, Kerobokan Kelod, Kuta Utara, kerobokan, Bali 80361"
+                }
               />
             </Grid>
             <Grid item xs={12} md={4} lg={3}>
               <ContactsItem
                 title={"Call us"}
                 icon={"phone"}
-                link={"#"}
-                textLink={"+61 7 3309 8300 (WhatsApp)"}
+                link={"https://wa.me/6282144576669"}
+                textLink={"+62 82144576669 (WhatsApp)"}
               />
             </Grid>
             <Grid item xs={12} md={4} lg={3}>
               <ContactsItem
                 title={"Email us"}
                 icon={"email"}
-                link={"#"}
-                textLink={"admin@cavcorp.com.au"}
+                link={"mailto:anna.mits.bali@gmail.com"}
+                textLink={"anna.mits.bali@gmail.com"}
               />
             </Grid>
           </Grid>

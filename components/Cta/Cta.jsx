@@ -15,6 +15,8 @@ const Cta = () => {
           </Grid>
           <Grid item xs={12} md={4} sx={{ textAlign: "right" }}>
             <Button
+              href={"https://wa.me/6282144576669"}
+              target={"_blank"}
               sx={{ marginLeft: "auto" }}
               style={{ color: "white", borderColor: "white" }}
               variant={"outlined"}

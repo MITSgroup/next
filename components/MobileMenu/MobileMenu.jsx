@@ -29,9 +29,13 @@ const MobileMenu = ({ closeMenu, open }) => {
           <MainNav transparent={false} />
         </Box>
         <Box className={styles.socials}>
-          <ContactsItem title={"instagram"} icon={"instagram"} link={""} />
-          <ContactsItem title={"LINKEDIN"} icon={"linkedin"} link={""} />
-          <ContactsItem title={"facebook"} icon={"facebook"} link={""} />
+          <ContactsItem
+            title={"instagram"}
+            icon={"instagram"}
+            link={"https://instagram.com/mits.bali?igshid=YmMyMTA2M2Y="}
+          />
+          {/*<ContactsItem title={"LINKEDIN"} icon={"linkedin"} link={""} />*/}
+          {/*<ContactsItem title={"facebook"} icon={"facebook"} link={""} />*/}
         </Box>
       </Box>
     </Dialog>

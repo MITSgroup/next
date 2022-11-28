@@ -37,13 +37,20 @@ const Footer = ({ global, social }) => {
               >
                 <ul className={styles.contacts}>
                   <li>
-                    <a href="#">8/9 Longland St, Newstead 4006</a>
+                    <a href="">
+                      jalan Dukuh Indah Gang Suli N°5 x2, Kerobokan Kelod, Kuta
+                      Utara, kerobokan, Bali 80361
+                    </a>
                   </li>
                   <li>
-                    <a href="#">+61 7 3309 8300</a>
+                    <a href="https://wa.me/6282144576669" target="_blank">
+                      +62 82144576669
+                    </a>
                   </li>
                   <li>
-                    <a href="#">admin@cavcorp.com.au</a>
+                    <a href="mailto:anna.mits.bali@gmail.com" target={"_blank"}>
+                      anna.mits.bali@gmail.com
+                    </a>
                   </li>
                 </ul>
                 <ul className={styles.social}>
