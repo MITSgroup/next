@@ -13,7 +13,7 @@ const PortfolioHero = ({ name, description, image }) => {
         <Image
           alt="Mountains"
           src={image}
-          quality={100}
+          quality={80}
           fill
           priority
           blurDataURL={placeholder}

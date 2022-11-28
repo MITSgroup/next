@@ -13,7 +13,7 @@ const BlogHero = ({ title, image }) => {
         <Image
           alt="Mountains"
           src={"/images/hero/blog.jpg"}
-          quality={100}
+          quality={80}
           fill
           priority
           blurDataURL={placeholder}

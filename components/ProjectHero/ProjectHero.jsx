@@ -26,7 +26,7 @@ const ProjectHero = ({
         <Image
           alt="Mountains"
           src={imageUrl}
-          quality={100}
+          quality={80}
           fill
           priority
           blurDataURL={placeholder}
