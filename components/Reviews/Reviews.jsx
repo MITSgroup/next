@@ -1,6 +1,6 @@
 import styles from "./Reviews.module.scss";
 import React from "react";
-import { Container, IconButton } from "@mui/material";
+import { Container, IconButton, Grid } from "@mui/material";
 import ReviewItem from "../ReviewItem/ReviewItem";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -16,7 +16,12 @@ const Reviews = ({ reviews }) => {
   return (
     <section className={styles.reviews}>
       <Container>
-        <h1 className={styles.title}>WHAT OUR CLIENTS SAY:</h1>
+        <Grid container justifyContent={"end"}>
+          <Grid item xs={12} md={9}>
+            <h1 className={styles.title}>WHAT OUR CLIENTS SAY:</h1>
+          </Grid>
+        </Grid>
+
         <Swiper
           navigation={{
             prevEl: arrowPrev.current,
