@@ -43,12 +43,12 @@ const Footer = ({ global, social }) => {
                     </a>
                   </li>
                   <li>
-                    <a href="https://wa.me/6282144576669" target="_blank">
+                    <a href="https://wa.me/6282144576669" rel="noreferrer">
                       +62 82144576669
                     </a>
                   </li>
                   <li>
-                    <a href="mailto:anna.mits.bali@gmail.com" target={"_blank"}>
+                    <a href="mailto:anna.mits.bali@gmail.com" rel="noreferrer">
                       anna.mits.bali@gmail.com
                     </a>
                   </li>
