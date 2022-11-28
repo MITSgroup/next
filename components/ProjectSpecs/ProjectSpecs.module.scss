@@ -1,11 +1,11 @@
-@import "styles/variables";
+@import 'styles/variables';
 
 .projectSpecs {
   padding: 60px 0;
   background-color: #f9f9f9;
 
   .listTitle {
-    font-family: "Metropolis", Helvetica, sans-serif;
+    font-family: '__Metropolis_e5531d', '__Metropolis_Fallback_e5531d';
     font-weight: 700;
     font-size: 12px;
     line-height: 12px;
@@ -17,7 +17,7 @@
   .list {
     li {
       position: relative;
-      font-weight: 400;
+      font-weight: 300;
       font-size: 14px;
 
       color: #000000;
@@ -26,7 +26,7 @@
 
       &:before {
         position: absolute;
-        content: "";
+        content: '';
         top: 6px;
         left: 0;
         background-color: #000;

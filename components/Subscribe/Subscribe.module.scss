@@ -1,11 +1,11 @@
-@import "styles/variables";
+@import 'styles/variables';
 
 .subscribe {
   padding: 50px 0;
   background-color: $secondary;
 
   .title {
-    font-family: "Metropolis", Helvetica, sans-serif;
+    font-family: '__Metropolis_e5531d', '__Metropolis_Fallback_e5531d';
     font-style: normal;
     font-weight: 700;
     font-size: 24px;
@@ -17,7 +17,7 @@
 
   .list {
     li {
-      font-weight: 400;
+      font-weight: 300;
       font-size: 12px;
       line-height: 20px;
       padding-left: 12px;
@@ -25,7 +25,7 @@
       position: relative;
 
       &:before {
-        content: "";
+        content: '';
         position: absolute;
         left: 0;
         top: 8px;
