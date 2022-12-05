@@ -16,9 +16,6 @@ const MainNav = ({ transparent }) => {
         <li>
           <Link href={"/posts"}>JOURNAL</Link>
         </li>
-        <li>
-          <Link href={"/contacts"}>Contact us</Link>
-        </li>
       </ul>
     </nav>
   );

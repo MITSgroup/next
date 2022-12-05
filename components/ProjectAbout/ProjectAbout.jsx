@@ -40,7 +40,9 @@ const ProjectAbout = ({
                   <Image
                     src={imageFirstColumn}
                     fill
-                    sizes="100vw"
+                    sizes="(max-width: 768px) 100vw,
+                            (max-width: 1200px) 50vw,
+                            50vw"
                     blurDataURL={placeholder}
                     placeholder={"blur"}
                     style={{
@@ -70,7 +72,7 @@ const ProjectAbout = ({
                 </Box>
               )}
 
-              <Box maxWidth={400} mt={"auto"} ml={matchesLg ? "auto" : 0}>
+              <Box maxWidth={400} mt={"auto"}>
                 <h4 className={styles.subtitle}>{titleSecondColumn}</h4>
 
                 {paragraphSecondColumn &&

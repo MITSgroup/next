@@ -1,4 +1,5 @@
 import { MainLayout } from "../../layouts/MainLayout";
+import styles from "../../styles/post.module.scss";
 import { useMediaQuery, Box, Grid, Typography, Container } from "@mui/material";
 import { fetchAPI } from "../../lib/api";
 import BlogHero from "../../components/BlogHero/BlogHero";
@@ -16,12 +17,11 @@ const Post = ({ post }) => {
 
   const year = (date) => new Date(Date.parse(date)).getFullYear();
   const month = (date) =>
-    new Date(Date.parse(date)).toLocaleString("default", { month: "long" });
+    new Date(Date.parse(date)).toLocaleString("en-US", { month: "long" });
   const day = (date) => new Date(Date.parse(date)).getDate();
 
   const getSlugs = (data) => {
     const slugs = [];
-
     data.map((obj) => {
       slugs.push(obj.attributes.slug);
     });
@@ -47,19 +47,6 @@ const Post = ({ post }) => {
     fetchData().catch(console.error);
   }, [router.asPath]);
 
-  const styles = {
-    date: {
-      fontsize: 12,
-      fontFamily: `"Metropolis", Helvetica, sans-serif`,
-      fontWeight: 700,
-      textTransform: "uppercase",
-    },
-    description: {
-      fontsize: matchesMd ? 24 : 18,
-      lineHeight: "130%",
-    },
-  };
-
   return (
     <MainLayout
       metaTitle={`MITS – ${post.attributes.title}`}
@@ -72,16 +59,16 @@ const Post = ({ post }) => {
           <Grid container>
             <Grid item xs={12} md={7} lg={5}>
               {" "}
-              <Typography sx={styles.date} mb={6}>
+              <p className={styles.date}>
                 {month(post.attributes.createdAt)},{" "}
                 {day(post.attributes.createdAt)}{" "}
                 {year(post.attributes.createdAt)}
-              </Typography>
-              <Typography sx={styles.description}>
+              </p>
+              <p className={styles.description}>
                 MITS. studio facilitates collaborative processes between
                 clients, builders and suppliers, with the aim of provide the
                 best solutions, based on aesthetics and creativity.
-              </Typography>
+              </p>
             </Grid>
           </Grid>
         </Box>

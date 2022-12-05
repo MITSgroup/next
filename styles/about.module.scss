@@ -1,11 +1,11 @@
-@import './variables';
+@import "./variables";
 
 .about {
   padding-bottom: 80px;
   position: relative;
 
   .title {
-    font-family: '__Metropolis_e5531d', '__Metropolis_Fallback_e5531d';
+    font-family: "__Metropolis_e5531d", "__Metropolis_Fallback_e5531d";
     text-align: center;
     font-weight: 700;
     font-size: 32px;
@@ -35,9 +35,9 @@
   .item {
     margin-bottom: 60px;
     h3 {
-      font-family: '__Metropolis_e5531d', '__Metropolis_Fallback_e5531d';
+      font-family: "__Metropolis_e5531d", "__Metropolis_Fallback_e5531d";
       font-weight: 700;
-      font-size: 12px;
+      font-size: 18px;
       line-height: 12px;
       letter-spacing: 0.002em;
       color: #000000;
@@ -46,13 +46,10 @@
 
     p {
       font-weight: 300;
-      font-size: 18px;
+      font-size: 14px;
+      line-height: 17px;
       line-height: 128.02%;
       color: #000000;
-
-      @media (min-width: 768px) {
-        font-size: 24px;
-      }
     }
   }
 

@@ -13,7 +13,7 @@ const Services = ({ services }) => {
         <Grid container sx={{ marginBottom: matchesLg ? 12 : 8 }}>
           <Grid item xs={12} md={6} lg={5}>
             <h3 className={styles.title}>SERVICES</h3>
-            <p className={styles.text}>
+            <p className={"text"}>
               MITS. studio facilitates collaborative processes between clients,
               builders and suppliers, with the aim of provide the best
               solutions, based on aesthetics and creativity.

@@ -1,4 +1,4 @@
-@import 'styles/variables';
+@import "styles/variables";
 
 .projectCard {
   position: relative;
@@ -6,20 +6,18 @@
   height: 300px;
   transition: all 0.3s ease-in-out;
 
-  @media (min-width: 1200px) {
-    &:hover {
-      .info {
-        opacity: 1;
-        visibility: visible;
-      }
+  &:hover {
+    .info {
+      opacity: 1;
+      visibility: visible;
+    }
 
-      .content {
-        transform: translateY(0);
-      }
+    .content {
+      transform: translateY(0);
+    }
 
-      .label {
-        opacity: 1;
-      }
+    .label {
+      opacity: 1;
     }
   }
 
@@ -34,11 +32,8 @@
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease-in-out;
-
-    @media (min-width: 1200px) {
-      opacity: 0;
-      visibility: hidden;
-    }
+    opacity: 0;
+    visibility: hidden;
   }
 
   .content {
@@ -48,7 +43,7 @@
   }
 
   .title {
-    font-family: '__Metropolis_e5531d', '__Metropolis_Fallback_e5531d';
+    font-family: "__Metropolis_e5531d", "__Metropolis_Fallback_e5531d";
     font-style: normal;
     font-weight: 700;
     font-size: 18px;
@@ -91,7 +86,7 @@
   }
 
   .link {
-    font-family: '__Metropolis_e5531d', '__Metropolis_Fallback_e5531d';
+    font-family: "__Metropolis_e5531d", "__Metropolis_Fallback_e5531d";
     font-style: normal;
     font-weight: 700;
     font-size: 12px;
@@ -122,7 +117,7 @@
     transition: opacity 0.3s ease-in-out;
 
     span {
-      font-family: '__Metropolis_e5531d', '__Metropolis_Fallback_e5531d';
+      font-family: "__Metropolis_e5531d", "__Metropolis_Fallback_e5531d";
       font-style: normal;
       font-weight: 700;
       font-size: 10px;

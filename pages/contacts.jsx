@@ -31,7 +31,7 @@ const Contacts = ({ global, social }) => {
       <section className={styles.contacts}>
         <Container>
           <Grid mb={5} container spacing={4} justifyContent={"center"}>
-            <Grid item xs={12} md={4} lg={3}>
+            <Grid item xs={12} md={3} lg={3}>
               <ContactsItem
                 title={"Visit us"}
                 icon={"location"}
@@ -41,7 +41,7 @@ const Contacts = ({ global, social }) => {
                 }
               />
             </Grid>
-            <Grid item xs={12} md={4} lg={3}>
+            <Grid item xs={12} md={3} lg={3}>
               <ContactsItem
                 title={"Call us"}
                 icon={"phone"}
@@ -49,7 +49,7 @@ const Contacts = ({ global, social }) => {
                 textLink={"+62 82144576669 (WhatsApp)"}
               />
             </Grid>
-            <Grid item xs={12} md={4} lg={3}>
+            <Grid item xs={12} md={3} lg={3}>
               <ContactsItem
                 title={"Email us"}
                 icon={"email"}
@@ -57,16 +57,16 @@ const Contacts = ({ global, social }) => {
                 textLink={"anna.mits.bali@gmail.com"}
               />
             </Grid>
-          </Grid>
-
-          <Grid container spacing={4} justifyContent={"center"}>
-            <Grid item xs={4} md={4} lg={3}>
+            <Grid item xs={12} md={3} lg={3}>
               <ContactsItem
                 title={"Instagram"}
                 icon={"instagram"}
                 link={"https://instagram.com/mits.bali?igshid=YmMyMTA2M2Y="}
               />
             </Grid>
+          </Grid>
+
+          <Grid container spacing={4} justifyContent={"center"}>
             {/*<Grid item xs={4} md={4} lg={3}>*/}
             {/*  <ContactsItem title={"Linkedin"} icon={"linkedin"} link={"#"} />*/}
             {/*</Grid>*/}

@@ -2,7 +2,6 @@ import styles from "./ImageGallery.module.scss";
 import React from "react";
 
 import { Container, Grid, useMediaQuery, Box, IconButton } from "@mui/material";
-
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -32,7 +31,7 @@ const ImageGallery = ({ images }) => {
               swiper.params.navigation.prevEl = arrowPrev.current;
               swiper.params.navigation.nextEl = arrowNext.current;
             }}
-            slidesPerView={matchesMd ? 2 : 1}
+            slidesPerView={matchesMd ? "auto" : 1}
             modules={[Navigation]}
             spaceBetween={20}
             loop={true}
@@ -49,7 +48,9 @@ const ImageGallery = ({ images }) => {
                       fill
                       blurDataURL={placeholder}
                       placeholder={"blur"}
-                      sizes="100vw"
+                      sizes="(max-width: 768px) 100vw,
+                            (max-width: 1200px) 50vw,
+                            50vw"
                       style={{
                         objectFit: "cover",
                       }}

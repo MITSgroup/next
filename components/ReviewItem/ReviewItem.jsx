@@ -14,7 +14,9 @@ const ReviewItem = ({ imgUrl, authorName, authorText }) => {
               <Image
                 src={imgUrl}
                 fill
-                sizes="100vw"
+                sizes="(max-width: 768px) 50vw,
+                      (max-width: 1200px) 33vw,
+                      25vw"
                 style={{
                   objectFit: "cover",
                 }}

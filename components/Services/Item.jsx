@@ -18,7 +18,7 @@ import "swiper/css/pagination";
 
 const ServicesItem = ({ title, description, slug }) => {
   const [isOpen, setIsOpen] = React.useState(false);
-  const matchesLg = useMediaQuery("(min-width: 1200px)");
+  const matchesLg = useMediaQuery("(min-width: 768px)");
   const materialStyles = {
     head: {
       display: "flex",
@@ -53,7 +53,7 @@ const ServicesItem = ({ title, description, slug }) => {
 
       <Box className={styles.body}>
         <Grid container spacing={3}>
-          <Grid item xs={12} md={6} lg={3}>
+          <Grid item xs={12} md={3} lg={3}>
             <Box className={styles.links}>
               <Link href={"/projects"}>
                 <Button variant={"text"} sx={materialStyles.link}>
@@ -64,7 +64,7 @@ const ServicesItem = ({ title, description, slug }) => {
           </Grid>
 
           {!matchesLg && (
-            <Grid item xs={12} md={6}>
+            <Grid item xs={12} md={3}>
               <Swiper pagination={true} modules={[Pagination]}>
                 <SwiperSlide>
                   <Box className={styles.imageBox}>
@@ -110,7 +110,7 @@ const ServicesItem = ({ title, description, slug }) => {
           )}
 
           {matchesLg && (
-            <Grid item xs={12} md={6} lg={3}>
+            <Grid item xs={12} md={3} lg={3}>
               {" "}
               <Box className={styles.imageBox}>
                 <Image
@@ -126,7 +126,7 @@ const ServicesItem = ({ title, description, slug }) => {
             </Grid>
           )}
           {matchesLg && (
-            <Grid item xs={12} md={6} lg={3}>
+            <Grid item xs={12} md={3} lg={3}>
               {" "}
               <Box className={styles.imageBox}>
                 <Image
@@ -142,7 +142,7 @@ const ServicesItem = ({ title, description, slug }) => {
             </Grid>
           )}
           {matchesLg && (
-            <Grid item xs={12} md={6} lg={3}>
+            <Grid item xs={12} md={3} lg={3}>
               {" "}
               <Box className={styles.imageBox}>
                 <Image

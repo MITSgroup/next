@@ -10,7 +10,7 @@ const PostCard = ({ url, title, date }) => {
 
   const year = (date) => new Date(Date.parse(date)).getFullYear();
   const month = (date) =>
-    new Date(Date.parse(date)).toLocaleString("default", { month: "long" });
+    new Date(Date.parse(date)).toLocaleString("en-US", { month: "long" });
   const day = (date) => new Date(Date.parse(date)).getDate();
 
   return (

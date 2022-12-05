@@ -6,16 +6,23 @@ const ProjectForm = () => {
   return (
     <form className={styles.form}>
       <Box className={styles.field}>
-        <label htmlFor="name">Your name:</label>
-        <input type={"text"} id={"name"} name={"name"} />
+        <input type={"text"} id={"name"} name={"name"} placeholder={"name:"} />
       </Box>
       <Box className={styles.field}>
-        <label htmlFor="email">Your email:</label>
-        <input type={"email"} id={"email"} name={"email"} />
+        <input
+          type={"email"}
+          id={"email"}
+          name={"email"}
+          placeholder={"email:"}
+        />
       </Box>
       <Box className={styles.field}>
-        <label htmlFor="phone">Your phone number:</label>
-        <input type={"phone"} id={"phone"} name={"phone"} />
+        <input
+          type={"phone"}
+          id={"phone"}
+          name={"phone"}
+          placeholder={"phone number:"}
+        />
       </Box>
       <button type="submit" className={styles.submit}>
         REQUEST A TOUR

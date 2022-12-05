@@ -6,16 +6,23 @@ const MainForm = () => {
   return (
     <form className={styles.form}>
       <Box className={styles.field}>
-        <label htmlFor="name">Your name:</label>
-        <input type={"text"} id={"name"} name={"name"} />
+        <input type={"text"} id={"name"} name={"name"} placeholder={"name:"} />
       </Box>
       <Box className={styles.field}>
-        <label htmlFor="email">Your email:</label>
-        <input type={"email"} id={"email"} name={"email"} />
+        <input
+          type={"email"}
+          id={"email"}
+          name={"email"}
+          placeholder={"email:"}
+        />
       </Box>
       <Box className={styles.field}>
-        <label htmlFor="message">Your message:</label>
-        <textarea rows={4} name={"message"} id={"message"} />
+        <textarea
+          rows={4}
+          name={"message"}
+          id={"message"}
+          placeholder={"message:"}
+        />
       </Box>
       <button type="submit" className={styles.submit}>
         send

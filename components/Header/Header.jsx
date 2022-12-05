@@ -15,6 +15,7 @@ import MainNav from "../Nav/MainNav";
 import Link from "next/link";
 
 const Header = ({ transparent, openMenu }) => {
+  const matchesMd = useMediaQuery("(min-width: 768px)");
   const matchesLg = useMediaQuery("(min-width: 1200px)");
 
   return (
@@ -43,12 +44,12 @@ const Header = ({ transparent, openMenu }) => {
             </Link>
           </Box>
 
-          {matchesLg && <MainNav transparent={transparent} />}
+          {matchesMd && <MainNav transparent={transparent} />}
 
           <Box sx={{ marginLeft: "auto" }}>
-            {matchesLg && (
+            {matchesMd && (
               <Button
-                href={"#form"}
+                href={"/contacts"}
                 variant={"outlined"}
                 style={{
                   color: transparent ? "#fff" : "primary.main",
@@ -59,9 +60,8 @@ const Header = ({ transparent, openMenu }) => {
               </Button>
             )}
           </Box>
-          {!matchesLg && (
+          {!matchesMd && (
             <IconButton onClick={openMenu}>
-              {" "}
               <DragHandleIcon
                 sx={{
                   fontSize: 45,
