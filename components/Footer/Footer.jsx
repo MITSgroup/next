@@ -37,35 +37,42 @@ const Footer = ({ global, social }) => {
               >
                 <ul className={styles.contacts}>
                   <li>
-                    <a href="">
+                    <a
+                      target={"_blank"}
+                      rel="noreferrer"
+                      href="https://goo.gl/maps/wKZqCnDqFgZgjCap8"
+                    >
                       jalan Dukuh Indah Gang Suli N°5 x2, Kerobokan Kelod, Kuta
                       Utara, kerobokan, Bali 80361
                     </a>
                   </li>
                   <li>
-                    <a href="https://wa.me/6282144576669" rel="noreferrer">
+                    <a
+                      target={"_blank"}
+                      href="https://wa.me/6282144576669"
+                      rel="noreferrer"
+                    >
                       +62 82144576669
                     </a>
                   </li>
                   <li>
-                    <a href="mailto:anna.mits.bali@gmail.com" rel="noreferrer">
+                    <a
+                      target={"_blank"}
+                      href="mailto:anna.mits.bali@gmail.com"
+                      rel="noreferrer"
+                    >
                       anna.mits.bali@gmail.com
                     </a>
                   </li>
                 </ul>
-                <ul className={styles.social}>
-                  <li>
-                    <a href="https://instagram.com/mits.bali?igshid=YmMyMTA2M2Y=">
-                      INSTAGRAM
-                    </a>
-                  </li>
-                  {/*<li>*/}
-                  {/*  <a href="#">FACEBOOK</a>*/}
-                  {/*</li>*/}
-                  {/*<li>*/}
-                  {/*  <a href="#">LINKEDIN</a>*/}
-                  {/*</li>*/}
-                </ul>
+                {/*<ul className={styles.social}>*/}
+                {/*  <li>*/}
+                {/*    <a href="#">FACEBOOK</a>*/}
+                {/*  </li>*/}
+                {/*  <li>*/}
+                {/*    <a href="#">LINKEDIN</a>*/}
+                {/*  </li>*/}
+                {/*</ul>*/}
               </Box>
             </Grid>
 

@@ -16,8 +16,15 @@ const FooterNav = () => {
         <li>
           <Link href={"/posts"}>JOURNAL</Link>
         </li>
+
         <li>
-          <Link href={"/contacts"}>Contact us</Link>
+          <a
+            target={"_blank"}
+            rel={"noreferrer"}
+            href="https://instagram.com/mits.bali?igshid=YmMyMTA2M2Y="
+          >
+            INSTAGRAM
+          </a>
         </li>
       </ul>
     </nav>

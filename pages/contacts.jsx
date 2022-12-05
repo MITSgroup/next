@@ -35,7 +35,7 @@ const Contacts = ({ global, social }) => {
               <ContactsItem
                 title={"Visit us"}
                 icon={"location"}
-                link={"#"}
+                link={"https://goo.gl/maps/wKZqCnDqFgZgjCap8"}
                 textLink={
                   "jalan Dukuh Indah Gang Suli N°5 x2, Kerobokan Kelod, Kuta Utara, kerobokan, Bali 80361"
                 }
