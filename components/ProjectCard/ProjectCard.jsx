@@ -36,15 +36,15 @@ const ProjectCard = ({
           <Box className={styles.content}>
             <h3 className={styles.title}>{title}</h3>
             <Box className={styles.location}>
-              <Box className={styles.icon}>
-                <Image
-                  src={"/images/icons/locationWhite.svg"}
-                  width={15}
-                  height={15}
-                  priority
-                  alt={"location icon"}
-                />
-              </Box>
+              {/*<Box className={styles.icon}>*/}
+              {/*  <Image*/}
+              {/*    src={"/images/icons/locationWhite.svg"}*/}
+              {/*    width={15}*/}
+              {/*    height={15}*/}
+              {/*    priority*/}
+              {/*    alt={"location icon"}*/}
+              {/*  />*/}
+              {/*</Box>*/}
               <span>{locationName}</span>
             </Box>
             <p className={styles.description}>{description}</p>
