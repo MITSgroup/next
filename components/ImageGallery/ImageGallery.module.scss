@@ -7,6 +7,10 @@
     padding: 0 40px;
     position: relative;
 
+    .slide {
+      width: 100%;
+    }
+
     &:before {
       content: "";
       position: absolute;

@@ -173,8 +173,12 @@ const ProjectApartments = ({ apartments }) => {
                 apartments.map((apartment, idx) =>
                   idx === activeTab ? (
                     <Box key={apartment.id} className={styles.tabContent}>
-                      <Grid container spacing={matchesLg ? 8 : 6}>
-                        <Grid item xs={12} md={6} lg={5}>
+                      <Grid
+                        container
+                        spacing={matchesLg ? 8 : 6}
+                        justifyContent={"space-between"}
+                      >
+                        <Grid item xs={12} md={6} lg={8}>
                           <h4 className={styles.subtitle}>LAYOUT</h4>
 
                           <Image
@@ -191,21 +195,20 @@ const ProjectApartments = ({ apartments }) => {
                             alt={"Apartment"}
                           />
                         </Grid>
-                        <Grid item xs={12} md={6} lg={4}>
+                        <Grid item xs={12} md={6} lg={3}>
                           <h4 className={styles.subtitle}>Specs</h4>
-                          <small className={styles.small}>Sq. m.</small>
                           <ul className={styles.specs}>
                             {apartment.specs &&
                               apartment.specs.map((item, idx) => (
                                 <li key={item.id}>
-                                  <p className={styles.count}>{idx + 1}</p>
                                   <p className={styles.name}>{item.name}</p>
                                   <p className={styles.value}>{item.value}</p>
                                 </li>
                               ))}
                             <li>
-                              <p className={styles.total}>
-                                Total — {apartment.specsTotal}
+                              <p className={styles.name}>Total</p>
+                              <p className={styles.value}>
+                                {apartment.specsTotal}
                               </p>
                             </li>
                           </ul>

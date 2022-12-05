@@ -21,7 +21,6 @@ const ImageGallery = ({ images }) => {
     <Box className={styles.imageGallery}>
       <Container sx={{ position: "relative" }}>
         <Box className={styles.container}>
-          {" "}
           <Swiper
             navigation={{
               prevEl: arrowPrev.current,
@@ -31,26 +30,43 @@ const ImageGallery = ({ images }) => {
               swiper.params.navigation.prevEl = arrowPrev.current;
               swiper.params.navigation.nextEl = arrowNext.current;
             }}
-            slidesPerView={matchesMd ? "auto" : 1}
+            slidesPerView={"auto"}
+            autoHeight
             modules={[Navigation]}
             spaceBetween={20}
             loop={true}
             className={styles.gallerySwiper}
           >
             {images &&
-              images.map((image) => (
-                <SwiperSlide key={image.id}>
+              images.map((image, idx) => (
+                <SwiperSlide
+                  key={image.id}
+                  className={styles.slide}
+                  style={{
+                    position: "relative",
+                    width:
+                      idx % 2 == 0 && matchesMd
+                        ? "60%"
+                        : !matchesMd
+                        ? "100%"
+                        : "40%",
+                  }}
+                >
                   <Box
-                    sx={{ width: "100%", height: 400, position: "relative" }}
+                    sx={{
+                      width: "100%",
+                      height: 400,
+                      position: "relative",
+                    }}
                   >
                     <Image
                       src={image.attributes.url}
                       fill
-                      blurDataURL={placeholder}
-                      placeholder={"blur"}
                       sizes="(max-width: 768px) 100vw,
                             (max-width: 1200px) 50vw,
                             50vw"
+                      blurDataURL={placeholder}
+                      placeholder={"blur"}
                       style={{
                         objectFit: "cover",
                       }}
