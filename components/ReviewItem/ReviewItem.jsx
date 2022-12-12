@@ -1,12 +1,18 @@
 import styles from "./ReviewItem.module.scss";
 import React from "react";
-import { Box, Grid } from "@mui/material";
+import { Box, Grid, useMediaQuery } from "@mui/material";
 import Image from "next/image";
 
 const ReviewItem = ({ imgUrl, authorName, authorText }) => {
+  const matchesLg = useMediaQuery("(min-width: 1200px)");
   return (
     <article className={styles.reviewItem}>
-      <Grid container justifyContent={"end"} alignItems={"center"}>
+      <Grid
+        container
+        justifyContent={matchesLg ? "end" : "center"}
+        alignItems={"center"}
+        spacing={0}
+      >
         <Grid item xs={12} md={4} lg={2}>
           {" "}
           <Box className={styles.imgBox}>

@@ -42,8 +42,8 @@ const ProjectHero = ({
         <Box className={styles.inner}>
           <Box
             sx={{
-              paddingTop: matchesLg ? 10 : 2,
-              paddingBottom: matchesLg ? 8 : 2,
+              paddingTop: matchesLg ? 10 : matchesMd ? 6 : 2,
+              paddingBottom: matchesLg ? 8 : matchesMd ? 6 : 2,
               paddingLeft: 0,
               paddingRight: matchesMd ? 8 : 0,
             }}
