@@ -28,7 +28,6 @@ const About = () => {
                   marginBottom: matchesMd ? 15 : 8,
                 }}
               >
-                {" "}
                 <Image
                   src={"/images/about/1.jpg"}
                   alt={"about company"}
@@ -43,10 +42,18 @@ const About = () => {
               </Box>
               <h1 className={styles.title}>ABOUT MITS.STUDIO</h1>
               <p className={styles.subtitle}>
-                Building for the living you deserve.
+                Building for the living you deserve
               </p>
             </Grid>
-            <Grid item xs={12} md={10} lg={8}>
+          </Grid>
+
+          <Grid
+            container
+            justifyContent={"center"}
+            spacing={matchesMd ? 20 : 0}
+          >
+            {" "}
+            <Grid item xs={12} md={8} lg={6}>
               <Box className={styles.item}>
                 <h3>WHO WE ARE</h3>
                 <p>

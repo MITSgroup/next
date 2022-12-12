@@ -178,7 +178,7 @@ const ProjectApartments = ({ apartments }) => {
                         spacing={matchesLg ? 8 : 6}
                         justifyContent={"space-between"}
                       >
-                        <Grid item xs={12} md={6} lg={8}>
+                        <Grid item xs={12} md={8} lg={8}>
                           <h4 className={styles.subtitle}>LAYOUT</h4>
 
                           <Image
@@ -195,7 +195,7 @@ const ProjectApartments = ({ apartments }) => {
                             alt={"Apartment"}
                           />
                         </Grid>
-                        <Grid item xs={12} md={6} lg={3}>
+                        <Grid item xs={12} md={4} lg={3}>
                           <h4 className={styles.subtitle}>Specs</h4>
                           <ul className={styles.specs}>
                             {apartment.specs &&

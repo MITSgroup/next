@@ -49,17 +49,6 @@ const Project = ({ project, reviews }) => {
       {project.attributes?.apartment && (
         <ProjectApartments apartments={project.attributes?.apartment} />
       )}
-      {
-        <Suspense fallback={<div>Loading...</div>}>
-          {project.attributes.location && (
-            <ProjectLocation
-              title={project.attributes.location?.title}
-              description={project.attributes.location?.description}
-              advantages={project.attributes.location?.advantages}
-            />
-          )}
-        </Suspense>
-      }
 
       <Cta />
       {project.attributes.about && (
@@ -92,6 +81,17 @@ const Project = ({ project, reviews }) => {
       {project.attributes.returnOnInvestment && (
         <ProjectModelling apartments={project.attributes.returnOnInvestment} />
       )}
+      {
+        <Suspense fallback={<div>Loading...</div>}>
+          {project.attributes.location && (
+            <ProjectLocation
+              title={project.attributes.location?.title}
+              description={project.attributes.location?.description}
+              advantages={project.attributes.location?.advantages}
+            />
+          )}
+        </Suspense>
+      }
       <ProjectCta
         title={"EARLY BIRD SPECIAL OFFER"}
         description={

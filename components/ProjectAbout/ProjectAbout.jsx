@@ -13,10 +13,9 @@ const ProjectAbout = ({
   imageFirstColumn,
   imageSecondColumn,
 }) => {
-  const matchesLg = useMediaQuery("(min-width: 1200px)");
   const placeholder =
     "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAECAIAAADETxJQAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAM0lEQVR4nAEoANf/AAABAPH1++3z+wC+u7afZk6gak0AXVhB48Wy//vcACcjF6aek4mRgaNzFJBAf93eAAAAAElFTkSuQmCC";
-
+  const matchesMd = useMediaQuery("(min-width: 768px)");
   return (
     <Box className={styles.projectAbout}>
       <Container>
@@ -72,7 +71,12 @@ const ProjectAbout = ({
                 </Box>
               )}
 
-              <Box maxWidth={400} mt={"auto"}>
+              <Box
+                maxWidth={400}
+                mt={"auto"}
+                ml={matchesMd ? "auto" : 0}
+                textAlign={matchesMd ? "right" : "left"}
+              >
                 <h4 className={styles.subtitle}>{titleSecondColumn}</h4>
 
                 {paragraphSecondColumn &&

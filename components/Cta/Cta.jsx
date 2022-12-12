@@ -17,7 +17,7 @@ const Cta = () => {
             <Button
               href={"https://wa.me/6282144576669"}
               target={"_blank"}
-              sx={{ marginLeft: "auto" }}
+              sx={{ marginLeft: "auto", textAlign: "center" }}
               style={{ color: "white", borderColor: "white" }}
               variant={"outlined"}
             >
