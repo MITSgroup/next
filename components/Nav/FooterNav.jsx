@@ -16,7 +16,6 @@ const FooterNav = () => {
         <li>
           <Link href={"/posts"}>JOURNAL</Link>
         </li>
-
         <li>
           <a
             target={"_blank"}
