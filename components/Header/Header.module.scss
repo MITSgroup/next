@@ -18,6 +18,56 @@
     }
   }
 
+  .linkContacts {
+    font-family: "__Metropolis_e5531d", "__Metropolis_Fallback_e5531d";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 22px;
+    /* identical to box height */
+    color: $black;
+    text-transform: uppercase;
+    transition: color 0.3s ease-in-out;
+    position: relative;
+
+    &:before {
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 2px;
+      background-color: #000;
+      transition: opacity 0.2s ease-in-out;
+      bottom: -5px;
+      opacity: 0;
+      left: 0;
+    }
+
+    @media (min-width: 768px) {
+      font-size: 12px;
+      line-height: 12px;
+    }
+
+    &:hover {
+      color: $secondary;
+
+      &:before {
+        opacity: 1;
+      }
+
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+
+  .linkContacts {
+    color: #fff;
+
+    &:before {
+      background-color: #fff;
+    }
+  }
+
   .logo {
     @media (min-width: 768px) {
       margin-right: 20px;

@@ -48,16 +48,14 @@ const Header = ({ transparent, openMenu }) => {
 
           <Box sx={{ marginLeft: "auto" }}>
             {matchesMd && (
-              <Button
+              <Link
+                className={`${styles.linkContacts} ${
+                  transparent && styles.linkContactsWhite
+                }`}
                 href={"/contacts"}
-                variant={"outlined"}
-                style={{
-                  color: transparent ? "#fff" : "primary.main",
-                  borderColor: transparent ? "#fff" : "primary.main",
-                }}
               >
                 CONTACT US
-              </Button>
+              </Link>
             )}
           </Box>
           {!matchesMd && (

@@ -14,7 +14,7 @@ const Posts = ({ posts }) => {
       metaDescription={"MITS"}
       headerTransparent={true}
     >
-      <BlogHero title={"MITS JOURNAL"} />
+      <BlogHero title={"MITS JOURNAL"} imagePath={"/images/hero/blog.jpg"} />
 
       <Container>
         <Box pt={matchesMd ? 12 : 8} pb={matchesMd ? 14 : 8}>

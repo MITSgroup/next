@@ -3,7 +3,7 @@ import React from "react";
 import { Container, Grid, Box } from "@mui/material";
 import Image from "next/image";
 
-const BlogHero = ({ title, image }) => {
+const BlogHero = ({ title, imagePath }) => {
   const placeholder =
     "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAI0lEQVR4nGO49vzVik3b3///P3/pPAZPSzVxBgY9FW4NBQYAxrMK7Iw5NV8AAAAASUVORK5CYII=";
 
@@ -12,7 +12,7 @@ const BlogHero = ({ title, image }) => {
       <Box className={styles.backgroundImage}>
         <Image
           alt="Mountains"
-          src={"/images/hero/blog.jpg"}
+          src={imagePath}
           quality={80}
           fill
           priority
@@ -21,6 +21,7 @@ const BlogHero = ({ title, image }) => {
           sizes="100vw"
           style={{
             objectFit: "cover",
+            objectPosition: "left top",
           }}
         />
       </Box>

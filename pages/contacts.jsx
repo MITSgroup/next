@@ -26,7 +26,7 @@ const Contacts = ({ global, social }) => {
       global={global}
       social={social}
     >
-      <BlogHero title={"CONTACT US"} />
+      <BlogHero title={"CONTACT US"} imagePath={"/images/hero/contacts.jpg"} />
 
       <section className={styles.contacts}>
         <Container>
