@@ -50,7 +50,7 @@ const Header = ({ transparent, openMenu }) => {
             {matchesMd && (
               <Link
                 className={`${styles.linkContacts} ${
-                  transparent && styles.linkContactsWhite
+                  transparent ? styles.linkContactsWhite : ""
                 }`}
                 href={"/contacts"}
               >

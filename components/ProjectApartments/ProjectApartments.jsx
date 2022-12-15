@@ -186,8 +186,6 @@ const ProjectApartments = ({ apartments }) => {
                             width={500}
                             height={750}
                             sizes="100vw"
-                            blurDataURL={placeholder}
-                            placeholder={"blur"}
                             style={{
                               width: "100%",
                               height: "auto",
