@@ -39,28 +39,43 @@
     }
   }
 
-  .submit {
-    display: block;
-    padding: 14px 75px;
-    font-family: "__Metropolis_e5531d", "__Metropolis_Fallback_e5531d";
-    font-size: 12px;
-    text-transform: uppercase;
-    color: #fff;
-    border: 1px solid #fff;
-    border-radius: 50px;
-    font-weight: 700;
-    white-space: nowrap;
-    cursor: pointer;
-    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
-    margin-top: 40px;
+  .fieldError {
+    input {
+      color: #d32f2f;
+      border-color: #d32f2f;
 
-    &:hover {
-      background-color: rgba(#fff, 0.2);
+      &::placeholder {
+        color: #d32f2f;
+      }
+    }
+  }
+
+  .submit {
+    font-family: "__Metropolis_e5531d", "__Metropolis_Fallback_e5531d";
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-top: 10px;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    font-size: 0.875rem;
+
+    &:before {
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 2px;
+      background-color: #fff;
+      transition: opacity 0.2s ease-in-out;
+      bottom: -12px;
+      opacity: 0;
+      left: 0;
     }
 
-    &:active,
-    &:focus {
-      background-color: rgba(#fff, 0.5);
+    &:hover {
+      &:before {
+        opacity: 1;
+      }
     }
   }
 }

@@ -1,4 +1,5 @@
 import React from "react";
+import styles from "./ProjectsGrid.module.scss";
 import { Grid, Collapse, useMediaQuery, Button, Box } from "@mui/material";
 import ProjectCard from "../ProjectCard/ProjectCard";
 
@@ -70,9 +71,9 @@ const ProjectsGrid = ({ projects, portfolio }) => {
         </Grid>
       </Collapse>
       <Box sx={{ paddingY: 3, display: "flex", justifyContent: "center" }}>
-        <Button onClick={handleChange} variant={"outlined"}>
+        <button className={styles.button} onClick={handleChange}>
           Show all projects
-        </Button>
+        </button>
       </Box>
     </>
   );

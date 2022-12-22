@@ -29,8 +29,6 @@ const ProjectHero = ({
           quality={80}
           fill
           priority
-          blurDataURL={placeholder}
-          placeholder={"blur"}
           sizes="100vw"
           style={{
             objectFit: "cover",

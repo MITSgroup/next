@@ -47,13 +47,18 @@ const Post = ({ post }) => {
     fetchData().catch(console.error);
   }, [router.asPath]);
 
+  console.log(post);
+
   return (
     <MainLayout
       metaTitle={`MITS – ${post.attributes.title}`}
       metaDescription={"MITS"}
       headerTransparent={true}
     >
-      <BlogHero title={post.attributes.title} />
+      <BlogHero
+        title={post.attributes.title}
+        imagePath={post.attributes.image.data.attributes.url}
+      />
       <Container>
         <Box sx={{ paddingTop: 7.5, paddingBottom: 4 }}>
           <Grid container>

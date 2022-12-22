@@ -1,6 +1,7 @@
 import styles from "./Cta.module.scss";
 import React from "react";
 import { Container, Grid, Button } from "@mui/material";
+import Link from "next/link";
 
 const Cta = () => {
   return (
@@ -14,15 +15,13 @@ const Cta = () => {
             <p className={styles.text}>CHAT WITH A LIVE PROPERTY EXPERT.</p>
           </Grid>
           <Grid item xs={12} md={4} sx={{ textAlign: "right" }}>
-            <Button
+            <Link
               href={"https://wa.me/6282144576669"}
               target={"_blank"}
-              sx={{ marginLeft: "auto", textAlign: "center" }}
-              style={{ color: "white", borderColor: "white" }}
-              variant={"outlined"}
+              className={styles.button}
             >
               PROCEED TO WHATSAPP &#x3e;
-            </Button>
+            </Link>
           </Grid>
         </Grid>
       </Container>

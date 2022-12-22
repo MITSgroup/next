@@ -16,11 +16,7 @@ const Reviews = ({ reviews }) => {
   return (
     <section className={styles.reviews}>
       <Container>
-        <Grid container justifyContent={"end"}>
-          <Grid item xs={12} md={9}>
-            <h1 className={styles.title}>WHAT OUR CLIENTS SAY:</h1>
-          </Grid>
-        </Grid>
+        <h1 className={styles.title}>WHAT OUR CLIENTS SAY:</h1>
 
         <Swiper
           navigation={{

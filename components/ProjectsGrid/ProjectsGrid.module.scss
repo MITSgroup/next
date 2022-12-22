@@ -1,22 +1,29 @@
 @import "styles/variables";
 
-.header {
+.button {
+  font-family: "__Metropolis_e5531d", "__Metropolis_Fallback_e5531d";
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-top: 10px;
+  cursor: pointer;
+  position: relative;
+  font-size: 1rem;
 
-  padding: 10px 0;
-
-  @media (min-width: 768px) {
-    padding: 10px 0;
+  &:before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+    transition: opacity 0.2s ease-in-out;
+    bottom: -12px;
+    opacity: 0;
+    left: 0;
   }
 
-  .wrapper {
-    display: flex;
-    align-items: center;
-  }
-
-  .logo {
-    @media (min-width: 768px) {
-      margin-right: 100px;
+  &:hover {
+    &:before {
+      opacity: 1;
     }
   }
-
 }

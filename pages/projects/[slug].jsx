@@ -13,9 +13,7 @@ import ProjectModelling from "../../components/ProjectModelling/ProjectModelling
 import { fetchAPI } from "../../lib/api";
 import ProjectApartments from "../../components/ProjectApartments/ProjectApartments";
 import ProjectCta from "../../components/ProjectCta/ProjectCta";
-const ProjectLocation = React.lazy(() =>
-  import("../../components/ProjectLocation/ProjectLocation")
-);
+import ProjectLocation from "../../components/ProjectLocation/ProjectLocation";
 
 const Project = ({ project, reviews }) => {
   return (
@@ -81,17 +79,15 @@ const Project = ({ project, reviews }) => {
       {project.attributes.returnOnInvestment && (
         <ProjectModelling apartments={project.attributes.returnOnInvestment} />
       )}
-      {
-        <Suspense fallback={<div>Loading...</div>}>
-          {project.attributes.location && (
-            <ProjectLocation
-              title={project.attributes.location?.title}
-              description={project.attributes.location?.description}
-              advantages={project.attributes.location?.advantages}
-            />
-          )}
-        </Suspense>
-      }
+
+      {project.attributes.location && (
+        <ProjectLocation
+          title={project.attributes.location?.title}
+          description={project.attributes.location?.description}
+          advantages={project.attributes.location?.advantages}
+        />
+      )}
+
       <ProjectCta
         title={"EARLY BIRD SPECIAL OFFER"}
         description={

@@ -63,17 +63,12 @@ const ProjectLocation = ({ title, description, advantages }) => {
           </Grid>
           <Grid item xs={12} md={6} lg={5}>
             <Box className={styles.map}>
-              <GoogleMapReact
-                bootstrapURLKeys={{ key: "" }}
-                defaultCenter={defaultProps.center}
-                defaultZoom={defaultProps.zoom}
-              >
-                <AnyReactComponent
-                  lat={59.955413}
-                  lng={30.337844}
-                  text="My Marker"
-                />
-              </GoogleMapReact>
+              <iframe
+                src="https://snazzymaps.com/embed/448329"
+                width="100%"
+                height="600px"
+                style={{ border: "none" }}
+              ></iframe>
             </Box>
           </Grid>
         </Grid>
