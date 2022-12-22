@@ -4,6 +4,11 @@ import { Container, Grid, Button } from "@mui/material";
 import Link from "next/link";
 
 const Cta = () => {
+  const handleClick = () => {
+    window.dataLayer = window.dataLayer || [];
+    dataLayer.push({ event: "wa_click" });
+  };
+
   return (
     <section className={styles.cta}>
       <Container>
@@ -19,6 +24,7 @@ const Cta = () => {
               href={"https://wa.me/6282144576669"}
               target={"_blank"}
               className={styles.button}
+              onClick={handleClick}
             >
               PROCEED TO WHATSAPP &#x3e;
             </Link>

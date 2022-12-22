@@ -25,9 +25,11 @@ const ThankYouSub = () => {
           </Typography>
 
           <Box className={styles.socials}>
-            <ContactsItem title={"instagram"} icon={"instagram"} link={""} />
-            <ContactsItem title={"LINKEDIN"} icon={"linkedin"} link={""} />
-            <ContactsItem title={"facebook"} icon={"facebook"} link={""} />
+            <ContactsItem
+              title={"Instagram"}
+              icon={"instagram"}
+              link={"https://instagram.com/mits.bali?igshid=YmMyMTA2M2Y="}
+            />
           </Box>
         </Box>
       </Container>
