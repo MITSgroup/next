@@ -12,14 +12,13 @@ function MyApp({ Component, pageProps }) {
     TagManager.initialize({ gtmId: "GTM-TS5WLMM" });
   }, []);
 
-  return <Component {...pageProps} />;
   return (
     <>
       <style jsx global>{`
-        html {
+       html {
           font-family: ${Metropolis.style.fontFamily};
           font-family: ${inter.style.fontFamily};
-        }
+        }}
       `}</style>
       <NextNProgress
         color="#000"
