@@ -1,5 +1,6 @@
 import styles from "./Form.module.scss";
 import React from "react";
+import { Button } from "@mui/material";
 import { Box } from "@mui/material";
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/router";
@@ -87,9 +88,9 @@ const MainForm = () => {
           {...register("message")}
         />
       </Box>
-      <button type={"submit"} className={styles.submit}>
+      <Button variant={"text"} type={"submit"} className={styles.submit}>
         send
-      </button>
+      </Button>
     </form>
   );
 };

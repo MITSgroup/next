@@ -71,9 +71,9 @@ const ProjectsGrid = ({ projects, portfolio }) => {
         </Grid>
       </Collapse>
       <Box sx={{ paddingY: 3, display: "flex", justifyContent: "center" }}>
-        <button className={styles.button} onClick={handleChange}>
+        <span className={styles.button} onClick={handleChange}>
           Show all projects
-        </button>
+        </span>
       </Box>
     </>
   );

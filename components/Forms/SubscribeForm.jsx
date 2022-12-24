@@ -1,6 +1,6 @@
 import styles from "./Form.module.scss";
 import React from "react";
-import { Box } from "@mui/material";
+import { Box, Button } from "@mui/material";
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/router";
 import axios from "axios";
@@ -72,9 +72,9 @@ const SubscribeForm = () => {
       </Box>
 
       <input type="hidden" value={"subscribe"} {...register("page")} />
-      <button type="submit" className={styles.submit}>
+      <Button variant={"text"} type={"submit"} className={styles.submit}>
         send
-      </button>
+      </Button>
     </form>
   );
 };
