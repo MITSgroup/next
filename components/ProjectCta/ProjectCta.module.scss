@@ -6,26 +6,19 @@
   padding-top: 100px;
   position: relative;
 
-  @media (min-width: 768px) {
-    padding-top: 80px;
-    padding-bottom: 50px;
-    &:before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 46%;
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center center;
-      background-image: url("./img/bg.jpeg");
-      z-index: 1;
-    }
-  }
+  .image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
 
-  @media (min-width: 1200px) {
-    &:before {
+    @media (min-width: 768px) {
+      display: block;
+      width: 45%;
+      height: 100%;
+    }
+
+    @media (min-width: 1200px) {
       width: 54%;
     }
   }

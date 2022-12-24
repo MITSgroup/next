@@ -4,10 +4,27 @@ import React from "react";
 import { Container, Grid, Box } from "@mui/material";
 
 import ProjectForm from "../Forms/ProjectForm";
+import Image from "next/image";
 
 const ProjectCta = ({ title, description, type, left, imageUrl, label }) => {
   return (
     <Box className={styles.projectCta} id={"form"}>
+      {imageUrl && (
+        <Box className={styles.image}>
+          <Image
+            alt={title}
+            src={imageUrl}
+            quality={80}
+            fill
+            priority
+            sizes="50vw"
+            style={{
+              objectFit: "cover",
+            }}
+          />
+        </Box>
+      )}
+
       <Container>
         <Grid container justifyContent={"flex-end"} position={"relative"}>
           <Grid item xs={12} md={6} lg={5}>

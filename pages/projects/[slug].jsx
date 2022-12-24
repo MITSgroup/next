@@ -16,6 +16,8 @@ import ProjectCta from "../../components/ProjectCta/ProjectCta";
 import ProjectLocation from "../../components/ProjectLocation/ProjectLocation";
 
 const Project = ({ project, reviews }) => {
+  console.log(project);
+
   return (
     <MainLayout
       metaTitle={`MITS – ${project.attributes.name}`}
@@ -94,6 +96,7 @@ const Project = ({ project, reviews }) => {
           "Gain up to 12% annualy or set up your fine-cut base in the heart of the most lively area in the most visited tourist destination of recent years."
         }
         label
+        imageUrl={project.attributes?.formImage?.data?.attributes?.url}
         type={project.attributes.hero.projectType}
         left={project.attributes.hero.projectLeft}
       />

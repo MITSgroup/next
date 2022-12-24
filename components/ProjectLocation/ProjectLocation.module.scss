@@ -61,6 +61,7 @@
   .images {
     display: flex;
     gap: 20px;
+    margin-top: auto;
 
     img {
       -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
@@ -71,6 +72,7 @@
   .map {
     width: 100%;
     height: 400px;
+    position: relative;
     padding-top: 26px;
 
     @media (min-width: 768px) {

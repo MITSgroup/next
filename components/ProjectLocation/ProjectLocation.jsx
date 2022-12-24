@@ -1,29 +1,32 @@
 import styles from "./ProjectLocation.module.scss";
 import React from "react";
-import GoogleMapReact from "google-map-react";
+import { useInView } from "react-intersection-observer";
 import { Container, Grid, Box } from "@mui/material";
 import Image from "next/image";
 import image1 from "./img/1.jpg";
 import image2 from "./img/2.jpg";
 import image3 from "./img/3.jpg";
 
-const AnyReactComponent = ({ text }) => <div>{text}</div>;
-
 const ProjectLocation = ({ title, description, advantages }) => {
-  const defaultProps = {
-    center: {
-      lat: 10.99835602,
-      lng: 77.01502627,
-    },
-    zoom: 11,
-  };
+  const { ref, inView, entry } = useInView({
+    /* Optional options */
+    threshold: 0,
+    triggerOnce: true,
+  });
 
   return (
     <Box className={styles.projectLocation}>
       <Container>
         <Grid container justifyContent={"flex-end"}>
-          <Grid item xs={12} md={6} lg={6}>
-            <Box paddingTop={6} maxWidth={390} mb={8}>
+          <Grid
+            item
+            xs={12}
+            md={6}
+            lg={6}
+            display={"flex"}
+            flexDirection={"column"}
+          >
+            <Box paddingTop={6} maxWidth={390} mb={4}>
               <i className={styles.icon}>
                 {" "}
                 <svg
@@ -61,14 +64,16 @@ const ProjectLocation = ({ title, description, advantages }) => {
               <Image src={image3} width={180} height={138} alt={"Bali"} />
             </Box>
           </Grid>
-          <Grid item xs={12} md={6} lg={5}>
-            <Box className={styles.map}>
-              <iframe
-                src="https://snazzymaps.com/embed/448329"
-                width="100%"
-                height="600px"
-                style={{ border: "none" }}
-              ></iframe>
+          <Grid item xs={12} md={6} lg={5} lineHeight={0}>
+            <Box className={styles.map} ref={ref}>
+              {inView && (
+                <iframe
+                  src="https://snazzymaps.com/embed/448329"
+                  width="100%"
+                  height="600px"
+                  style={{ border: "none" }}
+                ></iframe>
+              )}
             </Box>
           </Grid>
         </Grid>
