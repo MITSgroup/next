@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 
-import { Fancybox as NativeFancybox } from "@fancyapps/ui/dist/fancybox.esm.js";
+import { Fancybox as NativeFancybox } from "@fancyapps/ui";
 import "@fancyapps/ui/dist/fancybox.css";
 
-const Fancybox = (props) => {
+const MyFancybox = (props) => {
   const delegate = props.delegate || "[data-fancybox]";
 
   useEffect(() => {
@@ -19,4 +19,4 @@ const Fancybox = (props) => {
   return <>{props.children}</>;
 };
 
-export default Fancybox;
+export default MyFancybox;
