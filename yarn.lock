@@ -339,6 +339,11 @@
     "minimatch" "^3.1.2"
     "strip-json-comments" "^3.1.1"
 
+"@fancyapps/ui@^4.0.31":
+  "integrity" "sha512-D7+PMIloxSOFJyY+lXcNlVDhmssOmDT6PT5fqQUIiws2hT7PH29r0EKZxERmACSQpm6qrFkP7rSguzXWvRJduQ=="
+  "resolved" "https://registry.npmjs.org/@fancyapps/ui/-/ui-4.0.31.tgz"
+  "version" "4.0.31"
+
 "@googlemaps/js-api-loader@^1.7.0":
   "integrity" "sha512-AsnEgNsB7S/VdrHGEQUaUM2e5tmjFGKBAfzR/AqO8O7TPq/jQGvoRw5liPBw4EMF38RDsHmKDV89q/X+qiUREQ=="
   "resolved" "https://registry.npmjs.org/@googlemaps/js-api-loader/-/js-api-loader-1.15.1.tgz"

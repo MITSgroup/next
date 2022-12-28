@@ -8,7 +8,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 
-import { Navigation } from "swiper";
+import { Navigation, FreeMode } from "swiper";
 
 const ImageGallery = ({ images }) => {
   const placeholder =
@@ -16,6 +16,7 @@ const ImageGallery = ({ images }) => {
   const arrowPrev = React.useRef(null);
   const arrowNext = React.useRef(null);
   const matchesMd = useMediaQuery("(min-width: 768px)");
+  const matchesLg = useMediaQuery("(min-width: 1200px)");
 
   return (
     <Box className={styles.imageGallery}>
@@ -31,52 +32,36 @@ const ImageGallery = ({ images }) => {
               swiper.params.navigation.nextEl = arrowNext.current;
             }}
             slidesPerView={"auto"}
-            autoHeight
-            modules={[Navigation]}
-            spaceBetween={20}
-            loop={true}
+            modules={[FreeMode, Navigation]}
+            spaceBetween={matchesMd ? 20 : 10}
+            freeMode={matchesMd ? false : true}
+            loop={false}
             className={styles.gallerySwiper}
           >
             {images &&
               images.map((image, idx) => (
-                <SwiperSlide
-                  key={image.id}
-                  className={styles.slide}
-                  style={{
-                    position: "relative",
-                    width:
-                      idx % 2 == 0 && matchesMd
-                        ? "60%"
-                        : !matchesMd
-                        ? "100%"
-                        : "40%",
-                  }}
-                >
-                  <Box
-                    sx={{
+                <SwiperSlide key={image.id} className={styles.slide}>
+                  <Image
+                    src={image.attributes.url}
+                    width={image.attributes.width}
+                    height={image.attributes.height}
+                    blurDataURL={placeholder}
+                    placeholder={"blur"}
+                    sizes="100vw"
+                    style={{
                       width: "100%",
-                      height: 400,
-                      position: "relative",
+                      height: matchesLg
+                        ? "400px"
+                        : matchesMd
+                        ? "300px"
+                        : "200px",
                     }}
-                  >
-                    <Image
-                      src={image.attributes.url}
-                      fill
-                      sizes="(max-width: 768px) 100vw,
-                            (max-width: 1200px) 50vw,
-                            50vw"
-                      blurDataURL={placeholder}
-                      placeholder={"blur"}
-                      style={{
-                        objectFit: "cover",
-                      }}
-                      alt={
-                        image.attributes.caption
-                          ? image.attributes.caption
-                          : "Mits Apartment"
-                      }
-                    />
-                  </Box>
+                    alt={
+                      image.attributes.caption
+                        ? image.attributes.caption
+                        : "Mits Apartment"
+                    }
+                  />
                 </SwiperSlide>
               ))}
             <IconButton className={styles.arrowPrev} ref={arrowPrev}>
