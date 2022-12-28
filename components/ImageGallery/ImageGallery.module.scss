@@ -9,6 +9,20 @@
 
     .slide {
       width: auto;
+      height: 200px;
+
+      @media (min-width: 768px) {
+        height: 300px;
+      }
+
+      @media (min-width: 1200px) {
+        height: 400px;
+      }
+
+      .image {
+        width: auto;
+        height: 100%;
+      }
     }
 
     &:before {

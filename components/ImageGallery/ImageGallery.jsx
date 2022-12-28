@@ -53,15 +53,7 @@ const ImageGallery = ({ images }) => {
                       height={image.attributes.height}
                       blurDataURL={placeholder}
                       placeholder={"blur"}
-                      sizes="100vw"
-                      style={{
-                        width: "100%",
-                        height: matchesLg
-                          ? "400px"
-                          : matchesMd
-                          ? "300px"
-                          : "200px",
-                      }}
+                      className={styles.image}
                       alt={
                         image.attributes.caption
                           ? image.attributes.caption
