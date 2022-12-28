@@ -56,7 +56,11 @@ const ImageGallery = ({ images }) => {
                       sizes="100vw"
                       style={{
                         width: "100%",
-                        height: "auto",
+                        height: matchesLg
+                          ? "400px"
+                          : matchesMd
+                          ? "300px"
+                          : "200px",
                       }}
                       alt={
                         image.attributes.caption
