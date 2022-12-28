@@ -16,7 +16,6 @@ const ImageGallery = ({ images }) => {
   const arrowPrev = React.useRef(null);
   const arrowNext = React.useRef(null);
   const matchesMd = useMediaQuery("(min-width: 768px)");
-  const matchesLg = useMediaQuery("(min-width: 1200px)");
 
   return (
     <Box className={styles.imageGallery}>
