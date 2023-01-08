@@ -18,13 +18,12 @@ const Projects = ({ projects, portfolios, global, social }) => {
 };
 
 export async function getStaticProps() {
-  const [projectsRes, portfoliosRes, , globalRes, socialRes] =
-    await Promise.all([
-      fetchAPI("/projects", { populate: "*" }),
-      fetchAPI("/portfolios", { populate: "*" }),
-      fetchAPI("/global"),
-      fetchAPI("/social"),
-    ]);
+  const [projectsRes, portfoliosRes, globalRes, socialRes] = await Promise.all([
+    fetchAPI("/projects", { populate: "*" }),
+    fetchAPI("/portfolios", { populate: "*" }),
+    fetchAPI("/global"),
+    fetchAPI("/social"),
+  ]);
 
   return {
     props: {
