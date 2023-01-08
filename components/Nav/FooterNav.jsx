@@ -3,7 +3,7 @@ import React from "react";
 
 import Link from "next/link";
 
-const FooterNav = () => {
+const FooterNav = ({ social }) => {
   return (
     <nav className={styles.footerNav}>
       <ul>
@@ -16,15 +16,41 @@ const FooterNav = () => {
         <li>
           <Link href={"/posts"}>JOURNAL</Link>
         </li>
-        <li>
-          <a
-            target={"_blank"}
-            rel={"noreferrer"}
-            href="https://instagram.com/mits.bali?igshid=YmMyMTA2M2Y="
-          >
-            INSTAGRAM
-          </a>
-        </li>
+        {social?.attributes.instagramLink && (
+          <li>
+            <a
+              target={"_blank"}
+              rel={"noreferrer"}
+              href={social.attributes.instagramLink}
+            >
+              INSTAGRAM
+            </a>
+          </li>
+        )}
+
+        {social?.attributes.facebookLink && (
+          <li>
+            <a
+              target={"_blank"}
+              rel={"noreferrer"}
+              href={social.attributes.facebookLink}
+            >
+              facebook
+            </a>
+          </li>
+        )}
+
+        {social?.attributes.linkedinLink && (
+          <li>
+            <a
+              target={"_blank"}
+              rel={"noreferrer"}
+              href={social.attributes.linkedinLink}
+            >
+              linkedin
+            </a>
+          </li>
+        )}
       </ul>
     </nav>
   );

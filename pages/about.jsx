@@ -3,8 +3,9 @@ import { MainLayout } from "../layouts/MainLayout";
 import ContactUs from "../components/ContactUs/ContactUs";
 import styles from "../styles/about.module.scss";
 import { Container, Grid, Box, useMediaQuery } from "@mui/material";
+import { fetchAPI } from "../lib/api";
 
-const About = () => {
+const About = ({ global, social }) => {
   const matchesMd = useMediaQuery("(min-width: 768px)");
   const placeholder =
     "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAECAIAAADETxJQAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAM0lEQVR4nAEoANf/AAABAPH1++3z+wC+u7afZk6gak0AXVhB48Wy//vcACcjF6aek4mRgaNzFJBAf93eAAAAAElFTkSuQmCC";
@@ -16,6 +17,8 @@ const About = () => {
       metaTitle={"MITS"}
       metaDescription={"MITS"}
       headerTransparent={false}
+      global={global}
+      social={social}
     >
       <section className={styles.about}>
         <Container>
@@ -148,5 +151,20 @@ const About = () => {
     </MainLayout>
   );
 };
+
+export async function getStaticProps() {
+  const [globalRes, socialRes] = await Promise.all([
+    fetchAPI("/global"),
+    fetchAPI("/social"),
+  ]);
+
+  return {
+    props: {
+      global: globalRes.data,
+      social: socialRes.data,
+    },
+    revalidate: 120,
+  };
+}
 
 export default About;

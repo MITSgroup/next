@@ -9,7 +9,7 @@ import PostContent from "../../components/PostContent/PostContent";
 import PostPrevNext from "../../components/PostPrevNext/PostPrevNext";
 import { useRouter } from "next/router";
 
-const Post = ({ post }) => {
+const Post = ({ post, global, social }) => {
   const router = useRouter();
   const matchesMd = useMediaQuery("(min-width: 768px)");
   const [prevSlug, setPrevSlug] = React.useState();
@@ -47,13 +47,13 @@ const Post = ({ post }) => {
     fetchData().catch(console.error);
   }, [router.asPath]);
 
-  console.log(post);
-
   return (
     <MainLayout
       metaTitle={`MITS – ${post.attributes.title}`}
       metaDescription={"MITS"}
       headerTransparent={true}
+      global={global}
+      social={social}
     >
       <BlogHero
         title={post.attributes.title}
@@ -110,16 +110,22 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const postsRes = await fetchAPI("/posts", {
-    filters: {
-      slug: params.slug,
-    },
-    populate: "deep",
-  });
-  console.log(postsRes);
+  const [postsRes, globalRes, socialRes] = await Promise.all([
+    fetchAPI("/posts", {
+      filters: {
+        slug: params.slug,
+      },
+      populate: "deep",
+    }),
+    fetchAPI("/global"),
+    fetchAPI("/social"),
+  ]);
+
   return {
     props: {
       post: postsRes.data[0],
+      global: globalRes.data,
+      social: socialRes.data,
     },
     revalidate: 120,
   };

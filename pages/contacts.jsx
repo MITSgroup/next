@@ -5,10 +5,13 @@ import BlogHero from "../components/BlogHero/BlogHero";
 import GoogleMapReact from "google-map-react";
 import ContactsItem from "../components/ContactsItem/ContactsItem";
 import { fetchAPI } from "../lib/api";
+import React from "react";
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
 const Contacts = ({ global, social }) => {
   const matchesLg = useMediaQuery("(min-width: 1200px)");
+
+  console.log(global);
 
   const defaultProps = {
     center: {
@@ -31,39 +34,68 @@ const Contacts = ({ global, social }) => {
       <section className={styles.contacts}>
         <Container>
           <Grid mb={5} container spacing={4} justifyContent={"center"}>
-            <Grid item xs={12} md={3} lg={3}>
-              <ContactsItem
-                title={"Visit us"}
-                icon={"location"}
-                link={"https://goo.gl/maps/wKZqCnDqFgZgjCap8"}
-                textLink={
-                  "jalan Dukuh Indah Gang Suli N°5 x2, Kerobokan Kelod, Kuta Utara, kerobokan, Bali 80361"
-                }
-              />
-            </Grid>
-            <Grid item xs={12} md={3} lg={3}>
-              <ContactsItem
-                title={"Call us"}
-                icon={"phone"}
-                link={"https://wa.me/6282144576669"}
-                textLink={"+62 82144576669 (WhatsApp)"}
-              />
-            </Grid>
-            <Grid item xs={12} md={3} lg={3}>
-              <ContactsItem
-                title={"Email us"}
-                icon={"email"}
-                link={"mailto:anna.mits.bali@gmail.com"}
-                textLink={"anna.mits.bali@gmail.com"}
-              />
-            </Grid>
-            <Grid item xs={12} md={3} lg={3}>
-              <ContactsItem
-                title={"Instagram"}
-                icon={"instagram"}
-                link={"https://instagram.com/mits.bali?igshid=YmMyMTA2M2Y="}
-              />
-            </Grid>
+            {global?.attributes.address && (
+              <Grid item xs={12} md={3} lg={3}>
+                <ContactsItem
+                  title={"Visit us"}
+                  icon={"location"}
+                  link={"#"}
+                  textLink={global.attributes.address}
+                />
+              </Grid>
+            )}
+
+            {global?.attributes.phoneLInk && (
+              <Grid item xs={12} md={3} lg={3}>
+                <ContactsItem
+                  title={"Call us"}
+                  icon={"phone"}
+                  link={global.attributes.phoneLInk}
+                  textLink={global.attributes.phone}
+                />
+              </Grid>
+            )}
+
+            {global?.attributes.email && (
+              <Grid item xs={12} md={3} lg={3}>
+                <ContactsItem
+                  title={"Email us"}
+                  icon={"email"}
+                  link={`mailto:${global.attributes.email}`}
+                  textLink={global.attributes.email}
+                />
+              </Grid>
+            )}
+
+            {social?.attributes.instagramLink && (
+              <Grid item xs={12} md={3} lg={3}>
+                <ContactsItem
+                  title={"instagram"}
+                  icon={"instagram"}
+                  link={social.attributes.instagramLink}
+                />
+              </Grid>
+            )}
+
+            {social?.attributes.facebookLink && (
+              <Grid item xs={12} md={3} lg={3}>
+                <ContactsItem
+                  title={"facebook"}
+                  icon={"facebook"}
+                  link={social.attributes.facebookLink}
+                />
+              </Grid>
+            )}
+
+            {social?.attributes.linkedinLink && (
+              <Grid item xs={12} md={3} lg={3}>
+                <ContactsItem
+                  title={"linkedin"}
+                  icon={"linkedin"}
+                  link={social.attributes.linkedinLink}
+                />
+              </Grid>
+            )}
           </Grid>
 
           <Grid container spacing={4} justifyContent={"center"}>
@@ -77,15 +109,15 @@ const Contacts = ({ global, social }) => {
         </Container>
       </section>
 
-      <Box sx={{ width: "100%", height: matchesLg ? 550 : 350 }}>
-        <GoogleMapReact
-          bootstrapURLKeys={{ key: "" }}
-          defaultCenter={defaultProps.center}
-          defaultZoom={defaultProps.zoom}
-        >
-          <AnyReactComponent lat={59.955413} lng={30.337844} text="My Marker" />
-        </GoogleMapReact>
-      </Box>
+      {/*<Box sx={{ width: "100%", height: matchesLg ? 550 : 350 }}>*/}
+      {/*  <GoogleMapReact*/}
+      {/*    bootstrapURLKeys={{ key: "" }}*/}
+      {/*    defaultCenter={defaultProps.center}*/}
+      {/*    defaultZoom={defaultProps.zoom}*/}
+      {/*  >*/}
+      {/*    <AnyReactComponent lat={59.955413} lng={30.337844} text="My Marker" />*/}
+      {/*  </GoogleMapReact>*/}
+      {/*</Box>*/}
     </MainLayout>
   );
 };

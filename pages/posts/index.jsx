@@ -4,8 +4,9 @@ import { useMediaQuery, Box, Container } from "@mui/material";
 import BlogHero from "../../components/BlogHero/BlogHero";
 import PostsGrid from "../../components/PostsGrid/PostsGrid";
 import Subscribe from "../../components/Subscribe/Subscribe";
+import { fetchAPI } from "../../lib/api";
 
-const Posts = ({ posts }) => {
+const Posts = ({ posts, global, social }) => {
   const matchesMd = useMediaQuery("(min-width: 768px)");
 
   return (
@@ -13,6 +14,8 @@ const Posts = ({ posts }) => {
       metaTitle={"MITS – Journal"}
       metaDescription={"MITS"}
       headerTransparent={true}
+      global={global}
+      social={social}
     >
       <BlogHero title={"MITS JOURNAL"} imagePath={"/images/hero/blog.jpg"} />
 
@@ -30,12 +33,15 @@ export async function getStaticProps() {
   const response = await fetch(
     `${process.env.API_URL}/posts?sort=createdAt:desc`
   );
-
   const postsRes = await response.json();
+  const globalRes = await fetchAPI("/global");
+  const socialRes = await fetchAPI("/social");
 
   return {
     props: {
       posts: postsRes.data,
+      global: globalRes.data,
+      social: socialRes.data,
     },
     revalidate: 120,
   };

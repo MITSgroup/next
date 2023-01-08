@@ -3,13 +3,17 @@ import { Box, Typography, Container } from "@mui/material";
 import Subscribe from "../components/Subscribe/Subscribe";
 import styles from "../styles/thankYou.module.scss";
 import ContactsItem from "../components/ContactsItem/ContactsItem";
+import { fetchAPI } from "../lib/api";
+import React from "react";
 
-const ThankYouForm = () => {
+const ThankYouForm = ({ global, social }) => {
   return (
     <MainLayout
       metaTitle={"MITS – Thank You"}
       metaDescription={"MITS"}
       headerTransparent={false}
+      global={global}
+      social={social}
     >
       <Container>
         <Box className={styles.thankYou}>
@@ -25,11 +29,29 @@ const ThankYouForm = () => {
           </Typography>
 
           <Box className={styles.socials}>
-            <ContactsItem
-              title={"Instagram"}
-              icon={"instagram"}
-              link={"https://instagram.com/mits.bali?igshid=YmMyMTA2M2Y="}
-            />
+            {social?.attributes.instagramLink && (
+              <ContactsItem
+                title={"instagram"}
+                icon={"instagram"}
+                link={social.attributes.instagramLink}
+              />
+            )}
+
+            {social?.attributes.facebookLink && (
+              <ContactsItem
+                title={"facebook"}
+                icon={"facebook"}
+                link={social.attributes.facebookLink}
+              />
+            )}
+
+            {social?.attributes.linkedinLink && (
+              <ContactsItem
+                title={"linkedin"}
+                icon={"linkedin"}
+                link={social.attributes.linkedinLink}
+              />
+            )}
           </Box>
         </Box>
       </Container>
@@ -37,5 +59,20 @@ const ThankYouForm = () => {
     </MainLayout>
   );
 };
+
+export async function getStaticProps() {
+  const [globalRes, socialRes] = await Promise.all([
+    fetchAPI("/global"),
+    fetchAPI("/social"),
+  ]);
+
+  return {
+    props: {
+      global: globalRes.data,
+      social: socialRes.data,
+    },
+    revalidate: 120,
+  };
+}
 
 export default ThankYouForm;

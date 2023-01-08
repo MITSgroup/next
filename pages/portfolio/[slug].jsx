@@ -6,12 +6,14 @@ import { fetchAPI } from "../../lib/api";
 import PortfolioGallery from "../../components/PortfolioGallery/PortfolioGallery";
 import ContactUs from "../../components/ContactUs/ContactUs";
 
-const PortfolioSingle = ({ portfolio }) => {
+const PortfolioSingle = ({ portfolio, global, social }) => {
   return (
     <MainLayout
       metaTitle={"MITS"}
       metaDescription={"MITS"}
       headerTransparent={true}
+      global={global}
+      social={social}
     >
       <PortfolioHero
         name={portfolio.attributes.name}
@@ -50,16 +52,22 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const portfolioRes = await fetchAPI("/portfolios", {
-    filters: {
-      slug: params.slug,
-    },
-    populate: "deep",
-  });
+  const [portfolioRes, globalRes, socialRes] = await Promise.all([
+    fetchAPI("/portfolios", {
+      filters: {
+        slug: params.slug,
+      },
+      populate: "deep",
+    }),
+    fetchAPI("/global"),
+    fetchAPI("/social"),
+  ]);
 
   return {
     props: {
       portfolio: portfolioRes.data[0],
+      global: globalRes.data,
+      social: socialRes.data,
     },
     revalidate: 120,
   };

@@ -3,12 +3,14 @@ import ProjectsGrid from "../../components/ProjectsGrid/ProjectsGrid";
 import React from "react";
 import { fetchAPI } from "../../lib/api";
 
-const Projects = ({ projects, portfolios }) => {
+const Projects = ({ projects, portfolios, global, social }) => {
   return (
     <MainLayout
       metaTitle={"MITS"}
       metaDescription={"MITS"}
       headerTransparent={false}
+      global={global}
+      social={social}
     >
       <ProjectsGrid projects={projects} portfolio={portfolios} />
     </MainLayout>
@@ -16,15 +18,20 @@ const Projects = ({ projects, portfolios }) => {
 };
 
 export async function getStaticProps() {
-  const [projectsRes, portfoliosRes] = await Promise.all([
-    fetchAPI("/projects", { populate: "*" }),
-    fetchAPI("/portfolios", { populate: "*" }),
-  ]);
+  const [projectsRes, portfoliosRes, , globalRes, socialRes] =
+    await Promise.all([
+      fetchAPI("/projects", { populate: "*" }),
+      fetchAPI("/portfolios", { populate: "*" }),
+      fetchAPI("/global"),
+      fetchAPI("/social"),
+    ]);
 
   return {
     props: {
       projects: projectsRes.data,
       portfolios: portfoliosRes.data,
+      global: globalRes.data,
+      social: socialRes.data,
     },
     revalidate: 120,
   };

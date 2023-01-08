@@ -15,14 +15,14 @@ import ProjectApartments from "../../components/ProjectApartments/ProjectApartme
 import ProjectCta from "../../components/ProjectCta/ProjectCta";
 import ProjectLocation from "../../components/ProjectLocation/ProjectLocation";
 
-const Project = ({ project, reviews }) => {
-  console.log(project);
-
+const Project = ({ project, reviews, global, social }) => {
   return (
     <MainLayout
       metaTitle={`MITS – ${project.attributes.name}`}
       metaDescription={"MITS"}
       headerTransparent={true}
+      global={global}
+      social={social}
     >
       <ProjectHero
         name={project.attributes.name}
@@ -118,7 +118,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const [projectsRes, reviewsRes] = await Promise.all([
+  const [projectsRes, reviewsRes, globalRes, socialRes] = await Promise.all([
     fetchAPI("/projects", {
       filters: {
         slug: params.slug,
@@ -126,12 +126,16 @@ export async function getStaticProps({ params }) {
       populate: "deep",
     }),
     fetchAPI("/reviews", { populate: "*" }),
+    fetchAPI("/global"),
+    fetchAPI("/social"),
   ]);
 
   return {
     props: {
       project: projectsRes.data[0],
       reviews: reviewsRes.data,
+      global: globalRes.data,
+      social: socialRes.data,
     },
     revalidate: 120,
   };

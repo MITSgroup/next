@@ -7,7 +7,8 @@ import CloseIcon from "@mui/icons-material/Close";
 import MainNav from "../Nav/MainNav";
 import ContactsItem from "../ContactsItem/ContactsItem";
 
-const MobileMenu = ({ closeMenu, open }) => {
+const MobileMenu = ({ closeMenu, open, social }) => {
+  console.log(social);
   const materialStyles = {
     menu: {
       width: "100%",
@@ -29,13 +30,29 @@ const MobileMenu = ({ closeMenu, open }) => {
           <MainNav transparent={false} />
         </Box>
         <Box className={styles.socials}>
-          <ContactsItem
-            title={"instagram"}
-            icon={"instagram"}
-            link={"https://instagram.com/mits.bali?igshid=YmMyMTA2M2Y="}
-          />
-          {/*<ContactsItem title={"LINKEDIN"} icon={"linkedin"} link={""} />*/}
-          {/*<ContactsItem title={"facebook"} icon={"facebook"} link={""} />*/}
+          {social?.attributes.instagramLink && (
+            <ContactsItem
+              title={"instagram"}
+              icon={"instagram"}
+              link={social.attributes.instagramLink}
+            />
+          )}
+
+          {social?.attributes.facebookLink && (
+            <ContactsItem
+              title={"facebook"}
+              icon={"facebook"}
+              link={social.attributes.facebookLink}
+            />
+          )}
+
+          {social?.attributes.linkedinLink && (
+            <ContactsItem
+              title={"linkedin"}
+              icon={"linkedin"}
+              link={social.attributes.linkedinLink}
+            />
+          )}
         </Box>
       </Box>
     </Dialog>
