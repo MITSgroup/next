@@ -7,7 +7,8 @@ import axios from "axios";
 
 const ProjectForm = () => {
   const router = useRouter();
-  const page = router.pathname.split("/").pop();
+
+  const page = router.query.slug;
 
   const handleChange = () => {
     window.dataLayer = window.dataLayer || [];
@@ -26,7 +27,7 @@ const ProjectForm = () => {
       register("utm_campaign", { value: utm_campaign });
       register("Page", { value: !page ? "home" : page });
     }
-  });
+  }, []);
 
   const {
     register,
@@ -45,8 +46,6 @@ const ProjectForm = () => {
       .catch((error) => {
         console.log(error);
       });
-
-  console.log(watch("example"));
 
   return (
     <form
@@ -82,15 +81,6 @@ const ProjectForm = () => {
         />
       </Box>
 
-      <input
-        type="hidden"
-        value={
-          router.asPath === "/"
-            ? "Home page"
-            : router.asPath.split("/").slice(-1).join("")
-        }
-        {...register("page")}
-      />
       <Button variant={"text"} type={"submit"} className={styles.submit}>
         REQUEST A TOUR
       </Button>

@@ -8,7 +8,6 @@ import MainNav from "../Nav/MainNav";
 import ContactsItem from "../ContactsItem/ContactsItem";
 
 const MobileMenu = ({ closeMenu, open, social }) => {
-  console.log(social);
   const materialStyles = {
     menu: {
       width: "100%",

@@ -8,8 +8,6 @@ import axios from "axios";
 const SubscribeForm = () => {
   const router = useRouter();
 
-  const page = router.pathname.split("/").pop();
-
   React.useEffect(() => {
     const { utm_medium, utm_source, utm_term, utm_content, utm_campaign } =
       router.query;
@@ -20,7 +18,6 @@ const SubscribeForm = () => {
       register("utm_term", { value: utm_term });
       register("utm_content", { value: utm_content });
       register("utm_campaign", { value: utm_campaign });
-      register("Page", { value: !page ? "home" : page });
     }
   });
 
@@ -71,7 +68,7 @@ const SubscribeForm = () => {
         />
       </Box>
 
-      <input type="hidden" value={"subscribe"} {...register("page")} />
+      <input type="hidden" value={"subscribe"} {...register("type")} />
       <Button variant={"text"} type={"submit"} className={styles.submit}>
         send
       </Button>

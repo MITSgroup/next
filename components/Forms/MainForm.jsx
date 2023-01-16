@@ -8,7 +8,7 @@ import axios from "axios";
 
 const MainForm = () => {
   const router = useRouter();
-  const page = router.pathname.split("/").pop();
+  const page = router.query.slug;
 
   const handleChange = () => {
     window.dataLayer = window.dataLayer || [];
