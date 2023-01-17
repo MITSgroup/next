@@ -1,4 +1,4 @@
-@import 'styles/variables';
+@import "styles/variables";
 
 .projectModelling {
   padding: 50px 0;
@@ -6,12 +6,63 @@
 
   .title {
     margin-bottom: 20px;
-    font-family: '__Metropolis_e5531d', '__Metropolis_Fallback_e5531d';
+    font-family: "__Metropolis_e5531d", "__Metropolis_Fallback_e5531d";
     font-weight: 700;
     font-size: 32px;
     line-height: 32px;
     color: #000000;
     text-transform: uppercase;
+  }
+
+  .table {
+    overflow-x: scroll;
+    width: 600px;
+
+    @media (min-width: 768px) {
+      width: 700px;
+    }
+
+    @media (min-width: 1200px) {
+      width: 960px;
+      overflow-x: auto;
+    }
+
+    .row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+
+      &:last-child {
+        margin-top: 20px;
+        border-bottom: none;
+      }
+
+      p {
+        display: block;
+        width: 20%;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 150%;
+        letter-spacing: 0.025em;
+        white-space: nowrap;
+        color: #000;
+
+        &:first-child {
+          width: 50%;
+        }
+
+        @media (min-width: 768px) {
+          width: 15%;
+        }
+      }
+
+      &:last-child {
+        p {
+          font-weight: 600;
+        }
+      }
+    }
   }
 
   .tabs {
@@ -35,7 +86,7 @@
       }
 
       .name {
-        font-family: '__Metropolis_e5531d', '__Metropolis_Fallback_e5531d';
+        font-family: "__Metropolis_e5531d", "__Metropolis_Fallback_e5531d";
         font-weight: 700;
         font-size: 12px;
         line-height: 12px;
@@ -49,7 +100,7 @@
         font-size: 24px;
         line-height: 24px;
         /* identical to box height */
-        font-family: '__Metropolis_e5531d', '__Metropolis_Fallback_e5531d';
+        font-family: "__Metropolis_e5531d", "__Metropolis_Fallback_e5531d";
         color: #000000;
       }
     }
