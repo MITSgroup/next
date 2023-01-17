@@ -71,7 +71,7 @@ const ProjectLocation = ({ title, description, advantages }) => {
                   src="https://snazzymaps.com/embed/448329"
                   width="100%"
                   height="600px"
-                  style={{ border: "none" }}
+                  style="border:none;"
                 ></iframe>
               )}
             </Box>
