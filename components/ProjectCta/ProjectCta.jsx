@@ -37,7 +37,7 @@ const ProjectCta = ({ title, description, type, left, imageUrl, label }) => {
             {label && (
               <Box className={styles.availability}>
                 <p>
-                  ONLY {left} <br /> {type}S <br />
+                  ONLY {left} <br /> {type} <br />
                   LEFT
                 </p>
               </Box>

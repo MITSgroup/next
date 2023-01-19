@@ -39,7 +39,7 @@ const Contacts = ({ global, social }) => {
                 <ContactsItem
                   title={"Visit us"}
                   icon={"location"}
-                  link={"#"}
+                  link={global?.attributes?.addressLink}
                   textLink={global.attributes.address}
                 />
               </Grid>

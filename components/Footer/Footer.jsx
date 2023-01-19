@@ -41,7 +41,7 @@ const Footer = ({ global, social }) => {
                       <a
                         target={"_blank"}
                         rel="noreferrer"
-                        href="https://goo.gl/maps/wKZqCnDqFgZgjCap8"
+                        href={global?.attributes?.addressLink}
                       >
                         {global.attributes.address}
                       </a>

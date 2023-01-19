@@ -6,17 +6,10 @@ import ProjectCard from "../ProjectCard/ProjectCard";
 const ProjectsGrid = ({ projects, portfolio }) => {
   const matchesMd = useMediaQuery("(min-width: 768px)");
   const matchesLg = useMediaQuery("(min-width: 1200px)");
-  const [checked, setChecked] = React.useState(false);
 
-  const handleChange = () => {
-    setChecked((prev) => !prev);
-  };
   return (
     <>
-      <Collapse
-        in={checked}
-        collapsedSize={matchesLg ? 600 : matchesMd ? 900 : 1800}
-      >
+      <Box>
         <Grid container>
           {projects &&
             projects
@@ -69,11 +62,6 @@ const ProjectsGrid = ({ projects, portfolio }) => {
                 </Grid>
               ))}
         </Grid>
-      </Collapse>
-      <Box sx={{ paddingY: 3, display: "flex", justifyContent: "center" }}>
-        <span className={styles.button} onClick={handleChange}>
-          Show all projects
-        </span>
       </Box>
     </>
   );
