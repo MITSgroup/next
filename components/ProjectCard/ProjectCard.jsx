@@ -50,13 +50,19 @@ const ProjectCard = ({
             <p className={styles.description}>{description}</p>
             <span className={styles.link}> find out more &#x3e;</span>
           </Box>
+          {label && (
+            <Box className={styles.label}>
+              <span>
+                ONLY {left}
+                <br /> {type} <br /> LEFT
+              </span>
+            </Box>
+          )}
         </Box>
+
         {label && (
-          <Box className={styles.label}>
-            <span>
-              ONLY {left}
-              <br /> {type} <br /> LEFT
-            </span>
+          <Box className={`${styles.label} ${styles.onSaleLabel}`}>
+            <span>ON SALE</span>
           </Box>
         )}
       </article>
