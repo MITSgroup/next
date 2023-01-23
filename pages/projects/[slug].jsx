@@ -87,6 +87,7 @@ const Project = ({ project, reviews, global, social }) => {
           title={project.attributes.location?.title}
           description={project.attributes.location?.description}
           advantages={project.attributes.location?.advantages}
+          url={project.attributes?.locationLink}
         />
       )}
 

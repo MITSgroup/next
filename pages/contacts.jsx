@@ -109,15 +109,14 @@ const Contacts = ({ global, social }) => {
         </Container>
       </section>
 
-      {/*<Box sx={{ width: "100%", height: matchesLg ? 550 : 350 }}>*/}
-      {/*  <GoogleMapReact*/}
-      {/*    bootstrapURLKeys={{ key: "" }}*/}
-      {/*    defaultCenter={defaultProps.center}*/}
-      {/*    defaultZoom={defaultProps.zoom}*/}
-      {/*  >*/}
-      {/*    <AnyReactComponent lat={59.955413} lng={30.337844} text="My Marker" />*/}
-      {/*  </GoogleMapReact>*/}
-      {/*</Box>*/}
+      <Box sx={{ width: "100%", height: matchesLg ? 550 : 350 }}>
+        <iframe
+          src={"https://snazzymaps.com/embed/456294"}
+          width="100%"
+          height="600px"
+          style={{ border: "none" }}
+        ></iframe>
+      </Box>
     </MainLayout>
   );
 };

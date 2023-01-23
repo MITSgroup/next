@@ -7,12 +7,14 @@ import image1 from "./img/1.jpg";
 import image2 from "./img/2.jpg";
 import image3 from "./img/3.jpg";
 
-const ProjectLocation = ({ title, description, advantages }) => {
+const ProjectLocation = ({ title, description, advantages, url }) => {
   const { ref, inView, entry } = useInView({
     /* Optional options */
     threshold: 0,
     triggerOnce: true,
   });
+
+  console.log(url);
 
   return (
     <Box className={styles.projectLocation}>
@@ -68,7 +70,7 @@ const ProjectLocation = ({ title, description, advantages }) => {
             <Box className={styles.map} ref={ref}>
               {inView && (
                 <iframe
-                  src="https://snazzymaps.com/embed/448329"
+                  src={url ? url : "https://snazzymaps.com/embed"}
                   width="100%"
                   height="600px"
                   style={{ border: "none" }}
