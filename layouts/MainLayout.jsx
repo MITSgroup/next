@@ -6,7 +6,6 @@ import { theme } from "../theme";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import MobileMenu from "../components/MobileMenu/MobileMenu";
-import { setCookie, getCookie } from "cookies-next";
 import { fetchAPI } from "../lib/api";
 
 export const MainLayout = ({
@@ -19,7 +18,6 @@ export const MainLayout = ({
   social,
 }) => {
   const [menuIsOpen, setMenuIsOpen] = React.useState(false);
-  const router = useRouter();
 
   return (
     <ThemeProvider theme={theme}>
