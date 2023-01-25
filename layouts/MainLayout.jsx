@@ -1,11 +1,12 @@
 import Head from "next/head";
 import React from "react";
-import { ThemeProvider } from "@mui/material";
-
+import { Button, ThemeProvider } from "@mui/material";
+import { useRouter } from "next/router";
 import { theme } from "../theme";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import MobileMenu from "../components/MobileMenu/MobileMenu";
+import { setCookie, getCookie } from "cookies-next";
 import { fetchAPI } from "../lib/api";
 
 export const MainLayout = ({
@@ -18,6 +19,15 @@ export const MainLayout = ({
   social,
 }) => {
   const [menuIsOpen, setMenuIsOpen] = React.useState(false);
+  const router = useRouter();
+
+  const path = router.asPath;
+  const pathname = router.pathname;
+
+  React.useEffect(() => {
+    const urlParams = getCookie("urlParams");
+    router.push(path + "?" + urlParams);
+  }, []);
 
   return (
     <ThemeProvider theme={theme}>
