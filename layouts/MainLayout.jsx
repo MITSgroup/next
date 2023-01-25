@@ -21,14 +21,6 @@ export const MainLayout = ({
   const [menuIsOpen, setMenuIsOpen] = React.useState(false);
   const router = useRouter();
 
-  const path = router.asPath;
-  const pathname = router.pathname;
-
-  React.useEffect(() => {
-    const urlParams = getCookie("urlParams");
-    router.push(path + "?" + urlParams);
-  }, []);
-
   return (
     <ThemeProvider theme={theme}>
       <Head>
