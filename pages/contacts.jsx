@@ -109,14 +109,14 @@ const Contacts = ({ global, social }) => {
         </Container>
       </section>
 
-      {/*<Box sx={{ width: "100%", height: matchesLg ? 550 : 350 }}>*/}
-      {/*  <iframe*/}
-      {/*    src={"https://snazzymaps.com/embed/456294"}*/}
-      {/*    width="100%"*/}
-      {/*    height="600px"*/}
-      {/*    style={{ border: "none" }}*/}
-      {/*  ></iframe>*/}
-      {/*</Box>*/}
+      <Box sx={{ width: "100%", height: matchesLg ? 550 : 350 }}>
+        <iframe
+          src={"https://snazzymaps.com/embed/457352"}
+          width="100%"
+          height="600px"
+          style={{ border: "none" }}
+        ></iframe>
+      </Box>
     </MainLayout>
   );
 };
