@@ -37,17 +37,17 @@ const ProjectForm = () => {
     reset,
   } = useForm();
   const onSubmit = (data) =>
-    // axios
-    //   .post("https://hook.eu1.make.com/jcjz9wf8bjm8lqakt3cbqcefyhqdgdvh", data)
-    //   .then(() => {
-    //     reset();
-    //     router.replace("/thank-you-form");
-    //   })
-    //   .catch((error) => {
-    //     console.log(error);
-    //   });
+    axios
+      .post("https://hook.eu1.make.com/jcjz9wf8bjm8lqakt3cbqcefyhqdgdvh", data)
+      .then(() => {
+        reset();
+        router.replace("/thank-you-form");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
 
-    console.log(data);
+  // console.log(data);
   return (
     <form
       className={styles.form}

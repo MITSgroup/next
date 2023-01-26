@@ -36,16 +36,16 @@ const MainForm = () => {
     reset,
   } = useForm();
   const onSubmit = (data) =>
-    // axios
-    //   .post("https://hook.eu1.make.com/jcjz9wf8bjm8lqakt3cbqcefyhqdgdvh", data)
-    //   .then(() => {
-    //     reset();
-    //     router.replace("/thank-you-form");
-    //   })
-    //   .catch((error) => {
-    //     console.log(error);
-    //   });
-    console.log(data);
+    axios
+      .post("https://hook.eu1.make.com/jcjz9wf8bjm8lqakt3cbqcefyhqdgdvh", data)
+      .then(() => {
+        reset();
+        router.replace("/thank-you-form");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  // console.log(data);
 
   return (
     <form
