@@ -1,12 +1,11 @@
 import Head from "next/head";
 import React from "react";
-import { Button, ThemeProvider } from "@mui/material";
+import { ThemeProvider } from "@mui/material";
 import { useRouter } from "next/router";
 import { theme } from "../theme";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import MobileMenu from "../components/MobileMenu/MobileMenu";
-import { fetchAPI } from "../lib/api";
 
 export const MainLayout = ({
   children,
@@ -18,6 +17,20 @@ export const MainLayout = ({
   social,
 }) => {
   const [menuIsOpen, setMenuIsOpen] = React.useState(false);
+  const router = useRouter();
+  const path = router.asPath;
+
+  React.useEffect(() => {
+    sessionStorage.setItem("test", 1);
+
+    const searchParams = router.asPath.indexOf("?")
+      ? router.asPath.split("?").slice(1).join("")
+      : null;
+    // setCookie("urlParams", searchParams);
+    if (searchParams) {
+      router.push(path + "?" + searchParams, undefined, { shallow: true });
+    }
+  }, []);
 
   return (
     <ThemeProvider theme={theme}>

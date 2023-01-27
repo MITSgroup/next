@@ -3,7 +3,6 @@ import React from "react";
 import { Box, Button } from "@mui/material";
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/router";
-import axios from "axios";
 
 const ProjectForm = () => {
   const router = useRouter();
@@ -18,6 +17,8 @@ const ProjectForm = () => {
   React.useEffect(() => {
     const { utm_medium, utm_source, utm_term, utm_content, utm_campaign } =
       router.query;
+
+    console.log(router.query);
 
     if (router.isReady) {
       register("utm_medium", { value: utm_medium });
@@ -37,17 +38,17 @@ const ProjectForm = () => {
     reset,
   } = useForm();
   const onSubmit = (data) =>
-    axios
-      .post("https://hook.eu1.make.com/jcjz9wf8bjm8lqakt3cbqcefyhqdgdvh", data)
-      .then(() => {
-        reset();
-        router.replace("/thank-you-form");
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    // axios
+    //   .post("https://hook.eu1.make.com/jcjz9wf8bjm8lqakt3cbqcefyhqdgdvh", data)
+    //   .then(() => {
+    //     reset();
+    //     router.replace("/thank-you-form");
+    //   })
+    //   .catch((error) => {
+    //     console.log(error);
+    //   });
 
-  // console.log(data);
+    console.log(data);
   return (
     <form
       className={styles.form}

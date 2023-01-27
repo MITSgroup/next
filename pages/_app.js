@@ -1,9 +1,10 @@
 import "../styles/globals.scss";
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import NextNProgress from "nextjs-progressbar";
 import { Inter } from "@next/font/google";
 import TagManager from "react-gtm-module";
 import localFont from "@next/font/local";
+
 const inter = Inter({ subsets: ["latin"] });
 const Metropolis = localFont({ src: "fonts/Metropolis-Bold.woff2" });
 
