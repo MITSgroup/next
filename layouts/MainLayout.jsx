@@ -21,14 +21,18 @@ export const MainLayout = ({
   const path = router.asPath;
 
   React.useEffect(() => {
-    sessionStorage.setItem("test", 1);
+    const urlParams = sessionStorage.getItem("urlParams");
 
-    const searchParams = router.asPath.indexOf("?")
-      ? router.asPath.split("?").slice(1).join("")
-      : null;
-    // setCookie("urlParams", searchParams);
-    if (searchParams) {
-      router.push(path + "?" + searchParams, undefined, { shallow: true });
+    if (urlParams) {
+      router.replace(path + "?" + urlParams, undefined, { shallow: true });
+    } else {
+      const newParams = router.asPath.indexOf("?")
+        ? router.asPath.split("?").slice(1).join("")
+        : null;
+
+      if (newParams) {
+        router.replace(path + "?" + newParams, undefined, { shallow: true });
+      }
     }
   }, []);
 
