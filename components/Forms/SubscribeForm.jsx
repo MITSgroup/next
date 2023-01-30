@@ -4,14 +4,22 @@ import { Box, Button } from "@mui/material";
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/router";
 import axios from "axios";
+import { getCookie } from "cookies-next";
 
 const SubscribeForm = () => {
   const router = useRouter();
+  const utm_medium = getCookie("utm_medium");
+  const utm_source = getCookie("utm_source");
+  const utm_term = getCookie("utm_term");
+  const utm_content = getCookie("utm_content");
+  const utm_campaign = getCookie("utm_campaign");
+
+  const handleChange = () => {
+    window.dataLayer = window.dataLayer || [];
+    dataLayer.push({ event: "lead" });
+  };
 
   React.useEffect(() => {
-    const { utm_medium, utm_source, utm_term, utm_content, utm_campaign } =
-      router.query;
-
     if (router.isReady) {
       register("utm_medium", { value: utm_medium });
       register("utm_source", { value: utm_source });
@@ -19,13 +27,7 @@ const SubscribeForm = () => {
       register("utm_content", { value: utm_content });
       register("utm_campaign", { value: utm_campaign });
     }
-  });
-
-  const handleChange = () => {
-    window.dataLayer = window.dataLayer || [];
-    dataLayer.push({ event: "lead" });
-  };
-
+  }, []);
   const {
     register,
     handleSubmit,
