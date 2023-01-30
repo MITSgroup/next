@@ -20,13 +20,11 @@ const SubscribeForm = () => {
   };
 
   React.useEffect(() => {
-    if (router.isReady) {
-      register("utm_medium", { value: utm_medium });
-      register("utm_source", { value: utm_source });
-      register("utm_term", { value: utm_term });
-      register("utm_content", { value: utm_content });
-      register("utm_campaign", { value: utm_campaign });
-    }
+    register("utm_medium", { value: utm_medium });
+    register("utm_source", { value: utm_source });
+    register("utm_term", { value: utm_term });
+    register("utm_content", { value: utm_content });
+    register("utm_campaign", { value: utm_campaign });
   }, []);
   const {
     register,

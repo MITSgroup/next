@@ -22,14 +22,12 @@ const MainForm = () => {
   };
 
   React.useEffect(() => {
-    if (router.isReady) {
-      register("utm_medium", { value: utm_medium });
-      register("utm_source", { value: utm_source });
-      register("utm_term", { value: utm_term });
-      register("utm_content", { value: utm_content });
-      register("utm_campaign", { value: utm_campaign });
-      register("page", { value: !page ? "home" : page });
-    }
+    register("utm_medium", { value: utm_medium });
+    register("utm_source", { value: utm_source });
+    register("utm_term", { value: utm_term });
+    register("utm_content", { value: utm_content });
+    register("utm_campaign", { value: utm_campaign });
+    register("page", { value: !page ? "home" : page });
   }, []);
 
   const {
@@ -73,15 +71,6 @@ const MainForm = () => {
           {...register("email", { required: true })}
         />
       </Box>
-      <input
-        type="hidden"
-        value={
-          router.asPath === "/"
-            ? "Home page"
-            : router.asPath.split("/").slice(-1).join("")
-        }
-        {...register("page")}
-      />
       <Box className={styles.field}>
         <textarea
           rows={4}

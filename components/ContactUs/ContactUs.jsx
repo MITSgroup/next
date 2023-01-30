@@ -4,7 +4,7 @@ import { Container, Grid } from "@mui/material";
 
 import MainForm from "../Forms/MainForm";
 
-const ContactUs = () => {
+const ContactUs = ({ pageName }) => {
   return (
     <section className={styles.contactUs} id={"form"}>
       <Container>
@@ -13,7 +13,7 @@ const ContactUs = () => {
             <h2 className={styles.title}>CONTACT US</h2>
           </Grid>
           <Grid item xs={12} md={5} lg={4}>
-            <MainForm />
+            <MainForm pageName={pageName} />
           </Grid>
         </Grid>
       </Container>

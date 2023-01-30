@@ -6,7 +6,6 @@ import Services from "../components/Services/Services";
 import ContactUs from "../components/ContactUs/ContactUs";
 import { fetchAPI } from "../lib/api";
 import React from "react";
-import { useRouter } from "next/router";
 
 const Home = ({ projects, portfolios, reviews, services, global, social }) => {
   return (
