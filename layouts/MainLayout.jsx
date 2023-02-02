@@ -29,19 +29,19 @@ export const MainLayout = ({
 
   React.useEffect(() => {
     if (utm_medium || cookieUtmMedium === utm_medium) {
-      setCookie("utm_medium", utm_medium);
+      setCookie("utm_medium", utm_medium, { maxAge: 7200 });
     }
     if (utm_source || cookieUtmSource === utm_source) {
-      setCookie("utm_source", utm_source);
+      setCookie("utm_source", utm_source, { maxAge: 7200 });
     }
     if (utm_term || cookieUtmTerm === utm_term) {
-      setCookie("utm_term", utm_term);
+      setCookie("utm_term", utm_term, { maxAge: 7200 });
     }
     if (utm_content || cookieUtmContent === utm_content) {
-      setCookie("utm_content", utm_content);
+      setCookie("utm_content", utm_content, { maxAge: 7200 });
     }
     if (utm_campaign || cookieUtmCampaign === utm_source) {
-      setCookie("utm_campaign", utm_campaign);
+      setCookie("utm_campaign", utm_campaign, { maxAge: 7200 });
     }
   }, [utm_medium, utm_source, utm_term, utm_content, utm_campaign]);
 

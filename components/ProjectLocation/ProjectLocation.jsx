@@ -14,8 +14,6 @@ const ProjectLocation = ({ title, description, advantages, url }) => {
     triggerOnce: true,
   });
 
-  console.log(url);
-
   return (
     <Box className={styles.projectLocation}>
       <Container>

@@ -6,8 +6,8 @@ const nextConfig = {
   images: {
     loader: "default",
     domains: [
-      "mits-cbd3l.ondigitalocean.app",
-      "mits.sgp1.digitaloceanspaces.com",
+      "https://admin.mits.group",
+      "mits-images.sgp1.digitaloceanspaces.com",
     ],
   },
 };

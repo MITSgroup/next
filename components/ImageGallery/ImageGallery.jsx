@@ -34,7 +34,7 @@ const ImageGallery = ({ images }) => {
               slidesPerView={"auto"}
               modules={[FreeMode, Navigation]}
               spaceBetween={matchesMd ? 20 : 10}
-              freeMode={matchesMd ? false : true}
+              freeMode={!matchesMd}
               loop={false}
               className={styles.gallerySwiper}
             >

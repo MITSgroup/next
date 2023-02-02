@@ -35,7 +35,7 @@ const Post = ({ post, global, social }) => {
   React.useEffect(() => {
     const fetchData = async () => {
       const response = await fetch(
-        "https://mits-cbd3l.ondigitalocean.app/api/posts?sort=createdAt:desc"
+        "https://admin.mits.group/api/posts?sort=createdAt:desc"
       );
       const data = await response.json();
       const slugs = getSlugs(data.data);
