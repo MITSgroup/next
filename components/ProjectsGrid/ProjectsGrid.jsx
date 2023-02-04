@@ -17,7 +17,7 @@ const ProjectsGrid = ({ projects, portfolio }) => {
   return (
     <>
       <Box>
-        <Grid container>
+        <Grid container columns={24}>
           {projects &&
             projects
               .sort((a, b) =>
@@ -28,7 +28,7 @@ const ProjectsGrid = ({ projects, portfolio }) => {
                   : 0
               )
               .map((project) => (
-                <Grid item columns={24} xs={24} md={12} lg={GridLg(project.attributes.gridLg)} key={project.id}>
+                <Grid item xs={24} md={12} lg={GridLg(project.attributes.gridLg)} key={project.id}>
                   <ProjectCard
                     url={`projects/${project.attributes.slug}`}
                     image={
@@ -55,7 +55,7 @@ const ProjectsGrid = ({ projects, portfolio }) => {
                   : 0
               )
               .map((project) => (
-                <Grid item columns={24} xs={24} md={12} lg={GridLg(project.attributes.gridLg)} key={project.id}>
+                <Grid item xs={24} md={12} lg={GridLg(project.attributes.gridLg)} key={project.id}>
                   <ProjectCard
                     url={`portfolio/${project.attributes.slug}`}
                     image={
