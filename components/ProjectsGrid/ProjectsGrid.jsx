@@ -10,7 +10,7 @@ const ProjectsGrid = ({ projects, portfolio }) => {
     if (gridLg != null) {
       return gridLg;
     } else {
-      return '4';
+      return '8';
     }
   };
 
@@ -28,7 +28,7 @@ const ProjectsGrid = ({ projects, portfolio }) => {
                   : 0
               )
               .map((project) => (
-                <Grid item xs={12} md={6} lg={GridLg(project.attributes.gridLg)} key={project.id}>
+                <Grid item columns={24} xs={24} md={12} lg={GridLg(project.attributes.gridLg)} key={project.id}>
                   <ProjectCard
                     url={`projects/${project.attributes.slug}`}
                     image={
@@ -55,7 +55,7 @@ const ProjectsGrid = ({ projects, portfolio }) => {
                   : 0
               )
               .map((project) => (
-                <Grid item xs={12} md={6} lg={GridLg(project.attributes.gridLg)} key={project.id}>
+                <Grid item columns={24} xs={24} md={12} lg={GridLg(project.attributes.gridLg)} key={project.id}>
                   <ProjectCard
                     url={`portfolio/${project.attributes.slug}`}
                     image={
