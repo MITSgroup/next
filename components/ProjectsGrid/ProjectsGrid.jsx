@@ -7,6 +7,7 @@ const ProjectsGrid = ({ projects, portfolio }) => {
   const matchesMd = useMediaQuery("(min-width: 768px)");
   const matchesLg = useMediaQuery("(min-width: 1200px)");
   function GridLg(gridLg){
+    console.log('123' + gridLg);
     if (gridLg != '') {
       return gridLg;
     } else {
