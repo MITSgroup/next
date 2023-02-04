@@ -14,8 +14,6 @@
 
     .content {
       transform: translateY(0);
-      z-index: 1;
-      padding: 0 20px;
     }
 
     .label {
@@ -43,6 +41,8 @@
     max-width: 300px;
     transition: transform 0.2s ease-in-out;
     transform: translateY(10px);
+    z-index: 1;
+    padding: 0 20px;
   }
 
   .title {
