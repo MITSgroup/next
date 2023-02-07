@@ -13,6 +13,12 @@ const ProjectsGrid = ({ projects, portfolio }) => {
       return '8';
     }
   };
+  function debug2(projects) {
+    let mytest = 'https://' + projects[0].attributes.thumbnail.data.attributes.url;
+    console.log('123' + mytest);
+  }
+  
+  debug2(projects);
 
   return (
     <>
