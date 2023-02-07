@@ -24,7 +24,7 @@ const ProjectHero = ({
     <Box className={styles.projectHero}>
       <Box className={styles.backgroundImage}>
         <Image
-          alt="Mountains"
+          alt={name}
           src={imageUrl}
           quality={80}
           fill

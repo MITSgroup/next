@@ -16,6 +16,17 @@ import ProjectCta from "../../components/ProjectCta/ProjectCta";
 import ProjectLocation from "../../components/ProjectLocation/ProjectLocation";
 
 const Project = ({ project, reviews, global, social }) => {
+  function checkThumb(project){
+    let myproject = project.attributes.thumbnail.data.attributes.url;
+    console.log('Проверка:' + myproject.includes("to"));
+    if (myproject.includes("to")) {
+      console.log('yes');
+    } else {
+      myproject = 'https://' + project.attributes.thumbnail.data.attributes.url;
+      console.log(myproject);
+    }
+  }
+  checkThumb(project);
   return (
     <MainLayout
       metaTitle={`MITS – ${project.attributes.name}`}
@@ -31,7 +42,7 @@ const Project = ({ project, reviews, global, social }) => {
         left={project.attributes.hero.projectLeft}
         price={project.attributes.hero.startingPrice}
         specs={project.attributes.hero.specs}
-        imageUrl={project.attributes.thumbnail.data.attributes.url}
+        imageUrl={myproject}
       />
       {project.attributes.intro && (
         <ProjectIntro
