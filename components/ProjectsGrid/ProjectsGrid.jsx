@@ -6,13 +6,6 @@ import ProjectCard from "../ProjectCard/ProjectCard";
 const ProjectsGrid = ({ projects, portfolio }) => {
   const matchesMd = useMediaQuery("(min-width: 768px)");
   const matchesLg = useMediaQuery("(min-width: 1200px)");
-  function GridLg(gridLg){
-    if (gridLg != null) {
-      return gridLg;
-    } else {
-      return '8';
-    }
-  };
 
   return (
     <>
@@ -28,7 +21,7 @@ const ProjectsGrid = ({ projects, portfolio }) => {
                   : 0
               )
               .map((project) => (
-                <Grid item xs={24} md={12} lg={GridLg(project.attributes.gridLg)} key={project.id}>
+                <Grid item xs={12} md={6} lg={4} key={project.id}>
                   <ProjectCard
                     url={`projects/${project.attributes.slug}`}
                     image={
@@ -55,7 +48,7 @@ const ProjectsGrid = ({ projects, portfolio }) => {
                   : 0
               )
               .map((project) => (
-                <Grid item xs={24} md={12} lg={GridLg(project.attributes.gridLg)} key={project.id}>
+                <Grid item xs={12} md={6} lg={4} key={project.id}>
                   <ProjectCard
                     url={`portfolio/${project.attributes.slug}`}
                     image={
