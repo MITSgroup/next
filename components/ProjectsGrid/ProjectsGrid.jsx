@@ -6,6 +6,19 @@ import ProjectCard from "../ProjectCard/ProjectCard";
 const ProjectsGrid = ({ projects, portfolio }) => {
   const matchesMd = useMediaQuery("(min-width: 768px)");
   const matchesLg = useMediaQuery("(min-width: 1200px)");
+  function GridLg(gridLg){
+    if (gridLg != null) {
+      return gridLg;
+    } else {
+      return '8';
+    }
+  };
+  function debug2(projects) {
+    let mytest = 'https://' + projects[0].attributes.thumbnail.data.attributes.url;
+    console.log('123' + mytest);
+  }
+  
+  debug2(projects);
 
   return (
     <>
