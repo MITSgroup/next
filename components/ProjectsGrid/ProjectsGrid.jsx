@@ -34,7 +34,7 @@ const ProjectsGrid = ({ projects, portfolio }) => {
                   : 0
               )
               .map((project) => (
-                <Grid item xs={12} md={6} lg={GridLg(project.attributes.gridLg)} key={project.id}>
+                <Grid item xs={24} md={12} lg={GridLg(project.attributes.gridLg)} key={project.id}>
                   <ProjectCard
                     url={`projects/${project.attributes.slug}`}
                     image={
@@ -61,7 +61,7 @@ const ProjectsGrid = ({ projects, portfolio }) => {
                   : 0
               )
               .map((project) => (
-                <Grid item xs={12} md={6} lg={GridLg(project.attributes.gridLg)} key={project.id}>
+                <Grid item xs={24} md={12} lg={GridLg(project.attributes.gridLg)} key={project.id}>
                   <ProjectCard
                     url={`portfolio/${project.attributes.slug}`}
                     image={
