@@ -48,7 +48,7 @@ export const MainLayout = ({
   return (
     <ThemeProvider theme={theme}>
       <Head>
-        <title>{metaTitle}123</title>
+        <title>{metaTitle}</title>
         <meta name="description" content={metaDescription} />
         <meta name="keywords" content={keywords} />
         <meta property="og:image" content="/img/head/meta.jpg" />
