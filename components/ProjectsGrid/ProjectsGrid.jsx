@@ -38,7 +38,7 @@ const ProjectsGrid = ({ projects, portfolio }) => {
                   <ProjectCard
                     url={`projects/${project.attributes.slug}`}
                     image={
-                      project.attributes.thumbnail.data.attributes.formats
+                      project.attributes.thumbnailHome.data.attributes.formats
                         .medium.url
                     }
                     title={project.attributes.name}
@@ -65,7 +65,7 @@ const ProjectsGrid = ({ projects, portfolio }) => {
                   <ProjectCard
                     url={`portfolio/${project.attributes.slug}`}
                     image={
-                      project.attributes.thumbnail.data.attributes.formats
+                      project.attributes.thumbnailHome.data.attributes.formats
                         .medium.url
                     }
                     title={project.attributes.name}
