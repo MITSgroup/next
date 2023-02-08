@@ -26,7 +26,7 @@ const ProjectHero = ({
         <Image
           alt={name}
           src={imageUrl}
-          quality={80}
+          quality={100}
           fill
           priority
           sizes="100vw"
