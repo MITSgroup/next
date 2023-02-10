@@ -19,7 +19,7 @@ function MyApp({ Component, pageProps }) {
        html {
           font-family: ${Metropolis.style.fontFamily};
           font-family: ${inter.style.fontFamily};
-        }}
+        }
       `}</style>
       <NextNProgress
         color="#000"
