@@ -1,5 +1,4 @@
-import Document, { Html, Head, NextScript } from "next/document";
-import {MainLayout} from "../layouts/MainLayout";
+import Document, {Html, Head, NextScript, Main} from "next/document";
 
 export default class extends Document {
   render() {
@@ -26,8 +25,8 @@ export default class extends Document {
             </noscript>
         </Head>
           <body>
-              <MainLayout />
-              <NextScript />
+            <Main />
+            <NextScript />
           </body>
       </Html>
     );
