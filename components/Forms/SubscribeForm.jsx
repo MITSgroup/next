@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { useRouter } from "next/router";
 import axios from "axios";
 import { getCookie } from "cookies-next";
+import {trackGoalCompletionGoogle} from "../../helpers/analyticsGoalEvents";
 
 const SubscribeForm = () => {
   const router = useRouter();
@@ -37,6 +38,11 @@ const SubscribeForm = () => {
       .post("https://hook.eu1.make.com/jcjz9wf8bjm8lqakt3cbqcefyhqdgdvh", data)
       .then(() => {
         reset();
+        if (typeof window !== 'undefined') {
+          trackGoalCompletionGoogle('formSubmit', 'Forms', 'submit',
+              'subscribeForm', process.env.GA_TRACK);
+          () => window['ym92417784'].reachGoal('subscribeForm');
+        }
         router.replace("/thank-you-subscribe");
       })
       .catch((error) => {
@@ -48,6 +54,8 @@ const SubscribeForm = () => {
       className={styles.form}
       onSubmit={handleSubmit(onSubmit)}
       onChange={handleChange}
+      id={"subscribeForm"}
+      name={"subscribeForm"}
     >
       <Box className={`${styles.field} ${errors.name && styles.fieldError}`}>
         <input

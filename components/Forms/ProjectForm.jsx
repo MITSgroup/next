@@ -5,6 +5,8 @@ import { Box, Button } from "@mui/material";
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/router";
 import { getCookie } from "cookies-next";
+import {trackGoalCompletionGoogle} from "../../helpers/analyticsGoalEvents";
+
 
 const ProjectForm = () => {
   const router = useRouter();
@@ -41,6 +43,11 @@ const ProjectForm = () => {
       .post("https://hook.eu1.make.com/jcjz9wf8bjm8lqakt3cbqcefyhqdgdvh", data)
       .then(() => {
         reset();
+        if (typeof window !== 'undefined') {
+          trackGoalCompletionGoogle('formSubmit', 'Forms', 'submit',
+              'projectForm', process.env.GA_TRACK);
+          () => window['ym92417784'].reachGoal('projectForm');
+        }
         router.replace("/thank-you-form");
       })
       .catch((error) => {
@@ -52,6 +59,8 @@ const ProjectForm = () => {
       className={styles.form}
       onSubmit={handleSubmit(onSubmit)}
       onChange={handleChange}
+      id={"projectForm"}
+      name={"projectForm"}
     >
       <Box className={`${styles.field} ${errors.name && styles.fieldError}`}>
         <input

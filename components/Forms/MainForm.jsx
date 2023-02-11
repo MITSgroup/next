@@ -6,6 +6,7 @@ import { useForm } from "react-hook-form";
 import { useRouter } from "next/router";
 import axios from "axios";
 import { getCookie } from "cookies-next";
+import {trackGoalCompletionGoogle} from "../../helpers/analyticsGoalEvents";
 
 const MainForm = () => {
   const router = useRouter();
@@ -41,6 +42,11 @@ const MainForm = () => {
       .post("https://hook.eu1.make.com/jcjz9wf8bjm8lqakt3cbqcefyhqdgdvh", data)
       .then(() => {
         reset();
+        if (typeof window !== 'undefined') {
+          trackGoalCompletionGoogle('formSubmit', 'Forms', 'submit',
+              'mainForm', process.env.GA_TRACK);
+          () => window['ym92417784'].reachGoal('mainForm');
+        }
         router.replace("/thank-you-form");
       })
       .catch((error) => {
@@ -52,6 +58,8 @@ const MainForm = () => {
       className={styles.form}
       onSubmit={handleSubmit(onSubmit)}
       onChange={handleChange}
+      id={"mainForm"}
+      name={"mainForm"}
     >
       <Box className={`${styles.field} ${errors.name && styles.fieldError}`}>
         <input
