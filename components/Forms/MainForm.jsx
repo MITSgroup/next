@@ -37,7 +37,7 @@ const MainForm = () => {
     formState: { errors },
     reset,
   } = useForm();
-  const onSubmit = (data) => {
+  const onSubmit = (data) =>
     axios
         .post("https://hook.eu1.make.com/jcjz9wf8bjm8lqakt3cbqcefyhqdgdvh", data)
         .then(() => {
@@ -52,7 +52,7 @@ const MainForm = () => {
         .catch((error) => {
           console.log(error);
         });
-  }
+
 
 
   return (
