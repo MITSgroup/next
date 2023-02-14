@@ -33,21 +33,23 @@ const SubscribeForm = () => {
     formState: { errors },
     reset,
   } = useForm();
-  const onSubmit = (data) =>
+  const onSubmit = (data) => {
     axios
-      .post("https://hook.eu1.make.com/jcjz9wf8bjm8lqakt3cbqcefyhqdgdvh", data)
-      .then(() => {
-        reset();
-        if (typeof window !== 'undefined') {
-          trackGoalCompletionGoogle('formSubmit', 'Forms', 'submit',
-              'subscribeForm', process.env.GA_TRACK);
-          () => window['ym92417784'].reachGoal('subscribeForm');
-        }
-        router.replace("/thank-you-subscribe");
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+        .post("https://hook.eu1.make.com/jcjz9wf8bjm8lqakt3cbqcefyhqdgdvh", data)
+        .then(() => {
+          reset();
+          if (typeof window !== 'undefined') {
+            trackGoalCompletionGoogle('formSubmit', 'Forms', 'submit',
+                'subscribeForm', process.env.GA_TRACK);
+            window['yaCounter92417784'].reachGoal('subscribeForm');
+          }
+          router.replace("/thank-you-subscribe");
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+  }
+
 
   return (
     <form

@@ -37,29 +37,31 @@ const MainForm = () => {
     formState: { errors },
     reset,
   } = useForm();
-  const onSubmit = (data) =>
+  const onSubmit = (data) => {
     axios
-      .post("https://hook.eu1.make.com/jcjz9wf8bjm8lqakt3cbqcefyhqdgdvh", data)
-      .then(() => {
-        reset();
-        if (typeof window !== 'undefined') {
-          trackGoalCompletionGoogle('formSubmit', 'Forms', 'submit',
-              'mainForm', process.env.GA_TRACK);
-          () => window['ym92417784'].reachGoal('mainForm');
-        }
-        router.replace("/thank-you-form");
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+        .post("https://hook.eu1.make.com/jcjz9wf8bjm8lqakt3cbqcefyhqdgdvh", data)
+        .then(() => {
+          reset();
+          if (typeof window !== 'undefined') {
+            trackGoalCompletionGoogle('formSubmit', 'Forms', 'submit',
+                'main', process.env.GA_TRACK);
+            window['yaCounter92417784'].reachGoal('main');
+          }
+          router.replace("/thank-you-form");
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+  }
+
 
   return (
     <form
       className={styles.form}
       onSubmit={handleSubmit(onSubmit)}
       onChange={handleChange}
-      id={"mainForm"}
-      name={"mainForm"}
+      id={"main"}
+      name={"main"}
     >
       <Box className={`${styles.field} ${errors.name && styles.fieldError}`}>
         <input

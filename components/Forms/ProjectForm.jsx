@@ -46,7 +46,7 @@ const ProjectForm = () => {
         if (typeof window !== 'undefined') {
           trackGoalCompletionGoogle('formSubmit', 'Forms', 'submit',
               'projectForm', process.env.GA_TRACK);
-          () => window['ym92417784'].reachGoal('projectForm');
+          window['yaCounter92417784'].reachGoal('projectForm');
         }
         router.replace("/thank-you-form");
       })
