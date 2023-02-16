@@ -23,9 +23,9 @@ const PostPrevNext = ({ prevPostSlug, nextPostSlug }) => {
           </Grid>
           <Grid item xs={12} md={8} lg={6}>
             <p className={styles.text}>
-              MITS. studio facilitates collaborative processes between clients,
-              builders and suppliers, with the aim of provide the best
-              solutions, based on aesthetics and creativity.
+            MITS. studio facilitates collaborative processes between clients, 
+            builders and suppliers, with the aim of provide the best solutions, 
+            based on aesthetics and creativity.
               <br /> <br />
               Be the first to know when newest articles go live!
             </p>

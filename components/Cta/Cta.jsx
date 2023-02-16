@@ -26,7 +26,7 @@ const Cta = () => {
               className={styles.button}
               onClick={handleClick}
             >
-              PROCEED TO WHATSAPP &#x3e;
+              GO TO WHATSAPP &#x3e;
             </Link>
           </Grid>
         </Grid>

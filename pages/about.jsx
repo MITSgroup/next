@@ -60,29 +60,27 @@ const About = ({ global, social }) => {
               <Box className={styles.item}>
                 <h3>WHO WE ARE</h3>
                 <p>
-                  Founded in Bali in 2020, by multi-awards winning developers
-                  and architects, MITS is a collaborative team of creative
-                  individuals who bring a constructive, strategic and inclusive
-                  approach to design. We uncovering insights behind what users
-                  need and desire.
+                Founded in Bali in 2020, by multi-awards winning developers and 
+                architects, MITS is a collaborative team of creative individuals 
+                who bring a constructive, strategic and inclusive approach to design. We 
+                uncovering insights behind what users need and desire.
                 </p>
               </Box>
               <Box className={styles.item}>
                 <h3>MISSION</h3>
                 <p>
-                  Our mission is to make positive impact through design and
-                  create a better everyday life for people and the planet. Our
-                  driving force is to create sustainable social architecture for
-                  lifestyle of communities and make projects profitable for our
-                  customers.
+                  Our mission is to make positive impact through design and create a 
+                  better everyday life for people and the planet. Our driving force is to 
+                  create sustainable social architecture for lifestyle of communities and 
+                  make projects profitable for our customers.
                 </p>
               </Box>
               <Box className={styles.item}>
                 <h3>PROJECT APPROACH</h3>
                 <p>
-                  We work with an ever-growing network of forward-thinking
-                  specialists and creatives from around the world, specially
-                  selected for each project.
+                We work with an ever-growing network of forward-thinking 
+                specialists and creatives from around the world, specially selected for 
+                each project.
                 </p>
               </Box>
             </Grid>

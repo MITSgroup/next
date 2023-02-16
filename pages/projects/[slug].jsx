@@ -105,7 +105,7 @@ const Project = ({ project, reviews, global, social }) => {
       <ProjectCta
         title={"EARLY BIRD SPECIAL OFFER"}
         description={
-          "Gain up to 12% annualy or set up your fine-cut base in the heart of the most lively area in the most visited tourist destination of recent years."
+          "Gain up to 12% annually or set up your fine-cut base in the heart of the most lively area in the most visited tourist destination of recent years."
         }
         label
         imageUrl={project.attributes?.formImage?.data?.attributes?.url}
