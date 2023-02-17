@@ -16,7 +16,7 @@ const ProjectModels = ({ items }) => {
       <Container>
               {items &&
                 items.map((item) => (
-                    <Box  dangerouslySetInnerHTML={{__html: myModel(item.value)}}>
+                    <Box key={item.id} dangerouslySetInnerHTML={{__html: myModel(item.value)}}>
                       {/* {item.value.block?.data.html} */}
                       {/* {console.log(JSON.parse(item.value))} */}
                       {/* {console.log('123:',myModel(item.value))} */}
