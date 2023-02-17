@@ -16,14 +16,12 @@ const ProjectModels = ({ items }) => {
       <Container>
               {items &&
                 items.map((item) => (
-                  <Grid key={item.id} item xs={12} md={4} lg={3}>
                     <Box  dangerouslySetInnerHTML={{__html: myModel(item.value)}}>
                       {/* {item.value.block?.data.html} */}
                       {/* {console.log(JSON.parse(item.value))} */}
                       {/* {console.log('123:',myModel(item.value))} */}
                       
                     </Box>
-                  </Grid>
                 ))}
       </Container>
     </Box>
