@@ -9,6 +9,7 @@ import ProjectAbout from "../../components/ProjectAbout/ProjectAbout";
 import ProjectSpecs from "../../components/ProjectSpecs/ProjectSpecs";
 import Reviews from "../../components/Reviews/Reviews";
 import ProjectAdvantages from "../../components/ProjectAdvantages/ProjectAdvantages";
+import ProjectModels from "../../components/ProjectModels/ProjectModels";
 import ProjectModelling from "../../components/ProjectModelling/ProjectModelling";
 import { fetchAPI } from "../../lib/api";
 import ProjectApartments from "../../components/ProjectApartments/ProjectApartments";
@@ -88,6 +89,9 @@ const Project = ({ project, reviews, global, social }) => {
       {reviews && <Reviews reviews={reviews} />}
       {project.attributes.advantages && (
         <ProjectAdvantages items={project.attributes?.advantages.advantage} />
+      )}
+      {project.attributes.models && (
+        <ProjectModels items={project.attributes?.models.model} />
       )}
       {project.attributes.returnOnInvestment && (
         <ProjectModelling apartments={project.attributes.returnOnInvestment} />
