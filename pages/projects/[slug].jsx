@@ -62,6 +62,10 @@ const Project = ({ project, reviews, global, social }) => {
         <ProjectApartments apartments={project.attributes?.apartment} />
       )}
 
+      {project.attributes.models && (
+        <ProjectModels items={project.attributes?.models.model} />
+      )}
+
       <Cta />
       {project.attributes.about && (
         <ProjectAbout
@@ -89,9 +93,6 @@ const Project = ({ project, reviews, global, social }) => {
       {reviews && <Reviews reviews={reviews} />}
       {project.attributes.advantages && (
         <ProjectAdvantages items={project.attributes?.advantages.advantage} />
-      )}
-      {project.attributes.models && (
-        <ProjectModels items={project.attributes?.models.model} />
       )}
       {project.attributes.returnOnInvestment && (
         <ProjectModelling apartments={project.attributes.returnOnInvestment} />
