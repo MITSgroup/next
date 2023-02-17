@@ -15,6 +15,7 @@ const ProjectModels = ({ items }) => {
                   <Grid key={item.id} item xs={12} md={4} lg={3}>
                     <Box className={styles.item}>
                       {item.value.data?.text}
+                      {console.log(JSON.stringify(item.value, null, 4))}
                     </Box>
                   </Grid>
                 ))}
