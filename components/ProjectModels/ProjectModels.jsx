@@ -14,6 +14,7 @@ const ProjectModels = ({ items }) => {
                 items.map((item) => (
                   <Grid key={item.id} item xs={12} md={4} lg={3}>
                     <Box className={styles.item}>
+                      {console.log(item.value)}
                       {item.value}
                     </Box>
                   </Grid>
