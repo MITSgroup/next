@@ -20,7 +20,6 @@ const ProjectModels = ({ items }) => {
                       {/* {item.value.block?.data.html} */}
                       {/* {console.log(JSON.parse(item.value))} */}
                       {/* {console.log('123:',myModel(item.value))} */}
-                      
                     </Box>
                 ))}
          
