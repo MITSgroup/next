@@ -1,5 +1,6 @@
 import styles from "./ProjectModels.module.scss";
-import React from "react";
+import React, { useState } from 'react'
+import Modal from 'react-modal';
 
 import { Container, Grid, Box } from "@mui/material";
 
@@ -10,22 +11,59 @@ function myModel (model) {
   }
 }
 
-const ProjectModels = ({ items }) => {
-  return (
-    <Box className={styles.projectModels}>
-      <Container>
+const ProjectModels = ({ items, image }) => {
+  
+  const [isOpen, setIsOpen] = useState(false)
+   const customStyles = {
+      overlay: {
+         backgroundColor: 'rgba(0, 0, 0, 0.6)'
+      },
+      content: {
+         top: '50%',
+         left: '50%',
+         right: 'auto',
+         bottom: 'auto',
+         width: '50vw',
+         //height: '50vh',
+         marginRight: '-50%',
+         transform: 'translate(-50%, -50%)'
+      }
+   }
+   const customStyles2 = {
+    content: {
+      height: '100%'
+    }
+  }
+
+  let myImage = 'https://' + image[0]?.image.data.attributes.url;
+  let myImageCheck = image[0]?.image.data.attributes.url;
+  if (myImageCheck === undefined) {
+    return null;
+  } else {
+    return (
+      <Box className={styles.projectModels}>
+        <Container>
+          <button style={{margin:'0 auto',marginBottom: '-50px', display: 'block'}} class="model-btn" onClick={() => setIsOpen(true)}>Open 3d scan territory</button>
+          <img width="100%" src={myImage} onClick={() => setIsOpen(true)} ></img>
+           
               {items &&
-                items.map((item) => (
-                    <Box key={item.id} dangerouslySetInnerHTML={{__html: myModel(item.value)}}>
-                      {/* {item.value.block?.data.html} */}
-                      {/* {console.log(JSON.parse(item.value))} */}
-                      {/* {console.log('123:',myModel(item.value))} */}
-                      
-                    </Box>
-                ))}
-      </Container>
-    </Box>
-  );
+              items.map((item) => (
+                <Modal isOpen={isOpen} onRequestClose={() => setIsOpen(false)} style={customStyles}>
+                  <div id="mymodal-wrapper" key={item.id} dangerouslySetInnerHTML={{__html: myModel(item.value)}}>
+                    {/* {item.value.block?.data.html} */}
+                    {/* {console.log(JSON.parse(item.value))} */}
+                    {/* {console.log('123:',myModel(item.value))} */}
+                    
+                  </div>
+                </Modal>
+              ))}
+              {/* <button onClick={() => setIsOpen(false)}>Close Modal</button> */}
+          
+                
+        </Container>
+      </Box>
+    );
+  }
 };
 
 export default ProjectModels;
