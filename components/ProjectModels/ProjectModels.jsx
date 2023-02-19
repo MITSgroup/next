@@ -9,6 +9,7 @@ import { Container, Grid, Box } from "@mui/material";
 function myModel (model) {
   let myModel = JSON.parse(model);
   if(myModel.blocks[0].data.html) {
+    console.log(myModel.blocks[0].data.html);
     return myModel.blocks[0].data.html;
   }
 }
@@ -25,7 +26,7 @@ const ProjectModels = ({ items, image }) => {
          left: '50%',
          right: 'auto',
          bottom: 'auto',
-         width: '50vw',
+        //  width: '50vw',
          //height: '50vh',
          marginRight: '-50%',
          transform: 'translate(-50%, -50%)'
@@ -50,9 +51,11 @@ const ProjectModels = ({ items, image }) => {
           <Image
             src={myImage}
             alt="3D Model"
-            width="100%"
+            //width={1000}
             onClick={() => setIsOpen(true)}
             //height={500}
+            sizes="100vw"
+            style={{ width: '100%', height: 'auto' }}
           />
               {items &&
               items.map((item) => (

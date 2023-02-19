@@ -8,6 +8,7 @@ const nextConfig = {
     domains: [
       "https://admin.mits.group",
       "mits-images.sgp1.digitaloceanspaces.com",
+      "sgp1.digitaloceanspaces.com"
     ],
   },
 };

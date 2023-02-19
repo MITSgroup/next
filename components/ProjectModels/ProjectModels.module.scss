@@ -1,11 +1,23 @@
 @import "styles/variables";
 
 .projectModels {
+  // display: none !important;
   padding: 50px 0;
 
   #mymodal-wrapper {
     display: none !important;
   }  
+
+  & > div > button {
+    
+    @media (max-width:768px) {
+      margin: 0 auto !important;
+    }
+  }
+}
+
+.ReactModal__Overlay.ReactModal__Overlay--after-open {
+  z-index: 9999;
 }
 
   // .model-btn {
