@@ -1,6 +1,8 @@
 import styles from "./ProjectModels.module.scss";
 import React, { useState } from 'react'
 import Modal from 'react-modal';
+import Image from 'next/image';
+
 
 import { Container, Grid, Box } from "@mui/material";
 
@@ -44,8 +46,14 @@ const ProjectModels = ({ items, image }) => {
       <Box className={styles.projectModels}>
         <Container>
           <button style={{margin:'0 auto',marginBottom: '-50px', display: 'block'}} class="model-btn" onClick={() => setIsOpen(true)}>Open 3d scan territory</button>
-          <img width="100%" src={myImage} onClick={() => setIsOpen(true)} ></img>
-           
+          {/* <img width="100%" src={myImage} onClick={() => setIsOpen(true)} ></img> */}
+          <Image
+            src={myImage}
+            alt="3D Model"
+            width="100%"
+            onClick={() => setIsOpen(true)}
+            //height={500}
+          />
               {items &&
               items.map((item) => (
                 <Modal isOpen={isOpen} onRequestClose={() => setIsOpen(false)} style={customStyles}>
