@@ -19,7 +19,8 @@ const ProjectModels = ({ items, image }) => {
   const [isOpen, setIsOpen] = useState(false)
    const customStyles = {
       overlay: {
-         backgroundColor: 'rgba(0, 0, 0, 0.6)'
+         backgroundColor: 'rgba(0, 0, 0, 0.6)',
+         zIndex: '999'
       },
       content: {
          top: '50%',
