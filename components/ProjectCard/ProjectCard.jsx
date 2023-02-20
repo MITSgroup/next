@@ -62,7 +62,7 @@ const ProjectCard = ({
 
         {label && (
           <Box className={`${styles.label} ${styles.onSaleLabel}`}>
-            <span>ON SALE</span>
+            <span>FOR SALE</span>
           </Box>
         )}
       </article>
