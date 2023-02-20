@@ -1,0 +1,7 @@
+    // locales/ru/common.json
+    {
+      "en": "English",
+      "ru": "Russian",
+      "change_locale": "Изменить язык",
+      "current_locale": "Текущий язык"
+    }

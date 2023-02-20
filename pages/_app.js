@@ -4,6 +4,7 @@ import NextNProgress from "nextjs-progressbar";
 import { Inter } from "@next/font/google";
 import TagManager from "react-gtm-module";
 import localFont from "@next/font/local";
+import { appWithTranslation } from 'next-i18next';
 
 const inter = Inter({ subsets: ["latin"] });
 const Metropolis = localFont({ src: "fonts/Metropolis-Bold.woff2" });
@@ -33,4 +34,5 @@ function MyApp({ Component, pageProps }) {
   );
 }
 
-export default MyApp;
+//Wrap appWithTranslation around your app
+export default appWithTranslation(MyApp);

@@ -1,8 +1,10 @@
 /** @type {import('next').NextConfig} */
 const configs = require("./configs.json");
+const { i18n } = require('./next-i18next.config');
 
 const nextConfig = {
-  reactStrictMode: false,
+  i18n,
+  reactStrictMode: true,
   images: {
     loader: "default",
     domains: [
