@@ -8,10 +8,33 @@
     display: none !important;
   }  
 
-  & > div > button {
+  & > div {
+    position: relative;
+    cursor: pointer;
+  }
+  & > div > a {
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 40px;
+    font-size: 16px;
+    text-align: center;
+    margin: 0 auto;
+    // margin-bottom: -7vw;
+    z-index: 2;
+
+    span {
+      background: black;
+      border-radius: 4px;
+      color: white;
+      padding: 10px 10px;
+    }
     
     @media (max-width:768px) {
-      margin: 0 auto !important;
+      // margin-bottom: -5vw;
+      font-size: 14px;
+      bottom: 30px;
     }
   }
 }

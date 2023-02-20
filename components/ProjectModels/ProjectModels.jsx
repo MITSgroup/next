@@ -47,7 +47,7 @@ const ProjectModels = ({ items, image }) => {
     return (
       <Box className={styles.projectModels}>
         <Container>
-          <button style={{margin:'0 auto',marginBottom: '-50px', display: 'block'}} class="model-btn" onClick={() => setIsOpen(true)}>Open 3d scan territory</button>
+          <a class="model-btn" onClick={() => setIsOpen(true)}><span>Tap here to open 3D map</span></a>
           {/* <img width="100%" src={myImage} onClick={() => setIsOpen(true)} ></img> */}
           <Image
             src={myImage}
