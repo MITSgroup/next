@@ -33,9 +33,4 @@ function MyApp({ Component, pageProps }) {
   );
 }
 
-<<<<<<< HEAD
-//Wrap appWithTranslation around your app
-=======
->>>>>>> parent of 97b4c44 (Localization test)
 export default MyApp;
-//
