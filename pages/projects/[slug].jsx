@@ -29,7 +29,7 @@ const Project = ({ project, reviews, global, social }) => {
   // }
   // checkThumb(project);
 
-  console.log(project);
+  console.log(JSON.stringify(project, null, 4));
   return (
     <MainLayout
       metaTitle={`MITS – ${project.attributes.name}`}
