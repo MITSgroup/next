@@ -35,4 +35,4 @@ function MyApp({ Component, pageProps }) {
 }
 
 //Wrap appWithTranslation around your app
-export default appWithTranslation(MyApp);
+export default MyApp;
