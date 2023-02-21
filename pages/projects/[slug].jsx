@@ -15,21 +15,13 @@ import { fetchAPI } from "../../lib/api";
 import ProjectApartments from "../../components/ProjectApartments/ProjectApartments";
 import ProjectCta from "../../components/ProjectCta/ProjectCta";
 import ProjectLocation from "../../components/ProjectLocation/ProjectLocation";
+import Link from "next/link";
+import { useRouter } from "next/router";
 
 const Project = ({ project, reviews, global, social }) => {
-  // function checkThumb(project){
-  //   let myproject = project.attributes.thumbnail.data.attributes.url;
-  //   console.log('Проверка:' + myproject.includes("to"));
-  //   if (myproject.includes("to")) {
-  //     console.log('yes');
-  //   } else {
-  //     myproject = 'https://' + project.attributes.thumbnail.data.attributes.url;
-  //     console.log(myproject);
-  //   }
-  // }
-  // checkThumb(project);
-
-  console.log(JSON.stringify(project, null, 4));
+  const router = useRouter();
+  console.log(router);
+  console.log('123');
   return (
     <MainLayout
       metaTitle={`MITS – ${project.attributes.name}`}
@@ -38,6 +30,7 @@ const Project = ({ project, reviews, global, social }) => {
       global={global}
       social={social}
     >
+       
       <ProjectHero
         name={project.attributes.name}
         description={project.attributes.hero.description}
@@ -124,31 +117,37 @@ const Project = ({ project, reviews, global, social }) => {
   );
 };
 
-export async function getStaticPaths() {
-  const projectsRes = await fetchAPI("/projects", { fields: ["slug"] });
+export async function getStaticPaths({ locales }) {
+  const paths = []
+  const projectsRes = await fetchAPI("/projects", { fields: ["slug"], locale: "all" });
 
-  return {
-    paths: projectsRes.data.map((page) => ({
-      params: {
-        slug: page.attributes.slug,
-      },
-    })),
-    fallback: false,
-  };
+  locales.forEach((locale, i) => {
+    projectsRes.data.forEach((post, i) => {
+      paths.push({ params: { slug: post.attributes.slug }, locale })
+    });
+  });
+  return { paths, fallback: false }
 }
 
-export async function getStaticProps({ params }) {
+export async function getStaticProps(params) {
+  let currentLocale = params.locale;
   const [projectsRes, reviewsRes, globalRes, socialRes] = await Promise.all([
     fetchAPI("/projects", {
       filters: {
-        slug: params.slug,
+        slug: {$eq: params.params.slug},
+        locale: {$eq:currentLocale},
       },
+      locale: currentLocale,
       populate: "deep",
     }),
-    fetchAPI("/reviews", { populate: "*" }),
-    fetchAPI("/global"),
-    fetchAPI("/social"),
+    fetchAPI("/reviews", { locale: currentLocale, populate: "*" }),
+    fetchAPI("/global", { locale: currentLocale }),
+    fetchAPI("/social", { locale: currentLocale }),
   ]);
+
+  if (params.params.slug != projectsRes.data[0]?.attributes.slug) {
+    return {notFound: true}
+  }
 
   return {
     props: {

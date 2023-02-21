@@ -16,6 +16,10 @@ const ProjectCard = ({
 }) => {
   const placeholder =
     "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAI0lEQVR4nGO49vzVik3b3///P3/pPAZPSzVxBgY9FW4NBQYAxrMK7Iw5NV8AAAAASUVORK5CYII=";
+    if (image.indexOf("https://")) {
+      image = 'https://' + image;
+    }
+    
   return (
     <Link href={url}>
       <article className={styles.projectCard}>

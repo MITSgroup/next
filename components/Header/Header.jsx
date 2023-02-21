@@ -7,10 +7,12 @@ import { Container, IconButton, useMediaQuery, Box } from "@mui/material";
 import Image from "next/image";
 import MainNav from "../Nav/MainNav";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 const Header = ({ transparent, openMenu }) => {
   const matchesMd = useMediaQuery("(min-width: 768px)");
   const matchesLg = useMediaQuery("(min-width: 1200px)");
+  const router = useRouter();
 
   return (
     <header
@@ -40,16 +42,16 @@ const Header = ({ transparent, openMenu }) => {
 
           {matchesMd && <MainNav transparent={transparent} />}
 
-          <Box sx={{ marginLeft: "auto" }}>
+          <Box sx={{ marginLeft: "auto" }}> 
             {matchesMd && (
               <Link
-                className={`${styles.linkContacts} ${
-                  transparent ? styles.linkContactsWhite : ""
-                }`}
-                href={"/contacts"}
-              >
-                CONTACT US
-              </Link>
+              className={`${styles.linkContacts} ${
+                transparent ? styles.linkContactsWhite : ""
+              }`}
+              href="/"
+              locale={router.locale === "en" ? "ru" : "en"}
+            > {router.locale === "en" ? "ru" : "en"}
+            </Link>
             )}
           </Box>
           {!matchesMd && (

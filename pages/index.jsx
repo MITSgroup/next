@@ -25,7 +25,8 @@ const Home = ({ projects, portfolios, reviews, services, global, social }) => {
   );
 };
 
-export async function getStaticProps() {
+export async function getStaticProps( locales ) {
+  let currentLocale = locales.locale;
   const [
     projectsRes,
     portfoliosRes,
@@ -34,12 +35,12 @@ export async function getStaticProps() {
     globalRes,
     socialRes,
   ] = await Promise.all([
-    fetchAPI("/projects", { populate: "*" }),
-    fetchAPI("/portfolios", { populate: "*" }),
-    fetchAPI("/reviews", { populate: "*" }),
-    fetchAPI("/services", { populate: "*" }),
-    fetchAPI("/global"),
-    fetchAPI("/social"),
+    fetchAPI("/projects", { locale: {$eq:currentLocale},populate: "*" }),
+    fetchAPI("/portfolios", { locale: currentLocale, populate: "*" }),
+    fetchAPI("/reviews", { locale: currentLocale, populate: "*" }),
+    fetchAPI("/services", { locale: currentLocale, populate: "*" }),
+    fetchAPI("/global", {locale: currentLocale}),
+    fetchAPI("/social", {locale: currentLocale}),
   ]);
 
   return {
