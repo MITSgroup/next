@@ -21,7 +21,7 @@ const Cta = () => {
           </Grid>
           <Grid item xs={12} md={4} sx={{ textAlign: "right" }}>
             <Link
-              href={"https://wa.me/6282144576669"}
+              href={"https://wa.me/6281935583329"}
               target={"_blank"}
               className={styles.button}
               onClick={handleClick}
