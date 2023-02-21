@@ -22,7 +22,7 @@ const ProjectModelling = ({ apartments }) => {
     if (width > 1200) {
       setSlidesCount(5);
     } else if (width > 768) {
-      setSlidesCount(3);
+      setSlidesCount(4);
     } else if (width > 410) {
       setSlidesCount(2);
     } else {
@@ -45,11 +45,12 @@ const ProjectModelling = ({ apartments }) => {
     };
   }, []);
 
+  console.log('Modeling', slidesCount, apartments.length);
   return (
     <Box className={styles.projectModelling}>
       <Container>
         <Grid container justifyContent={"center"}>
-          <Grid item xs={12} md={10}>
+          <Grid item xs={10}>
             <h2 className={styles.title}>
               RETURN ON <br /> INVESTMENT <br /> MODELLING
             </h2>

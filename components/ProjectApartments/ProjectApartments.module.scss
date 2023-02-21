@@ -9,6 +9,7 @@
     overflow: hidden;
 
     .tabItem {
+      width: 100%;
       min-height: 220px;
       padding: 20px 10px 40px;
       min-width: 50%;
@@ -162,16 +163,19 @@
   }
   .apartmentsSlider {
     margin-left: 0;
-    padding: 0 40px;
-    position: relative;
-    width: 100%;
+    padding: 0 100px;
+    // position: relative;
+    // width: 100%;
 
-    .slide {
-      max-width: 220px;
-    }
+    // .slide {
+    //   max-width: 220px;
+    // }
 
-    @media (min-width: 768px) {
-      padding: 0 100px;
+    // @media (min-width: 768px) {
+    //   padding: 0 100px;
+    // }
+    @media (max-width: 1200px) {
+      padding: 0 40px;
     }
   }
 }

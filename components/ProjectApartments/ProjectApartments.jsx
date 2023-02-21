@@ -13,7 +13,7 @@ import { Navigation } from "swiper";
 
 const numberOfCount = (count, apartmentsLength) =>
   count > apartmentsLength ? apartmentsLength : count;
-
+  
 const ProjectApartments = ({ apartments }) => {
   const placeholder =
     "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAIAAAAmkwkpAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAMklEQVR4nB3BQREAQAgCQKJcDjP4NQQhSEIgYnkz7oLkOyRhu6ok7S5ybCeBpO4GMDMfM6oWVFzQoEYAAAAASUVORK5CYII=";
@@ -29,14 +29,14 @@ const ProjectApartments = ({ apartments }) => {
     if (width > 1200) {
       setSlidesCount(5);
     } else if (width > 768) {
-      setSlidesCount(3);
+      setSlidesCount(4);
     } else if (width > 410) {
       setSlidesCount(2);
     } else {
       setSlidesCount(1);
     }
   };
-
+  console.log('Aparts', slidesCount, apartments.length);
   const handleTabClick = (event) => {
     const item = event.currentTarget.tabIndex;
     setActiveTab(item);
