@@ -44,8 +44,13 @@ const MainForm = () => {
           reset();
           if (typeof window !== 'undefined') {
             trackGoalCompletionGoogle('formSubmit', 'Forms', 'submit',
-                'main', process.env.GA_TRACK);
-            window['yaCounter92417784'].reachGoal('main');
+                'Отправка формы footer', process.env.GA_TRACK);
+            window['yaCounter92417784'].reachGoal("mainForm", {
+              params: {
+                name: 'Отправка формы footer',
+                pageUrl: window.location.href
+              }
+            });
           }
           router.replace("/thank-you-form");
         })
@@ -60,7 +65,7 @@ const MainForm = () => {
       className={styles.form}
       onSubmit={handleSubmit(onSubmit)}
       onChange={handleChange}
-      id={"main"}
+      id={"mainForm"}
       name={"main"}
     >
       <Box className={`${styles.field} ${errors.name && styles.fieldError}`}>

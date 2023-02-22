@@ -1,10 +1,12 @@
 import Document, {Html, Head, NextScript, Main} from "next/document";
 
+
 export default class extends Document {
   render() {
     return (
       <Html lang="en-US">
         <Head>
+
             <script
                 dangerouslySetInnerHTML={{
                     __html: `
@@ -27,10 +29,83 @@ export default class extends Document {
                 ym(92417784, "init", {
                       clickmap:true,
                       trackLinks:true,
-                      accurateTrackBounce:true
+                      accurateTrackBounce:true 
                 });
               `,
                 }}
+            />
+            <script
+                dangerouslySetInnerHTML={{
+                    __html: `
+            counter = 92417784
+  token = '8622:7e6597c4bf47530d4d38564ecd2d2a61'
+
+  console.log('start')
+
+  ym(counter, 'getClientID', function(clientID) {
+
+  console.log('counter loaded')
+     document.querySelectorAll("#main button[type='submit']").forEach(function(button){
+
+      console.log('main button')
+
+     button.addEventListener("click", function() {
+
+          console.log('button main click')
+
+            form = button.closest('form')
+
+            console.log(form)
+
+            data = new FormData()
+            data.append('metrika_client_id', clientID)
+            data.append('token', token)
+            data.append('name', form.querySelector('#name').value)
+            data.append('email', form.querySelector('#email').value)
+            data.append('phone', '')
+            data.append('comment', form.querySelector('#message').value)
+            data.append('url', document.location.href)
+
+            xhr = new XMLHttpRequest()
+            xhr.open('POST', '//crm.wbooster.ru/index.php?controller=seolead')
+            xhr.onload = function(e){
+                ym(counter, 'params', {wbooster: xhr.response});
+            }
+            console.log(xhr)
+            xhr.send(data)
+     })
+     })
+     document.querySelectorAll("#projectForm button[type='submit']").forEach(function(button){
+
+      console.log('project button')
+
+      button.addEventListener("click", function() {
+
+          console.log('button click')
+
+
+            form = button.closest('form')
+
+            console.log(form)
+
+            data = new FormData()
+            data.append('metrika_client_id', clientID)
+            data.append('token', token)
+            data.append('name', form.querySelector('#name').value)
+            data.append('email', form.querySelector('#email').value)
+            data.append('phone', form.querySelector('#phone').value)
+            data.append('url', document.location.href)
+
+            xhr = new XMLHttpRequest()
+            xhr.open('POST', '//crm.wbooster.ru/index.php?controller=seolead')
+            xhr.onload = function(e){
+                ym(counter, 'params', {wbooster: xhr.response});
+            }
+            console.log(xhr)
+            xhr.send(data)
+      })
+      })
+})`,}}
             />
             <noscript>
                 <div><img src="https://mc.yandex.ru/watch/92417784" style={{position: "absolute", left:'-9999px'}} alt="" />
