@@ -38,20 +38,48 @@ const ProjectForm = ({reachGoal}) => {
     formState: { errors },
     reset,
   } = useForm();
-  const onSubmit = (data) =>
+  const onSubmit = (data) => {
     axios
-      .post("https://hook.eu1.make.com/jcjz9wf8bjm8lqakt3cbqcefyhqdgdvh", data)
-      .then(() => {
-        reset();
-        if (typeof window !== 'undefined') {
-          trackEvent({event: 'sendForm', formName: reachGoal, url: window.location.href});
-          window['yaCounter92417784'].reachGoal(reachGoal, {URL: window.location.href});
-        }
-        router.replace("/thank-you-form");
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+        .post("https://hook.eu1.make.com/jcjz9wf8bjm8lqakt3cbqcefyhqdgdvh", data)
+        .then(() => {
+          reset();
+          if (typeof window !== 'undefined') {
+            trackEvent({event: 'sendForm', formName: reachGoal, url: window.location.href});
+            window['yaCounter92417784'].reachGoal(reachGoal, {URL: window.location.href});
+          }
+          router.replace("/thank-you-form");
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+
+    delete data.utm_campaign;
+    delete data.utm_content;
+    delete data.utm_medium;
+    delete data.utm_source;
+    delete data.utm_term;
+
+    const dataForCrm = {
+      clientId: '92417784',
+      token:'8622:7e6597c4bf47530d4d38564ecd2d2a61',
+      url: window.location.href,
+      ...data,
+    }
+
+    fetch('/api/crm', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ dataForCrm: dataForCrm }),
+    })
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+  }
+
 
   return (
     <form
