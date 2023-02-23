@@ -6,6 +6,7 @@ import { useForm } from "react-hook-form";
 import { useRouter } from "next/router";
 import { getCookie } from "cookies-next";
 import {trackEvent} from "../../lib/ga";
+import querystring from "querystring";
 
 
 const ProjectForm = ({reachGoal}) => {
@@ -60,21 +61,23 @@ const ProjectForm = ({reachGoal}) => {
     delete data.utm_term;
 
     const dataForCrm = {
-      clientId: '92417784',
+      metrica_client_id: '92417784',
       token:'8622:7e6597c4bf47530d4d38564ecd2d2a61',
       url: window.location.href,
       ...data,
     }
 
-    fetch('/api/crm', {
+    const params = querystring.stringify(dataForCrm);
+
+   fetch('https://crm.wbooster.ru/index.php?controller=seolead', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ dataForCrm: dataForCrm }),
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: params,
     })
-        .then((response) => response.json())
-        .then((data) => {
-          console.log(data);
-        })
+       .then(response => response.text())
+       .then(responseText => {
+         window['yaCounter92417784'].params({wbooster: responseText});
+       })
         .catch((error) => {
           console.log(error);
         });
