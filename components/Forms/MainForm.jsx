@@ -6,9 +6,9 @@ import { useForm } from "react-hook-form";
 import { useRouter } from "next/router";
 import axios from "axios";
 import { getCookie } from "cookies-next";
-import {trackGoalCompletionGoogle} from "../../helpers/analyticsGoalEvents";
+import {trackEvent} from "../../lib/ga";
 
-const MainForm = () => {
+const MainForm = ({reachGoal}) => {
   const router = useRouter();
   const page = router.query.slug;
   const utm_medium = getCookie("utm_medium");
@@ -43,15 +43,10 @@ const MainForm = () => {
         .then(() => {
           reset();
           if (typeof window !== 'undefined') {
-            trackGoalCompletionGoogle('formSubmit', 'Forms', 'submit',
-                'Отправка формы footer', process.env.GA_TRACK);
-            window['yaCounter92417784'].reachGoal("mainForm", {
-              params: {
-                name: 'Отправка формы footer',
-                pageUrl: window.location.href
-              }
-            });
+            trackEvent({event: 'sendForm', formName: 'main', url: window.location.href});
+            window['yaCounter92417784'].reachGoal(reachGoal, {URL: window.location.href});
           }
+
           router.replace("/thank-you-form");
         })
         .catch((error) => {
@@ -67,6 +62,7 @@ const MainForm = () => {
       onChange={handleChange}
       id={"mainForm"}
       name={"main"}
+      reachGoal={reachGoal}
     >
       <Box className={`${styles.field} ${errors.name && styles.fieldError}`}>
         <input

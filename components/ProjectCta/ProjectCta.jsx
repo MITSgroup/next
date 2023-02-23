@@ -6,7 +6,7 @@ import { Container, Grid, Box } from "@mui/material";
 import ProjectForm from "../Forms/ProjectForm";
 import Image from "next/image";
 
-const ProjectCta = ({ title, description, type, left, imageUrl, label }) => {
+const ProjectCta = ({ title, description, type, left, imageUrl, label, reachGoal }) => {
   return (
     <Box className={styles.projectCta} id={"form"}>
       {imageUrl && (
@@ -31,7 +31,7 @@ const ProjectCta = ({ title, description, type, left, imageUrl, label }) => {
             <Box className={styles.content}>
               <h2 className={styles.title}>{title}</h2>
               <p className={styles.description}>{description}</p>
-              <ProjectForm />
+              <ProjectForm reachGoal={reachGoal} />
             </Box>
 
             {label && (

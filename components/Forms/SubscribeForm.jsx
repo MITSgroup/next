@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import { useRouter } from "next/router";
 import axios from "axios";
 import { getCookie } from "cookies-next";
-import {trackGoalCompletionGoogle} from "../../helpers/analyticsGoalEvents";
+import {trackEvent} from "../../lib/ga";
 
 const SubscribeForm = () => {
   const router = useRouter();
@@ -39,9 +39,10 @@ const SubscribeForm = () => {
         .then(() => {
           reset();
           if (typeof window !== 'undefined') {
-            trackGoalCompletionGoogle('formSubmit', 'Forms', 'submit',
-                'subscribeForm', process.env.GA_TRACK);
-            window['yaCounter92417784'].reachGoal('subscribeForm');
+            trackEvent({event: 'sendForm', formName: 'subscribeForm', url: window.location.href});
+            window['yaCounter92417784'].reachGoal('subscribeForm', {
+              URL: window.location.href
+            });
           }
           router.replace("/thank-you-subscribe");
         })

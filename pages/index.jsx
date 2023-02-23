@@ -9,6 +9,7 @@ import React from "react";
 
 const Home = ({ projects, portfolios, reviews, services, global, social }) => {
   return (
+
     <MainLayout
       metaTitle={"MITS"}
       metaDescription={"MITS"}
@@ -20,7 +21,7 @@ const Home = ({ projects, portfolios, reviews, services, global, social }) => {
       <Reviews reviews={reviews} />
       <Cta />
       <Services services={services} />
-      <ContactUs />
+      <ContactUs reachGoal={"Отправка формы footer"} />
     </MainLayout>
   );
 };

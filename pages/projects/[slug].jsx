@@ -30,7 +30,7 @@ const Project = ({ project, reviews, global, social }) => {
       global={global}
       social={social}
     >
-       
+
       <ProjectHero
         name={project.attributes.name}
         description={project.attributes.hero.description}
@@ -39,6 +39,7 @@ const Project = ({ project, reviews, global, social }) => {
         price={project.attributes.hero.startingPrice}
         specs={project.attributes.hero.specs}
         imageUrl={project.attributes.thumbnail.data.attributes.url}
+        reachGoal={"project_top"}
       />
       {project.attributes.intro && (
         <ProjectIntro
@@ -92,7 +93,7 @@ const Project = ({ project, reviews, global, social }) => {
 
       {project.attributes.models && (
         <ProjectModels image={project.attributes.models.model} items={project.attributes?.models.model} />
-      )} 
+      )}
 
       {project.attributes.location && (
         <ProjectLocation
@@ -112,6 +113,7 @@ const Project = ({ project, reviews, global, social }) => {
         imageUrl={project.attributes?.formImage?.data?.attributes?.url}
         type={project.attributes.hero.projectType}
         left={project.attributes.hero.projectLeft}
+        reachGoal={"project_bot"}
       />
     </MainLayout>
   );

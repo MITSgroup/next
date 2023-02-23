@@ -2,11 +2,18 @@ import styles from "./Cta.module.scss";
 import React from "react";
 import { Container, Grid, Button } from "@mui/material";
 import Link from "next/link";
+import {trackEvent} from "../../lib/ga";
 
 const Cta = () => {
   const handleClick = () => {
     window.dataLayer = window.dataLayer || [];
     dataLayer.push({ event: "wa_click" });
+    if (typeof window !== 'undefined') {
+      trackEvent({event: 'sendForm', formName: 'whatsapp', url: window.location.href});
+      window['yaCounter92417784'].reachGoal('whatsapp', {
+        URL: window.location.href,
+      });
+    }
   };
 
   return (

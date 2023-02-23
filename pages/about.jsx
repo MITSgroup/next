@@ -12,6 +12,15 @@ const About = ({ global, social }) => {
   const placeholder2 =
     "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAI0lEQVR4nGO49vzVik3b3///P3/pPAZPSzVxBgY9FW4NBQYAxrMK7Iw5NV8AAAAASUVORK5CYII=";
 
+
+  if(typeof window !== 'undefined') {
+    window.dataLayer.push({
+      event: 'pageview',
+      page: window.location.href,
+    });
+  }
+
+
   return (
     <MainLayout
       metaTitle={"MITS"}
@@ -60,26 +69,26 @@ const About = ({ global, social }) => {
               <Box className={styles.item}>
                 <h3>WHO WE ARE</h3>
                 <p>
-                Founded in Bali in 2020, by multi-awards winning developers and 
-                architects, MITS is a collaborative team of creative individuals 
-                who bring a constructive, strategic and inclusive approach to design. We 
+                Founded in Bali in 2020, by multi-awards winning developers and
+                architects, MITS is a collaborative team of creative individuals
+                who bring a constructive, strategic and inclusive approach to design. We
                 uncovering insights behind what users need and desire.
                 </p>
               </Box>
               <Box className={styles.item}>
                 <h3>MISSION</h3>
                 <p>
-                  Our mission is to make positive impact through design and create a 
-                  better everyday life for people and the planet. Our driving force is to 
-                  create sustainable social architecture for lifestyle of communities and 
+                  Our mission is to make positive impact through design and create a
+                  better everyday life for people and the planet. Our driving force is to
+                  create sustainable social architecture for lifestyle of communities and
                   make projects profitable for our customers.
                 </p>
               </Box>
               <Box className={styles.item}>
                 <h3>PROJECT APPROACH</h3>
                 <p>
-                We work with an ever-growing network of forward-thinking 
-                specialists and creatives from around the world, specially selected for 
+                We work with an ever-growing network of forward-thinking
+                specialists and creatives from around the world, specially selected for
                 each project.
                 </p>
               </Box>
@@ -145,7 +154,7 @@ const About = ({ global, social }) => {
           </Box>
         </Box>
       </section>
-      <ContactUs />
+      <ContactUs reachGoal={'about'} />
     </MainLayout>
   );
 };
