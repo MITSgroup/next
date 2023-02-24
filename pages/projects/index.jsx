@@ -20,7 +20,7 @@ const Projects = ({ projects, portfolios, global, social }) => {
 export async function getStaticProps( locales ) {
   console.log(locales);
   const [projectsRes, portfoliosRes, globalRes, socialRes] = await Promise.all([
-    fetchAPI("/projects", { locale: {$eq:currentLocale}, populate: "*" }),
+    fetchAPI("/projects", { populate: "*" }),
     fetchAPI("/portfolios", { populate: "*" }),
     fetchAPI("/global"),
     fetchAPI("/social"),
