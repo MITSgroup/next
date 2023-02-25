@@ -6,7 +6,6 @@ import { useForm } from "react-hook-form";
 import { useRouter } from "next/router";
 import axios from "axios";
 import { getCookie } from "cookies-next";
-import {trackEvent} from "../../lib/ga";
 
 const MainForm = ({reachGoal}) => {
   const router = useRouter();
@@ -43,7 +42,10 @@ const MainForm = ({reachGoal}) => {
         .then(() => {
           reset();
           if (typeof window !== 'undefined') {
-            trackEvent({event: 'sendForm', formName: 'main', url: window.location.href});
+            window.gtag('event', 'sendForm', {
+              'formName': reachGoal,
+              'formURL': window.location.href,
+            });
             window['yaCounter92417784'].reachGoal(reachGoal, {URL: window.location.href});
           }
 

@@ -1,6 +1,5 @@
 import Document, {Html, Head, NextScript, Main} from "next/document";
 
-
 export default class extends Document {
   render() {
     return (
@@ -19,8 +18,26 @@ export default class extends Document {
                 }}
             />
             {/* Google Tag Manager Script - Google Analytics */}
+            {/* Google Analytics Script */}
+            <script
+                async
+                src={`https://www.googletagmanager.com/gtag/js?id=G-WPQXCQ95LV`}
+            />
+            <script
+                // eslint-disable-next-line react/no-danger
+                dangerouslySetInnerHTML={{
+                    __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-WPQXCQ95LV', {
+              page_path: window.location.pathname,
+            });
+          `,
+                }}
+            />
+            {/* Google Analytics Script */}
             {/* Yandex Metrika Script */}
-
             <script
                 dangerouslySetInnerHTML={{
                     __html: `

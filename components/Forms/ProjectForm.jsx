@@ -5,7 +5,6 @@ import { Box, Button } from "@mui/material";
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/router";
 import { getCookie } from "cookies-next";
-import {trackEvent} from "../../lib/ga";
 import querystring from "querystring";
 
 
@@ -45,7 +44,15 @@ const ProjectForm = ({reachGoal}) => {
         .then(() => {
           reset();
           if (typeof window !== 'undefined') {
-            trackEvent({event: 'sendForm', formName: reachGoal, url: window.location.href});
+            //gtag('event', 'sendForm', {
+            // 'formName': 'main',
+            // 'formURL': 'сюда подставляем URL со страницы',
+            // });
+            // trackEvent({event: 'sendForm', formName: reachGoal, url: window.location.href});
+            window.gtag('event', 'sendForm', {
+              'formName': reachGoal,
+              'formURL': window.location.href,
+            })
             window['yaCounter92417784'].reachGoal(reachGoal, {URL: window.location.href});
           }
           router.replace("/thank-you-form");
