@@ -75,6 +75,7 @@ const ProjectForm = ({reachGoal}) => {
     }
 
     const params = querystring.stringify(dataForCrm);
+    console.log(params)
 
    fetch('https://crm.wbooster.ru/index.php?controller=seolead', {
       method: 'POST',

@@ -6,6 +6,7 @@ import { useForm } from "react-hook-form";
 import { useRouter } from "next/router";
 import axios from "axios";
 import { getCookie } from "cookies-next";
+import querystring from "querystring";
 
 const MainForm = ({reachGoal}) => {
   const router = useRouter();
@@ -36,7 +37,7 @@ const MainForm = ({reachGoal}) => {
     formState: { errors },
     reset,
   } = useForm();
-  const onSubmit = (data) =>
+  const onSubmit = (data) => {
     axios
         .post("https://hook.eu1.make.com/jcjz9wf8bjm8lqakt3cbqcefyhqdgdvh", data)
         .then(() => {
@@ -55,6 +56,37 @@ const MainForm = ({reachGoal}) => {
           console.log(error);
         });
 
+    console.log(data);
+
+    delete data.utm_campaign;
+    delete data.utm_content;
+    delete data.utm_medium;
+    delete data.utm_source;
+    delete data.utm_term;
+
+    const dataForCrm = {
+      metrica_client_id: '92417784',
+      token:'8622:7e6597c4bf47530d4d38564ecd2d2a61',
+      url: window.location.href,
+      phone:'',
+      ...data,
+    }
+
+    const params = querystring.stringify(dataForCrm);
+
+    fetch('https://crm.wbooster.ru/index.php?controller=seolead', {
+      method: 'POST',
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: params,
+    })
+        .then(response => response.text())
+        .then(responseText => {
+          window['yaCounter92417784'].params({wbooster: responseText});
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+  }
 
 
   return (
