@@ -16,8 +16,8 @@ const MainNav = ({ transparent }) => {
         <li>
           <Link href={"/posts"}>JOURNAL</Link>
         </li>
-        <li>
-          <Link
+        {/* <li>
+        <Link
             className={`${styles.linkContacts} ${
               transparent ? styles.linkContactsWhite : ""
             }`}
@@ -25,7 +25,7 @@ const MainNav = ({ transparent }) => {
             >
             CONTACT US
           </Link>
-        </li>
+        </li> */}
       </ul>
     </nav>
   );

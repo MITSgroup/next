@@ -44,14 +44,22 @@ const Header = ({ transparent, openMenu }) => {
 
           <Box sx={{ marginLeft: "auto" }}> 
             {matchesMd && (
-              <Link
-              className={`${styles.linkContacts} ${
-                transparent ? styles.linkContactsWhite : ""
-              }`}
-              href="/"
-              locale={router.locale === "en" ? "ru" : "en"}
-            > {router.locale === "en" ? "ru" : "en"}
-            </Link>
+            //   <Link
+            //   className={`${styles.linkContacts} ${
+            //     transparent ? styles.linkContactsWhite : ""
+            //   }`}
+            //   href="/"
+            //   locale={router.locale === "en" ? "ru" : "en"}
+            // > {router.locale === "en" ? "ru" : "en"}
+            // </Link>
+            <Link
+            className={`${styles.linkContacts} ${
+              transparent ? styles.linkContactsWhite : ""
+            }`}
+            href={"/contacts"}
+            >
+            CONTACT US
+          </Link>
             )}
           </Box>
           {!matchesMd && (
