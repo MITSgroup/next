@@ -3,7 +3,7 @@ import React from "react";
 import { Container, IconButton, Grid } from "@mui/material";
 import ReviewItem from "../ReviewItem/ReviewItem";
 import { Swiper, SwiperSlide } from "swiper/react";
-
+import { useRouter } from "next/router";
 import "swiper/css";
 import "swiper/css/navigation";
 
@@ -12,11 +12,11 @@ import { Navigation } from "swiper";
 const Reviews = ({ reviews }) => {
   const arrowPrev = React.useRef(null);
   const arrowNext = React.useRef(null);
-
+  const router = useRouter();
   return (
     <section className={styles.reviews}>
       <Container>
-        <h1 className={styles.title}>WHAT OUR CLIENTS SAY:</h1>
+        <h1 className={styles.title}>{router.locale === "en" ? "WHAT OUR CLIENTS SAY" : "ЧТО ГОВОРЯТ НАШИ КЛИЕНТЫ"}:</h1>
 
         <Swiper
           navigation={{

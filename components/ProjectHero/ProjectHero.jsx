@@ -5,6 +5,7 @@ import { useMediaQuery, Box } from "@mui/material";
 
 import ProjectForm from "../Forms/ProjectForm";
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 const ProjectHero = ({
                          name,
@@ -20,6 +21,8 @@ const ProjectHero = ({
     const matchesLg = useMediaQuery("(min-width: 1200px)");
     const placeholder =
         "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAI0lEQVR4nGO49vzVik3b3///P3/pPAZPSzVxBgY9FW4NBQYAxrMK7Iw5NV8AAAAASUVORK5CYII=";
+
+    const router = useRouter();
 
     return (
         <Box className={styles.projectHero}>
@@ -66,7 +69,7 @@ const ProjectHero = ({
                         }}
                     >
                         <Box className={styles.priceBlock}>
-                            <small>Starting from:</small>
+                            <small>{router.locale === "en" ? "Starting from:" : "Стартовая цена:"}</small>
                             <p className={styles.price}>${price}</p>
                             <ul className={styles.includesList}>
                                 {specs &&
@@ -74,10 +77,10 @@ const ProjectHero = ({
                             </ul>
                         </Box>
                         <Box className={styles.availability}>
-                            <p>
-                                ONLY {left} <br /> {type} <br />
-                                LEFT
-                            </p>
+                        <p>
+                            {router.locale === "en" ? "ONLY" : "Остался"} {left}
+                            <br /> {type} <br /> {router.locale === "en" ? "LEFT" : ""}
+                        </p>
                         </Box>
                     </Box>
                 </Box>

@@ -103,7 +103,7 @@ const MainForm = ({reachGoal}) => {
           type={"text"}
           id={"name"}
           name={"name"}
-          placeholder={"name:"}
+          placeholder={router.locale === "en" ? "name:" : "ИМЯ"}
           {...register("name", { required: true })}
         />
       </Box>
@@ -112,7 +112,7 @@ const MainForm = ({reachGoal}) => {
           type={"email"}
           id={"email"}
           name={"email"}
-          placeholder={"email:"}
+          placeholder={router.locale === "en" ? "email:" : "ЭЛЕКТРОННАЯ ПОЧТА"}
           {...register("email", { required: true })}
         />
       </Box>
@@ -121,12 +121,12 @@ const MainForm = ({reachGoal}) => {
           rows={4}
           name={"message"}
           id={"message"}
-          placeholder={"message:"}
+          placeholder={router.locale === "en" ? "message:" : "СООБЩЕНИЕ"}
           {...register("message")}
         />
       </Box>
       <Button variant={"text"} type={"submit"} className={styles.submit}>
-        send
+        {router.locale === "en" ? "send" : "отправить"}
       </Button>
     </form>
   );

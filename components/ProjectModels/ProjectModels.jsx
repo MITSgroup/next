@@ -2,7 +2,7 @@ import styles from "./ProjectModels.module.scss";
 import React, { useState } from 'react'
 import Modal from 'react-modal';
 import Image from 'next/image';
-
+import { useRouter } from "next/router";
 
 import { Container, Grid, Box } from "@mui/material";
 
@@ -16,6 +16,7 @@ function myModel (model) {
 
 const ProjectModels = ({ items, image }) => {
   
+  const router = useRouter();
   const [isOpen, setIsOpen] = useState(false)
    const customStyles = {
       overlay: {

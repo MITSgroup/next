@@ -3,6 +3,9 @@ import React from "react";
 import { Box } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
+// const router = useRouter();
+// {router.locale === "en" ? "LEFT" : ""}
 
 const ProjectCard = ({
   url,
@@ -14,6 +17,8 @@ const ProjectCard = ({
   type,
   left,
 }) => {
+
+  const router = useRouter();
   const placeholder =
     "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAI0lEQVR4nGO49vzVik3b3///P3/pPAZPSzVxBgY9FW4NBQYAxrMK7Iw5NV8AAAAASUVORK5CYII=";
     if (image.indexOf("https://")) {
@@ -52,13 +57,13 @@ const ProjectCard = ({
               <span>{locationName}</span>
             </Box>
             <p className={styles.description}>{description}</p>
-            <span className={styles.link}> find out more &#x3e;</span>
+            <span className={styles.link}> {router.locale === "en" ? "find out more" : "узнать больше"} &#x3e;</span>
           </Box>
           {label && (
             <Box className={styles.label}>
               <span>
-                ONLY {left}
-                <br /> {type} <br /> LEFT
+              {router.locale === "en" ? "ONLY" : "Осталось"} {left}
+                <br /> {type} <br /> {router.locale === "en" ? "LEFT" : ""}
               </span>
             </Box>
           )}
@@ -66,7 +71,7 @@ const ProjectCard = ({
 
         {label && (
           <Box className={`${styles.label} ${styles.onSaleLabel}`}>
-            <span>FOR SALE</span>
+            <span>{router.locale === "en" ? "FOR SALE" : "продается"}</span>
           </Box>
         )}
       </article>

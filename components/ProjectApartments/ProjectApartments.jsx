@@ -182,7 +182,7 @@ const ProjectApartments = ({ apartments }) => {
                           <h4 className={styles.subtitle}>LAYOUT</h4>
 
                           <Image
-                            src={apartment.layout.data.attributes.url}
+                            src={apartment.layout.data?.attributes.url}
                             width={500}
                             height={750}
                             sizes="100vw"

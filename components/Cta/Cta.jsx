@@ -2,6 +2,7 @@ import styles from "./Cta.module.scss";
 import React from "react";
 import { Container, Grid, Button } from "@mui/material";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 const Cta = () => {
   const handleClick = () => {
@@ -17,15 +18,17 @@ const Cta = () => {
     }
   };
 
+  const router = useRouter();
+
   return (
     <section className={styles.cta}>
       <Container>
         <Grid container alignItems={"center"} spacing={4}>
           <Grid item xs={12} md={4}>
-            <p className={styles.text}>FIND OUT WHAT’S BEST FOR YOU.</p>
+            <p className={styles.text}>{router.locale === "en" ? "FIND OUT WHAT’S BEST FOR YOU." : "УЗНАЙТЕ, ЧТО МЫ ПРИГОТОВИЛИ СПЕЦИАЛЬНО ДЛЯ ВАС."}</p>
           </Grid>
           <Grid item xs={12} md={4}>
-            <p className={styles.text}>CHAT WITH A LIVE PROPERTY EXPERT.</p>
+            <p className={styles.text}>{router.locale === "en" ? "CHAT WITH A LIVE PROPERTY EXPERT." : "ОБЩАЙТЕСЬ С НАШИМ ЭКСПЕРТОМ ПО НЕДВИЖИМОСТИ."}</p>
           </Grid>
           <Grid item xs={12} md={4} sx={{ textAlign: "right" }}>
             <Link
@@ -34,7 +37,7 @@ const Cta = () => {
               className={styles.button}
               onClick={handleClick}
             >
-              GO TO WHATSAPP &#x3e;
+              {router.locale === "en" ? "GO TO WHATSAPP" : "ПЕРЕЙТИ В WHATSAPP"} &#x3e;
             </Link>
           </Grid>
         </Grid>

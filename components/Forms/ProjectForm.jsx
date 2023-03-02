@@ -106,7 +106,7 @@ const ProjectForm = ({reachGoal}) => {
           type={"text"}
           id={"name"}
           name={"name"}
-          placeholder={"name:"}
+          placeholder={router.locale === "en" ? "name:" : "ИМЯ:"}
           {...register("name", { required: true })}
         />
       </Box>
@@ -115,7 +115,7 @@ const ProjectForm = ({reachGoal}) => {
           type={"email"}
           id={"email"}
           name={"email"}
-          placeholder={"email:"}
+          placeholder={router.locale === "en" ? "email:" : "EMAIL:"}
           {...register("email", { required: true })}
         />
       </Box>
@@ -124,13 +124,13 @@ const ProjectForm = ({reachGoal}) => {
           type={"tel"}
           id={"phone"}
           name={"phone"}
-          placeholder={"phone number:"}
+          placeholder={router.locale === "en" ? "phone number:" : "НОМЕР ТЕЛЕФОНА:"}
           {...register("phone", { required: true })}
         />
       </Box>
 
       <Button variant={"text"} type={"submit"} className={styles.submit}>
-        REQUEST A TOUR
+        {router.locale === "en" ? "REQUEST A TOUR" : "ЗАКАЗАТЬ ПРОСМОТР"}
       </Button>
     </form>
   );
