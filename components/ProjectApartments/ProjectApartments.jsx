@@ -10,11 +10,13 @@ import "swiper/css";
 import "swiper/css/navigation";
 
 import { Navigation } from "swiper";
+import { useRouter } from "next/router";
 
 const numberOfCount = (count, apartmentsLength) =>
   count > apartmentsLength ? apartmentsLength : count;
   
 const ProjectApartments = ({ apartments }) => {
+  const router = useRouter();
   const placeholder =
     "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAIAAAAmkwkpAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAMklEQVR4nB3BQREAQAgCQKJcDjP4NQQhSEIgYnkz7oLkOyRhu6ok7S5ybCeBpO4GMDMfM6oWVFzQoEYAAAAASUVORK5CYII=";
   const matchesLg = useMediaQuery("(min-width: 1200px)");

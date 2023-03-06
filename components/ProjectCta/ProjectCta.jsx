@@ -5,8 +5,10 @@ import { Container, Grid, Box } from "@mui/material";
 
 import ProjectForm from "../Forms/ProjectForm";
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 const ProjectCta = ({ title, description, type, left, imageUrl, label, reachGoal }) => {
+  const router = useRouter();
   return (
     <Box className={styles.projectCta} id={"form"}>
       {imageUrl && (
@@ -37,8 +39,8 @@ const ProjectCta = ({ title, description, type, left, imageUrl, label, reachGoal
             {label && (
               <Box className={styles.availability}>
                 <p>
-                  ONLY {left} <br /> {type} <br />
-                  LEFT
+                {router.locale === "en" ? "ONLY" : "Осталось"} {left}
+                <br /> {type} <br /> {router.locale === "en" ? "LEFT" : ""}
                 </p>
               </Box>
             )}

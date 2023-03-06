@@ -2,6 +2,8 @@ import styles from "./ProjectModelling.module.scss";
 import React from "react";
 import { Container, Grid, Box, IconButton } from "@mui/material";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { useRouter } from "next/router";
+
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -12,6 +14,7 @@ const numberOfCount = (count, apartmentsLength) =>
   count > apartmentsLength ? apartmentsLength : count;
 
 const ProjectModelling = ({ apartments }) => {
+  const router = useRouter();
   const [activeTab, setActiveTab] = React.useState(0);
   const [slidesCount, setSlidesCount] = React.useState(1);
   const arrowPrev = React.useRef(null);
@@ -52,7 +55,7 @@ const ProjectModelling = ({ apartments }) => {
         <Grid container justifyContent={"center"}>
           <Grid item xs={10}>
             <h2 className={styles.title}>
-              RETURN ON <br /> INVESTMENT <br /> MODELLING
+               {router.locale === "en" ? "RETURN ON" : "ПРИБЫЛЬ ОТ"} <br /> {router.locale === "en" ? "INVESTMENT" : "ИНВЕСТИИЦИОННОЙ"} <br />{router.locale === "en" ? "MODELLING" : "ДЕЯТЕЛЬНОСТИ"} 
             </h2>
           </Grid>
         </Grid>
