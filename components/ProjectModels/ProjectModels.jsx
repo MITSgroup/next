@@ -48,7 +48,7 @@ const ProjectModels = ({ items, image }) => {
     return (
       <Box className={styles.projectModels}>
         <Container>
-          <a class="model-btn" onClick={() => setIsOpen(true)}><span>Tap here to open 3D map</span></a>
+          <a class="model-btn" onClick={() => setIsOpen(true)}><span>{router.locale === "en" ? "Tap here to open 3D map" : "Карта 3D"}</span></a>
           {/* <img width="100%" src={myImage} onClick={() => setIsOpen(true)} ></img> */}
           <Image
             src={myImage}

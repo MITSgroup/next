@@ -16,7 +16,7 @@ const Reviews = ({ reviews }) => {
   return (
     <section className={styles.reviews}>
       <Container>
-        <h1 className={styles.title}>{router.locale === "en" ? "WHAT OUR CLIENTS SAY" : "ЧТО ГОВОРЯТ НАШИ КЛИЕНТЫ"}:</h1>
+        <h1 className={styles.title}>{router.locale === "en" ? "WHAT OUR CLIENTS SAY" : "ОТЗЫВЫ ПОКУПАТЕЛЕЙ"}:</h1>
 
         <Swiper
           navigation={{

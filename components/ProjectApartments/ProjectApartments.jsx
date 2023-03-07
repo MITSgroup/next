@@ -87,7 +87,7 @@ const ProjectApartments = ({ apartments }) => {
                         <Box>
                           <p className={styles.price}>${apartment.price}</p>
                           <p className={styles.bedrooms}>
-                            FOR A {apartment.bedroomsCount}-BEDROOM UNIT
+                            {apartment.bedroomsCount}
                           </p>
                           <ul className={styles.list}>
                             {apartment.advantages &&
@@ -181,7 +181,7 @@ const ProjectApartments = ({ apartments }) => {
                         justifyContent={"space-between"}
                       >
                         <Grid item xs={12} md={8} lg={8}>
-                          <h4 className={styles.subtitle}>LAYOUT</h4>
+                          <h4 className={styles.subtitle}>{router.locale === "en" ? "LAYOUT" : "ПЛАН"}</h4>
 
                           <Image
                             src={apartment.layout.data?.attributes.url}
@@ -196,7 +196,7 @@ const ProjectApartments = ({ apartments }) => {
                           />
                         </Grid>
                         <Grid item xs={12} md={4} lg={3}>
-                          <h4 className={styles.subtitle}>Specs</h4>
+                          <h4 className={styles.subtitle}>{router.locale === "en" ? "LAYOUT" : "СПЕЦИФИКАЦИЯ"}</h4>
                           <ul className={styles.specs}>
                             {apartment.specs &&
                               apartment.specs.map((item, idx) => (
@@ -206,7 +206,7 @@ const ProjectApartments = ({ apartments }) => {
                                 </li>
                               ))}
                             <li>
-                              <p className={styles.name}>Total</p>
+                              <p className={styles.name}>{router.locale === "en" ? "Total" : "Общая площадь"}</p>
                               <p className={styles.value}>
                                 {apartment.specsTotal}
                               </p>
