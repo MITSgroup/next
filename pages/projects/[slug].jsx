@@ -120,7 +120,7 @@ const Project = ({ project, reviews, global, social }) => {
 export async function getStaticPaths({ locales }) {
   const paths = []
   const projectsRes = await fetchAPI("/projects", { fields: ["slug"], locale: "all" });
-
+  
   locales.forEach((locale, i) => {
     projectsRes.data.forEach((post, i) => {
       paths.push({ params: { slug: post.attributes.slug }, locale })

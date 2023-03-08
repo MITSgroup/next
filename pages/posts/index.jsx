@@ -5,8 +5,10 @@ import BlogHero from "../../components/BlogHero/BlogHero";
 import PostsGrid from "../../components/PostsGrid/PostsGrid";
 import Subscribe from "../../components/Subscribe/Subscribe";
 import { fetchAPI } from "../../lib/api";
+import { useRouter } from "next/router";
 
 const Posts = ({ posts, global, social }) => {
+  const router = useRouter();
   const matchesMd = useMediaQuery("(min-width: 768px)");
 
   return (
@@ -17,7 +19,7 @@ const Posts = ({ posts, global, social }) => {
       global={global}
       social={social}
     >
-      <BlogHero title={"MITS JOURNAL"} imagePath={"/images/hero/blog.jpg"} />
+      <BlogHero title={router.locale === "en" ? "MITS JOURNAL" : "MITS БЛОГ"} imagePath={"/images/hero/blog.jpg"} />
 
       <Container>
         <Box pt={matchesMd ? 12 : 8} pb={matchesMd ? 14 : 8}>
@@ -29,13 +31,14 @@ const Posts = ({ posts, global, social }) => {
   );
 };
 
-export async function getStaticProps() {
+export async function getStaticProps(locales) {
+  let currentLocale = locales.locale;
   const response = await fetch(
-    `${process.env.API_URL}/posts?sort=createdAt:desc`
+    `${process.env.API_URL}/posts?sort=createdAt:desc&locale=` + currentLocale
   );
   const postsRes = await response.json();
-  const globalRes = await fetchAPI("/global");
-  const socialRes = await fetchAPI("/social");
+  const globalRes = await fetchAPI("/global", {locale: currentLocale});
+  const socialRes = await fetchAPI("/social", {locale: currentLocale} );
 
   return {
     props: {

@@ -96,30 +96,37 @@ const Post = ({ post, global, social }) => {
   );
 };
 
-export async function getStaticPaths() {
-  const postsRes = await fetchAPI("/posts", { fields: ["slug"] });
+export async function getStaticPaths({ locales }) {
+  const paths = []
+  const postsRes = await fetchAPI("/posts", { fields: ["slug"], locale: "all" });
 
-  return {
-    paths: postsRes.data.map((page) => ({
-      params: {
-        slug: page.attributes.slug,
-      },
-    })),
-    fallback: false,
-  };
+  locales.forEach((locale, i) => {
+    postsRes.data.forEach((post, i) => {
+      paths.push({ params: { slug: post.attributes.slug }, locale })
+    });
+  });
+
+  return { paths, fallback: false }
 }
 
-export async function getStaticProps({ params }) {
+export async function getStaticProps( params ) {
+  let currentLocale = params.locale;
   const [postsRes, globalRes, socialRes] = await Promise.all([
     fetchAPI("/posts", {
       filters: {
-        slug: params.slug,
+        slug: {$eq: params.params.slug},
+        locale: {$eq:currentLocale},
       },
+      locale: currentLocale,
       populate: "deep",
     }),
-    fetchAPI("/global"),
-    fetchAPI("/social"),
+    fetchAPI("/global", { locale: currentLocale }),
+    fetchAPI("/social", { locale: currentLocale }),
   ]);
+
+  if (params.params.slug != postsRes.data[0]?.attributes.slug) {
+    return {notFound: true}
+  }
 
   return {
     props: {

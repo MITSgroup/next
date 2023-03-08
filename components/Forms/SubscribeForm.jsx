@@ -67,7 +67,7 @@ const SubscribeForm = () => {
           type={"text"}
           id={"name"}
           name={"name"}
-          placeholder={"name:"}
+          placeholder={router.locale === "en" ? "name:" : "ИМЯ:"}
           {...register("name", { required: true })}
         />
       </Box>
@@ -76,14 +76,14 @@ const SubscribeForm = () => {
           type={"email"}
           id={"email"}
           name={"email"}
-          placeholder={"email:"}
+          placeholder={router.locale === "en" ? "email:" : "EMAIL:"}
           {...register("email", { required: true })}
         />
       </Box>
 
       <input type="hidden" value={"subscribe"} {...register("type")} />
       <Button variant={"text"} type={"submit"} className={styles.submit}>
-        send
+        {router.locale === "en" ? "send" : "отправить"}
       </Button>
     </form>
   );

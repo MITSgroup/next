@@ -38,30 +38,41 @@ const PortfolioSingle = ({ portfolio, global, social }) => {
   );
 };
 
-export async function getStaticPaths() {
-  const portfolioRes = await fetchAPI("/portfolios", { fields: ["slug"] });
-
-  return {
-    paths: portfolioRes.data.map((page) => ({
-      params: {
-        slug: page.attributes.slug,
-      },
-    })),
-    fallback: false,
-  };
+export async function getStaticPaths({ locales }) {
+  const paths = []
+  const portfolioRes = await fetchAPI("/portfolios", { fields: ["slug"], locale: "all" });
+  console.log('123333333331233333333312333333333123333333331233333333312333333333123333333331233333333312333333333123333333331233333333312333333333')
+  console.log(portfolioRes);
+  locales.forEach((locale, i) => {
+    portfolioRes.data.forEach((post, i) => {
+      console.log(post.attributes.slug);
+      paths.push({ params: { slug: post.attributes.slug }, locale })
+    });
+  });
+  console.log(paths);
+  return { paths, fallback: false }
 }
 
-export async function getStaticProps({ params }) {
+export async function getStaticProps(params) {
+  // console.log('123333333331233333333312333333333123333333331233333333312333333333123333333331233333333312333333333123333333331233333333312333333333')
+  // console.log(params);
+  let currentLocale = params.locale;
   const [portfolioRes, globalRes, socialRes] = await Promise.all([
     fetchAPI("/portfolios", {
       filters: {
-        slug: params.slug,
+        slug: {$eq: params.params.slug},
+        locale: {$eq:currentLocale},
       },
+      locale: currentLocale,
       populate: "deep",
     }),
-    fetchAPI("/global"),
-    fetchAPI("/social"),
+    fetchAPI("/global", { locale: currentLocale }),
+    fetchAPI("/social", { locale: currentLocale }),
   ]);
+
+  if (params.params.slug != portfolioRes.data[0]?.attributes.slug) {
+    return {notFound: true}
+  }
 
   return {
     props: {
