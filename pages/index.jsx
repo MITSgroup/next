@@ -21,7 +21,7 @@ const Home = ({ projects, portfolios, reviews, services, global, social }) => {
       <Reviews reviews={reviews} />
       <Cta />
       <Services services={services} />
-      <ContactUs reachGoal={"Отправка формы footer"} />
+      <ContactUs reachGoal={"main"} />
     </MainLayout>
   );
 };
