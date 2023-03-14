@@ -1,7 +1,7 @@
 @import "styles/variables";
 
 .button {
-  font-family: "__Metropolis_e5531d", "__Metropolis_Fallback_e5531d";
+  font-family: var(--myfont);
   text-transform: uppercase;
   font-weight: 700;
   margin-top: 10px;

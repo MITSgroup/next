@@ -5,7 +5,7 @@
   position: relative;
 
   .title {
-    font-family: "__Metropolis_e5531d", "__Metropolis_Fallback_e5531d";
+    font-family: var(--myfont);
     text-align: center;
     font-weight: 700;
     font-size: 32px;
@@ -20,7 +20,7 @@
   }
 
   .subtitle {
-    font-family: "__Metropolis_e5531d", "__Metropolis_Fallback_e5531d";
+    font-family: var(--myfont);
     font-weight: 700;
     font-size: 14px;
     text-align: center;
@@ -32,7 +32,7 @@
   .item {
     margin-bottom: 25px;
     h3 {
-      font-family: "__Metropolis_e5531d", "__Metropolis_Fallback_e5531d";
+      font-family: var(--myfont);
       font-weight: 700;
       font-size: 14px;
       line-height: 12px;

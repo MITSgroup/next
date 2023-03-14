@@ -35,7 +35,7 @@
       }
 
       .price {
-        font-family: "__Metropolis_e5531d", "__Metropolis_Fallback_e5531d";
+        font-family: var(--myfont);
         font-weight: 700;
         font-size: 24px;
         line-height: 24px;
@@ -47,7 +47,7 @@
       }
 
       .bedrooms {
-        font-family: "__Metropolis_e5531d", "__Metropolis_Fallback_e5531d";
+        font-family: var(--myfont);
         font-weight: 700;
         font-size: 12px;
         line-height: 12px;
@@ -80,7 +80,7 @@
   }
 
   .subtitle {
-    font-family: "__Metropolis_e5531d", "__Metropolis_Fallback_e5531d";
+    font-family: var(--myfont);
     font-weight: 700;
     font-size: 12px;
     line-height: 12px;

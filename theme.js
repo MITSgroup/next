@@ -1,4 +1,7 @@
 import { createTheme } from "@mui/material/styles";
+import localFont from "@next/font/local";
+const myFont = localFont({ src: './pages/fonts/Geometria.woff' })
+let geometriaFont = myFont.style.fontFamily;
 
 export const theme = createTheme({
   palette: {
@@ -11,7 +14,7 @@ export const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: `'Inter', 'Helvetica',  'sans-serif'`,
+    fontFamily: `var(--myfont)`,
   },
   components: {
     MuiButton: {
@@ -21,7 +24,7 @@ export const theme = createTheme({
       styleOverrides: {
         root: {
           borderRadius: 30,
-          fontFamily: `'Metropolis', 'Helvetica',  'sans-serif'`,
+          fontFamily: `var(--myfont)`,
           textTransform: "uppercase",
           padding: "10px 50px",
           fontWeight: 700,

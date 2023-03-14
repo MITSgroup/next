@@ -11,7 +11,7 @@
     }
     input,
     textarea {
-      font-family: "__Metropolis_e5531d", "__Metropolis_Fallback_e5531d";
+      font-family: var(--myfont);
       background-color: transparent;
       width: 100%;
       border: none;
@@ -55,7 +55,7 @@
   }
 
   .submit {
-    font-family: "__Metropolis_e5531d", "__Metropolis_Fallback_e5531d";
+    font-family: var(--myfont);
     text-transform: uppercase;
     font-weight: 700;
     margin-top: 10px;

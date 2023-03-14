@@ -6,7 +6,7 @@
 
   .title {
     margin-bottom: 20px;
-    font-family: "__Metropolis_e5531d", "__Metropolis_Fallback_e5531d";
+    font-family: var(--myfont);
     font-weight: 700;
     font-size: 32px;
     line-height: 32px;
@@ -86,7 +86,7 @@
       }
 
       .name {
-        font-family: "__Metropolis_e5531d", "__Metropolis_Fallback_e5531d";
+        font-family: var(--myfont);
         font-weight: 700;
         font-size: 12px;
         line-height: 12px;
@@ -100,7 +100,7 @@
         font-size: 24px;
         line-height: 24px;
         /* identical to box height */
-        font-family: "__Metropolis_e5531d", "__Metropolis_Fallback_e5531d";
+        font-family: var(--myfont);
         color: #000000;
       }
     }
