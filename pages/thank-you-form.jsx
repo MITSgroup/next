@@ -6,10 +6,10 @@ import ContactsItem from "../components/ContactsItem/ContactsItem";
 import { fetchAPI } from "../lib/api";
 import React from "react";
 
-const ThankYouForm = ({ global, social }) => {
+const ThankYouForm = ({ global, social, window }) => {
 
   if(typeof window !== 'undefined') {
-    window['yaCounter92417784'].hit(window?.location.href);
+    window['yaCounter92417784'].hit(window.location.href);
   }
 
   return (
