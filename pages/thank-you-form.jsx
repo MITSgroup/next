@@ -8,9 +8,9 @@ import React from "react";
 
 const ThankYouForm = ({ global, social }) => {
 
-  // if(typeof window !== 'undefined') {
-  //   window['yaCounter92417784'].hit(window?.location.href);
-  // }
+  if(typeof window !== 'undefined') {
+    window['yaCounter92417784'].hit(window?.location.href);
+  }
 
   return (
     <MainLayout
