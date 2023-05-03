@@ -39,8 +39,7 @@ const ProjectCta = ({ title, description, type, left, imageUrl, label, reachGoal
             {label && (
               <Box className={styles.availability}>
                 <p>
-                {router.locale === "en" ? "ONLY" : "Осталось"} {left}
-                <br /> {type} <br /> {router.locale === "en" ? "LEFT" : ""}
+                  {left}
                 </p>
               </Box>
             )}

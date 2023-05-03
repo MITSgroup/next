@@ -62,8 +62,7 @@ const ProjectCard = ({
           {label && (
             <Box className={styles.label}>
               <span>
-              {router.locale === "en" ? "ONLY" : "Осталось"} {left}
-                <br /> {type} <br /> {router.locale === "en" ? "LEFT" : ""}
+                {left}
               </span>
             </Box>
           )}
