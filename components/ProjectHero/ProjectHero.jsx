@@ -78,8 +78,7 @@ const ProjectHero = ({
                         </Box>
                         <Box className={styles.availability}>
                         <p>
-                            {router.locale === "en" ? "ONLY" : "Остался"} {left}
-                            <br /> {type} <br /> {router.locale === "en" ? "LEFT" : ""}
+                            {left}
                         </p>
                         </Box>
                     </Box>
