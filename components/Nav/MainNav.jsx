@@ -19,7 +19,7 @@ const MainNav = ({ transparent }) => {
         <li>
           <Link href={"/posts"}>{router.locale === "en" ? "JOURNAL" : "БЛОГ"}</Link>
         </li>
-        {/* <li>
+        <li>
         <Link
             className={`${styles.linkContacts} ${
               transparent ? styles.linkContactsWhite : ""
@@ -28,7 +28,7 @@ const MainNav = ({ transparent }) => {
             >
             {router.locale === "en" ? "CONTACT US" : "КОНТАКТЫ"}
           </Link>
-        </li> */}
+        </li>
       </ul>
     </nav>
   );
