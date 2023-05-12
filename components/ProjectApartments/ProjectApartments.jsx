@@ -17,6 +17,13 @@ const numberOfCount = (count, apartmentsLength) =>
   
 const ProjectApartments = ({ apartments }) => {
   const router = useRouter();
+  let soldLabel;
+  if(router.locale === "en") {
+    soldLabel = "SOLD OUT"
+  } else {
+    soldLabel = "ПРОДАНО"
+  }
+
   const placeholder =
     "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAIAAAAmkwkpAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAMklEQVR4nB3BQREAQAgCQKJcDjP4NQQhSEIgYnkz7oLkOyRhu6ok7S5ybCeBpO4GMDMfM6oWVFzQoEYAAAAASUVORK5CYII=";
   const matchesLg = useMediaQuery("(min-width: 1200px)");
@@ -84,11 +91,14 @@ const ProjectApartments = ({ apartments }) => {
                         tabIndex={idx}
                         onClick={(event) => handleTabClick(event)}
                       >
-                        <Box>
+                        <Box className={apartment.sold == true ? styles.sold : "notsold"}>
                           <p className={styles.price}>${apartment.price}</p>
                           <p className={styles.bedrooms}>
-                            {apartment.bedroomsCount}
+                            {apartment.sold == true ? soldLabel : apartment.bedroomsCount}
                           </p>
+                          {/* <span className={styles.soldLabel} style={{ display: 'none' }}>
+                            {apartment.sold == true ? soldLabel : ""}
+                          </span> */}
                           <ul className={styles.list}>
                             {apartment.advantages &&
                               apartment.advantages.map((obj) => (
