@@ -63,16 +63,6 @@ const Header = ({ transparent, openMenu }) => {
             )}
           </Box>
           {!matchesMd && (
-            <Link
-              className={`${styles.linkContactsM} ${
-                transparent ? styles.linkContactsWhite : ""
-              }`}
-              href="/"
-              locale={router.locale === "en" ? "ru" : "en"}
-            > {router.locale === "en" ? "ru" : "en"}
-            </Link>
-          )}
-          {!matchesMd && (
             <IconButton onClick={openMenu}>
               <DragHandleIcon
                 sx={{

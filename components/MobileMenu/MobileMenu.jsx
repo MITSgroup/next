@@ -6,8 +6,12 @@ import Image from "next/image";
 import CloseIcon from "@mui/icons-material/Close";
 import MainNav from "../Nav/MainNav";
 import ContactsItem from "../ContactsItem/ContactsItem";
+import Link from "next/link";
+import { useRouter } from "next/router";
 
 const MobileMenu = ({ closeMenu, open, social }) => {
+  const router = useRouter();
+
   const materialStyles = {
     menu: {
       width: "100%",
@@ -28,6 +32,23 @@ const MobileMenu = ({ closeMenu, open, social }) => {
         <Box mb={8}>
           <MainNav transparent={false} />
         </Box>
+
+        <Box mb={8} className={styles.linkContactsMB}>
+          <Link
+            className={styles.linkContactsM}
+            href="/ru"
+            locale='ru'
+          >{router.locale === "en" ? "RU" : "RU"}
+          </Link>
+          &nbsp;|&nbsp;
+          <Link
+            className={styles.linkContactsM}
+            href="/"
+            locale='en'
+          >{router.locale === "en" ? "EN" : "EN"}
+          </Link>
+        </Box>
+
         <Box className={styles.socials}>
           {social?.attributes.instagramLink && (
             <ContactsItem
