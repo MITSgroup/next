@@ -22,6 +22,9 @@ let CurrentFont;
 let CurrentFont2;
 const router = useRouter();
 console.log('0000000000', router.locale);
+if (router.locale == 'ru') {
+  geometriaFont = "'Helvetica',  'sans-serif'";
+}
 let defFont = '"__Metropolis_e5531d", "__Metropolis_Fallback_e5531d"';
 if (router.locale == "en") {
   console.log('current en');
