@@ -7,6 +7,7 @@ import { useRouter } from "next/router";
 // const router = useRouter();
 // {router.locale === "en" ? "LEFT" : ""}
 
+
 const ProjectCard = ({
   url,
   image,
@@ -19,12 +20,21 @@ const ProjectCard = ({
 }) => {
 
   const router = useRouter();
+  let soldOut = 0;
+  let forSale =  "продается";
+  if (router.locale === "en") {
+    forSale = "FOR SALE";
+  }
   const placeholder =
     "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAI0lEQVR4nGO49vzVik3b3///P3/pPAZPSzVxBgY9FW4NBQYAxrMK7Iw5NV8AAAAASUVORK5CYII=";
-    if (image.indexOf("https://")) {
-      image = 'https://' + image;
-    }
-    
+  if (image.indexOf("https://")) {
+    image = 'https://' + image;
+  }
+  console.log(left, '12312312');
+  if (left == "SOLD OUT") {
+    forSale = "SOLD OUT";
+  }
+
   return (
     <Link href={url}>
       <article className={styles.projectCard}>
@@ -70,7 +80,7 @@ const ProjectCard = ({
 
         {label && (
           <Box className={`${styles.label} ${styles.onSaleLabel}`}>
-            <span>{router.locale === "en" ? "FOR SALE" : "продается"}</span>
+            <span>{forSale}</span>
           </Box>
         )}
       </article>
