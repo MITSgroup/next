@@ -33,6 +33,8 @@ const ProjectCard = ({
   console.log(left, '12312312');
   if (left == "SOLD OUT") {
     forSale = "SOLD OUT";
+  } else if (left == "РАСПРОДАНО") {
+    forSale = "РАСПРОДАНО";
   }
 
   return (
