@@ -81,8 +81,31 @@
       transition: background-color 0.3s ease-in-out;
       cursor: pointer;
 
+      .sold {
+        position: relative;
+        text-decoration: line-through;
+        // background-image: url('/images/icons/19448182.png');
+        // background-size: 130px;
+        // background-repeat: no-repeat;
+        // background-position: center bottom;
+      }
+
       &:hover {
         background-color: #f6f6f6;
+
+        .sold {
+          background-image: unset;
+        }
+        
+        .soldLabel {
+          display: none !important;
+          opacity: 0;
+        }
+
+        .list {
+          opacity: 1;
+          visibility: visible;
+        }
       }
 
       .name {
@@ -103,10 +126,31 @@
         font-family: var(--myfont);
         color: #000000;
       }
+
+      .soldLabel {
+        display: block !important;
+        position: absolute;
+        top: 120px;
+        z-index: 0;
+        background-image: url('/images/icons/19448182.png');
+      }
     }
 
     .active {
       background-color: #f6f6f6;
+
+      .sold {
+        background-image: unset;
+      }
+
+      .soldLabel {
+        display: none !important;
+        opacity: 0;
+      }
+      .list {
+        opacity: 1;
+        visibility: visible;
+      }
     }
   }
 

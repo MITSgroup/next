@@ -15,6 +15,13 @@ const numberOfCount = (count, apartmentsLength) =>
 
 const ProjectModelling = ({ apartments }) => {
   const router = useRouter();
+  let soldLabel;
+  if(router.locale === "en") {
+    soldLabel = "SOLD OUT"
+  } else {
+    soldLabel = "ПРОДАНО"
+  }
+  
   const [activeTab, setActiveTab] = React.useState(0);
   const [slidesCount, setSlidesCount] = React.useState(1);
   const arrowPrev = React.useRef(null);
@@ -87,10 +94,12 @@ const ProjectModelling = ({ apartments }) => {
                         tabIndex={idx}
                         onClick={(event) => handleTabClick(event)}
                       >
-                        <p className={styles.name}>{apartment.apartmentName}</p>
-                        <p className={styles.price}>
-                          ${apartment.apartmentPrice}
-                        </p>
+                        <Box className={apartment.sold == true ? styles.sold : "notsold"}>
+                          <p className={styles.name}>{apartment.sold == true ? soldLabel : apartment.apartmentName}</p>
+                          <p className={styles.price}>
+                            ${apartment.apartmentPrice}
+                          </p>
+                        </Box>
                       </Box>
                     </SwiperSlide>
                   ))}
